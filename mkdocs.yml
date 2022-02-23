@@ -6,9 +6,9 @@ site_author: Uuvana Studios
 repo_url: https://github.com/Uuvana-Studios/Longvinter-server-documentation
 edit_uri: ""
 
+
 theme:
-    name: mkdocs
-    locale: en
-    highlightjs: true
+  name: 'rtd-dropdown'
+  locale: en
     
 copyright: Copyright &copy; 2021 <a href="https://github.com/Uuvana-Studios">Uuvana Studios</a>.
