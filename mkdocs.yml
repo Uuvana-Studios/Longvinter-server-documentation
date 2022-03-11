@@ -138,13 +138,13 @@ plugins:
           remove_comments: true
       css_files:
           - css/hint.min.css
-
-    - git-revision-date-localized:
-        type: timeago
-        timezone: Europe/Finland
-        locale: en
-        fallback_to_build_date: false
-        enable_creation_date: true
+      
+  - git-revision-date-localized:
+      type: timeago
+      timezone: Europe/Finland
+      locale: en
+      fallback_to_build_date: false
+      enable_creation_date: true
 
     - print-site:
         add_to_navigation: true
