@@ -20,18 +20,15 @@ If you have any trouble following the guide. Please send us a message in [Discor
 
 Run the following commands according to your chosen system:
 
-**Ubuntu/Debian**
-
+**Ubuntu/Debian**:
 - `$ apt update`
 - `$ apt install git git-lfs`
 
-**Arch-Linux**
-
+**Arch-Linux**:
 - `$ pacman -Sy`
 - `$ pacman -S git git-lfs`
 
-**Fedora**
-
+**Fedora**:
 - `$ yum update`
 - `$ yum install git git-lfs`
 
@@ -44,7 +41,7 @@ Run the following commands according to your chosen system:
 
 #### Installing Steam SDK
 
-The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user.
+The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user:
 - `cd ~/` Makes sure we are in the home directory
 - `mkdir steamcmd` Makes SteamCMD directory
 - `cd steamcmd` Goes to the SteamCMD directory
@@ -57,20 +54,20 @@ Steam CMD will install updates automatically and login to install 64-bit SDK.
 
 #### Copying Steam SDK to right place
 
-We still need to move the sdk to default location where the server tries to 
+We still need to move the sdk to default location where the server tries to:
 - `cd ~/.steam` Go to the steam folder
 - `mkdir sdk64` Create folder for the sdk
 - `cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/` Copy the steamclient.so from SteamCmd to .steam/sdk64 folder
 
 ### Installing the server
 
-After this we want to make sure we are in home directory
+After this we want to make sure we are in home directory:
 - `cd ~/`
 
-Then we can clone the Linux repository
+Then we can clone the Linux repository:
 - `git clone https://github.com/Uuvana-Studios/longvinter-linux-server.git`
 
-Then we want to give permission for this folder to execute commands with
+Then we want to give permission for this folder to execute commands with:
 - `sudo chmod -R ugo+rwx longvinter-linux-server/`
 
 After this we can open the required ports by executing the following commands:
