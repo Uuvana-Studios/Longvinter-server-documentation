@@ -49,13 +49,15 @@ theme:
     # - toc.integrate
   
   palette:
-    - scheme: slate
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
-    - scheme: default
+    - media: "(prefers-color-scheme: dark)"
+      scheme: default
       primary: indigo
       accent: indigo
       toggle:
@@ -82,6 +84,11 @@ extra:
 extra_css:
   - css/hint.min.css
 
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
+
 markdown_extensions:
   - abbr
   - footnotes
@@ -95,15 +102,22 @@ markdown_extensions:
   - pymdownx.betterem
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
 
 plugins:
+  - offline
+  - git-authors
+  - tooltips
+  - charts
+  - search:
+      prebuild_index: true
   - privacy:
       externals: bundle
       externals_directory: docs/externals
-  - search:
-      prebuild_index: true
-
   - enumerate-headings:
       exclude:
         - index.md
@@ -123,9 +137,24 @@ plugins:
           remove_comments: true
       css_files:
           - css/hint.min.css
-  - offline
-  - git-authors
-  - tooltips
+    - git-revision-date-localized:
+        type: timeago
+        timezone: Europe/Finland
+        locale: en
+        fallback_to_build_date: false
+        enable_creation_date: true
+    - print-site:
+        add_to_navigation: true
+        add_full_urls: false
+        add_table_of_contents: true
+        toc_title: "Table of Contents"
+        toc_depth: 2
+        add_full_urls: false
+        enumerate_headings: true
+        enumerate_figures: true
+        add_cover_page: true
+        path_to_pdf: "assets/site.pdf"
+
   - print-site
     
 copyright: Copyright &copy; 2021 <a href="https://github.com/Uuvana-Studios">Uuvana Studios</a>.
