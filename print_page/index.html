@@ -285,18 +285,6 @@
   
 
       
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link">
-      Print Site
-    </a>
-  </li>
-
-      
     </ul>
   </div>
 </nav>
@@ -488,103 +476,6 @@
           
         </ul>
       </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Print Site
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Print Site
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#" class="md-nav__link">
-    1. Home
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section-linux-guide" class="md-nav__link">
-    I. Linux Guide
-  </a>
-  
-    <nav class="md-nav" aria-label="I. Linux Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux-setup-vanilla" class="md-nav__link">
-    2. Vanilla Setup
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linux-setup-docker" class="md-nav__link">
-    3. Docker Setup
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#section-windows-guide" class="md-nav__link">
-    II. Windows Guide
-  </a>
-  
-    <nav class="md-nav" aria-label="II. Windows Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#windows-setup-vanilla" class="md-nav__link">
-    4. Vanilla Setup
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -865,7 +756,16 @@ AdminSteamID=76561198965966997
 <h3 id="linux-setup-docker-installing-docker">Installing Docker</h3>
 <p><strong>Ubuntu/Debian</strong>:</p>
 <ul>
-<li><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></li>
+<li><code>sudo apt-get update</code></li>
+<li>
+<p><code>sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release</code></p>
+</li>
+<li>
+<p><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></p>
+</li>
+<li>
+<p><code>echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</code></p>
+</li>
 </ul>
 <h2 id="linux-setup-docker-setting-up-the-container">Setting up the container</h2>
 <h3 id="linux-setup-docker-downloading-the-container">Downloading the container</h3>
@@ -1092,36 +992,40 @@ git pull
               
 
   
+  
 
-    
-      <!-- Giscus -->
-      <script src="https://giscus.app/client.js" data-repo="Uuvana-Studios/longvinter-server-documentation" data-repo-id="R_kgDOG5V-6Q" data-category="Announcements" data-category-id="DIC_kwDOG5V-6c4CODom" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script>
+  
 
-      <!-- Reload on palette change -->
-      <script>
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object")
-          if (palette.color.scheme === "slate") {
-            var giscus = document.querySelector("script[src*=giscus]")
-            giscus.setAttribute("data-theme", "dark") 
-          }
+  
+    <!-- Giscus -->
+    <script src="https://giscus.app/client.js" data-repo="Uuvana-Studios/longvinter-server-documentation" data-repo-id="R_kgDOG5V-6Q" data-category="Announcements" data-category-id="DIC_kwDOG5V-6c4CODom" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script>
 
-        /* Register event handlers after documented loaded */
-        document.addEventListener("DOMContentLoaded", function() {
-          var ref = document.querySelector("[data-md-component=palette]")
-          ref.addEventListener("change", function() {
-            var palette = __md_get("__palette")
-            if (palette && typeof palette.color === "object") {
-              var theme = palette.color.scheme === "slate" ? "dark" : "light"
+    <!-- Reload on palette change -->
+    <script>
+      var palette = __md_get("__palette")
+      if (palette && typeof palette.color === "object")
+         if (palette.color.scheme === "slate") {
+           var giscus = document.querySelector("script[src*=giscus]")
+           giscus.setAttribute("data-theme", "dark") 
+         }
 
-              /* Instruct Giscus to change theme */
-              var frame = document.querySelector(".giscus-frame")
-              frame.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, "https://giscus.app")
-            }
-          })
+      /* Register event handlers after documented loaded */
+      document.addEventListener("DOMContentLoaded", function() {
+         var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function() {
+           var palette = __md_get("__palette")
+           if (palette && typeof palette.color === "object") {
+             var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+             /* Instruct Giscus to change theme */
+            var frame = document.querySelector(".giscus-frame")
+            frame.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, "https://giscus.app")
+           }
+         })
         })
       </script>
     
+
 
             </article>
           </div>
