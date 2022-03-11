@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
          <loc>https://docs-server.longvinter.com/</loc>
          <lastmod>2022-03-11</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/"/>
+         
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/linux/</loc>
          <lastmod>2022-03-11</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/linux/"/>
+         
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/linux/setup-docker/</loc>
          <lastmod>2022-03-11</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/linux/setup-docker/"/>
+         
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/linux/setup-vanilla/</loc>
          <lastmod>2022-03-11</lastmod>
          <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/linux/setup-vanilla/"/>
+         
     </url>
 </urlset>
