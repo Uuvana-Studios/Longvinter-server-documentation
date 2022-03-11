@@ -19,8 +19,16 @@ nav:
 theme:
   name: material
   custom_dir: overrides
+
   locale: en
-  font: false
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
 
   features:
     - content.code.annotate
@@ -41,7 +49,18 @@ theme:
     # - toc.integrate
   
   palette:
-    scheme: slate
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
 
 
 extra_css:
