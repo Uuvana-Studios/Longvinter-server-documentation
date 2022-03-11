@@ -26,6 +26,9 @@ theme:
     text: Roboto
     code: Roboto Mono
 
+  static_templates:
+    - 404.html
+
   # Don't include MkDocs' JavaScript
   include_search_page: false
   search_index_only: true
@@ -65,9 +68,6 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
-
-static_templates:
-  - 404.html
 
 # Customization
 extra:
