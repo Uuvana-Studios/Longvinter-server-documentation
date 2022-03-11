@@ -119,9 +119,9 @@ plugins:
   - charts
 
   - redirects:
-    redirect_maps:
-      'linux/index.md': 'linux/setup-vanilla.md'
-      'windows/index.md': 'windows/setup-vanilla.md'
+      redirect_maps:
+        'linux/index.md': 'linux/setup-vanilla.md'
+        'windows/index.md': 'windows/setup-vanilla.md'
 
   - search:
       prebuild_index: true
