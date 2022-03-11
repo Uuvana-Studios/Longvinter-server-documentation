@@ -20,17 +20,14 @@ If you have any trouble following the guide. Please send us a message in [Discor
 Run the following commands according to your chosen system:
 
 **Ubuntu/Debian**:
-
 - `$ apt update`
 - `$ apt install git git-lfs`
 
 **Arch-Linux**:
-
 - `$ pacman -Sy`
 - `$ pacman -S git git-lfs`
 
 **Fedora**:
-
 - `$ yum update`
 - `$ yum install git git-lfs`
 
@@ -44,7 +41,6 @@ Run the following commands according to your chosen system:
 ### Installing Steam SDK
 
 The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user:
-
 - `cd ~/` Makes sure we are in the home directory
 - `mkdir steamcmd` Makes SteamCMD directory
 - `cd steamcmd` Goes to the SteamCMD directory
@@ -58,7 +54,6 @@ Steam CMD will install updates automatically and login to install 64-bit SDK.
 ### Copying Steam SDK to right place
 
 We still need to move the sdk to default location where the server tries to:
-
 - `cd ~/.steam` Go to the steam folder
 - `mkdir sdk64` Create folder for the sdk
 - `cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/` Copy the steamclient.so from SteamCmd to .steam/sdk64 folder
@@ -66,19 +61,15 @@ We still need to move the sdk to default location where the server tries to:
 ## Installing the server
 
 After this we want to make sure we are in home directory:
-
 - `cd ~/`
 
 Then we can clone the Linux repository:
-
 - `git clone https://github.com/Uuvana-Studios/longvinter-linux-server.git`
 
 Then we want to give permission for this folder to execute commands with:
-
 - `sudo chmod -R ugo+rwx longvinter-linux-server/`
 
 After this we can open the required ports by executing the following commands:
-
 - `sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT`
 - `sudo iptables -I INPUT -p tcp --dport 7777 --syn -j ACCEPT`
 - `sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT`
@@ -91,7 +82,6 @@ After this we can open the required ports by executing the following commands:
 Server values can be customized with Game.ini
 
 Create the file for edit with:
-
 `nano ~/longvinter-linux-server/Longvinter/Saved/Config/LinuxServer/Game.ini`
 
 Add the following content there:
@@ -107,7 +97,6 @@ CommunityWebsite=www.longvinter.com
 [/Game/Blueprints/Server/GM_Longvinter.GM_Longvinter_C]
 AdminSteamID=76561198965966997
 ```
-
 - **ServerName:** Name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.
 - **ServerMOTD:** Server message that is on a signs around the island.
 - **MaxPlayer:** Maximum allowed players that can connect at any given time.
@@ -128,7 +117,6 @@ AdminSteamID=76561198965966997
 - `$ systemctl daemon-reload`
 
 Now, how to use it:
-
 - `$ systemctl start longvinter.service` (Starts the server)
 - `$ systemctl stop longvinter.service` (Stops the server)
 - `$ systemctl restart longvinter.service` (Restart the server, for example, if you made a change to Game.ini)
@@ -137,8 +125,7 @@ Now, how to use it:
 
 
 If the console shows these lines at the bottom after startup your server has started corretly.
-
-```
+```yaml
 [2022.02.22-12.51.34:514][ 13]LogOnline: Verbose: STEAM: FOnlineAsyncEventSteamServerConnectedGS ServerId: Server[0x***************]
 [2022.02.22-12.51.34:782][ 21]LogOnline: Verbose: STEAM: FOnlineAsyncEventSteamServerPolicyResponseGS Secure: 1
 [2022.02.22-12.51.34:849][ 23]LogOnline: Verbose: OSS: Async task 'FOnlineAsyncTaskSteamCreateServer bWasSuccessful: 1' succeeded in 2.828243 seconds
@@ -149,11 +136,11 @@ If the console shows these lines at the bottom after startup your server has sta
 ## Server Maintenance
 
 ### Updating the server
-We have created an automated script that you can run to automatically update and restart a server.
 
+We have created an automated script that you can run to automatically update and restart a server.
 - `bash /home/steam/longvinter-linux-server/LongvinterUpdate.sh`
 
 ### Backing up your saves
-We have created an automated script that you can run to automatically backup and restart a server, for now it has to be run manually and it requires user input.
 
+We have created an automated script that you can run to automatically backup and restart a server, for now it has to be run manually and it requires user input.
 - `bash /home/steam/longvinter-linux-server/LongvinterBackup.sh`

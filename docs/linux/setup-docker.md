@@ -21,30 +21,51 @@ If you have any trouble following the guide. Please send us a message in [Discor
 Run the following commands according to your chosen system:
 
 **Ubuntu/Debian**:
-
 - `$ apt update`
 - `$ apt install git git-lfs`
 
 **Arch-Linux**:
-
 - `$ pacman -Sy`
 - `$ pacman -S git git-lfs`
 
 **Fedora**:
-
 - `$ yum update`
 - `$ yum install git git-lfs`
 
 ### Installing Docker
 
 **Ubuntu/Debian**:
+Begin by adding dependencies needed by the installation process:
+- `$ apt-get install apt-transport-https ca-certificates curl gnupg lsb-release`
 
-- `sudo apt-get update`
-- `sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release`
-
+Begin by adding dependencies needed by the installation process:
 - `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`
 
+Begin by adding dependencies needed by the installation process:
 - `echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
+
+Now you can install Docker:
+`$ apt-get install docker-ce docker-ce-cli containerd.io`
+
+Start and enable docker service:
+- `sudo systemctl start docker && sudo systemctl enable docker`
+
+Add your user account to the docker group:
+- `sudo usermod -aG docker $USER`
+
+**Fedora**:
+Add Docker’s package repository:
+- `$ dnf -y install yum-utils device-mapper-persistent-data lvm2 dnf-plugins-core`
+- `$ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo`
+
+Install Docker:
+- `$ dnf install docker-ce docker-ce-cli containerd.io`
+
+Start and enable docker service:
+- `sudo systemctl start docker && sudo systemctl enable docker`
+
+Add your user account to the docker group:
+- `sudo usermod -aG docker $USER`
 
 ## Setting up the container
 
@@ -79,7 +100,7 @@ The server settings can be changed by opening the `docker-compose.yaml` file. Se
 | CFG_QUERY_PORT        | This setting is used to change the query port when multiple servers are running on the same (public) IP address. When changing this setting, make sure to also change the port number under the ports section of the docker-compose.yaml file. | 27016                         |
 
 With the default values above, the environment part of the `docker-compose.yaml` file should look like this:
-```shell
+```yaml
   environment:
     CFG_SERVER_NAME: "Unnamed Island"
     CFG_MAX_PLAYERS: "32"
@@ -94,13 +115,13 @@ With the default values above, the environment part of the `docker-compose.yaml`
 
 ### Changing the port numbers
 In order to run the server with different port numbers than the default ports `7777` and `27016`, the new port numbers have to be edited in two places in the `docker-compose.yaml` file.
-```shell
+```yaml
   ports:
     - "7777:7777"
     - "27016:27016"
 ```
 
-```
+```yaml
   environment:
     CFG_GAME_PORT: "7777"
     CFG_QUERY_PORT: "27016"
