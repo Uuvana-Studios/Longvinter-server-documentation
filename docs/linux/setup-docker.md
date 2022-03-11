@@ -25,6 +25,7 @@ To download the container configuration using git, use the command below
 
 In order to keep game progress between container restarts a data directory needs to be created. Create this directory in the same directory as the docker-compose.yaml file.
 Use the following commands to create the directory and set the appropriate rights.
+
 `mkdir data`
 `chown -R 1200:1200 data/`
 
@@ -45,20 +46,22 @@ The server settings can be changed by opening the `docker-compose.yaml` file. Se
 
 With the default values above, the environment part of the `docker-compose.yaml` file should look like this:
 ```shell
-environment:
-  CFG_SERVER_NAME: "Unnamed Island"
-  CFG_MAX_PLAYERS: "32"
-  CFG_SERVER_MOTD: "Welcome to Longvinter Island!"
-  CFG_PASSWORD: ""
-  CFG_COMMUNITY_WEBSITE: "www.longvinter.com"
-  CFG_ADMIN_STEAM_ID: ""
-  CFG_ENABLE_PVP: "true"
-  CFG_GAME_PORT: "7777"
-  CFG_QUERY_PORT: "27016"
+
+  environment:
+    CFG_SERVER_NAME: "Unnamed Island"
+    CFG_MAX_PLAYERS: "32"
+    CFG_SERVER_MOTD: "Welcome to Longvinter Island!"
+    CFG_PASSWORD: ""
+    CFG_COMMUNITY_WEBSITE: "www.longvinter.com"
+    CFG_ADMIN_STEAM_ID: ""
+    CFG_ENABLE_PVP: "true"
+    CFG_GAME_PORT: "7777"
+    CFG_QUERY_PORT: "27016"
+    
 ```
 
 ### Changing the port numbers
-In order to run the server with different port numbers than the default ports `7777` and `27016`, the new port numbers have to be edited in two places in the `docker-compose.yaml` file. 
+In order to run the server with different port numbers than the default ports `7777` and `27016`, the new port numbers have to be edited in two places in the `docker-compose.yaml` file.
 ```shell
   ports:
     - "7777:7777"
