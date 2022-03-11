@@ -107,21 +107,11 @@
         </li>
     
       
-        <li class="toctree-l4">
-          <a class="toctree-l5" href="#installing-git-large-file-system">Installing GIT Large file system</a>
-        </li>
-    
-      
-        <li class="toctree-l4">
-          <a class="toctree-l5" href="#creating-a-dedicated-user">Creating a dedicated user</a>
-        </li>
-    
-      
           
 
   <li class="toctree-l4">
-    <a href="#installing-steam-sdk">
-      Installing Steam SDK
+    <a href="#system-setup">
+      System Setup
       <span class="toctree-expand"></span>
     </a>
   </li>
@@ -133,7 +123,22 @@
     
       
         <li class="toctree-l5">
-          <a class="toctree-l6" href="#copying-sdk-to-right-place">Copying SDK to right place</a>
+          <a class="toctree-l6" href="#installing-git-large-file-system">Installing GIT Large file system</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#creating-a-dedicated-user">Creating a dedicated user</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#installing-steam-sdk">Installing Steam SDK</a>
+        </li>
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#copying-steam-sdk-to-right-place">Copying Steam SDK to right place</a>
         </li>
     
     </ul>
@@ -143,15 +148,15 @@
     
       
         <li class="toctree-l4">
-          <a class="toctree-l5" href="#customize-the-server">Customize the server</a>
+          <a class="toctree-l5" href="#customizing-the-server">Customizing the server</a>
         </li>
     
       
           
 
   <li class="toctree-l4">
-    <a href="#run-the-server">
-      Run the server
+    <a href="#running-the-server">
+      Running the server
       <span class="toctree-expand"></span>
     </a>
   </li>
@@ -166,25 +171,45 @@
           <a class="toctree-l6" href="#start-the-server-manually-with-shell-script">Start the server manually with shell script</a>
         </li>
     
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</a>
+        </li>
+    
     </ul>
   </li>
 
       
     
       
-        <li class="toctree-l4">
-          <a class="toctree-l5" href="#start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</a>
+          
+
+  <li class="toctree-l4">
+    <a href="#server-maintenance">
+      Server Maintenance
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l4">
+    <ul class="subnav-l4 toc-hidden">
+    
+      
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#updating-the-server">Updating the server</a>
         </li>
     
       
-        <li class="toctree-l4">
-          <a class="toctree-l5" href="#updating-the-server">Updating the server</a>
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#backing-up-your-saves">Backing up your saves</a>
         </li>
     
+    </ul>
+  </li>
+
       
-        <li class="toctree-l4">
-          <a class="toctree-l5" href="#backing-up-your-saves">Backing up your saves</a>
-        </li>
     
     </ul>
   </li>
@@ -283,7 +308,8 @@
 <li>Router with the ability to port forward</li>
 <li>Min. 2 GB RAM</li>
 </ul>
-<h3 id="installing-git-large-file-system">Installing GIT Large file system</h3>
+<h3 id="system-setup">System Setup</h3>
+<h4 id="installing-git-large-file-system">Installing GIT Large file system</h4>
 <p>.pak files are large and we need to install Git Lfs in order to download them</p>
 <p>Run the following commands according to your chosen system:</p>
 <p><strong>Ubuntu/Debian</strong>
@@ -295,14 +321,14 @@
 <p><strong>Fedora</strong>
 - <code>$ yum update</code>
 - <code>$ yum install git git-lfs</code></p>
-<h3 id="creating-a-dedicated-user">Creating a dedicated user</h3>
+<h4 id="creating-a-dedicated-user">Creating a dedicated user</h4>
 <ul>
 <li><code>$ useradd -m -d /home/steam steamcmd</code></li>
 <li><code>$ passwd steamcmd</code> (Choose a stronge secure password)</li>
 <li><code>$ usermod -aG sudo steamcmd</code></li>
 <li><code>$ su steamcmd</code></li>
 </ul>
-<h3 id="installing-steam-sdk">Installing Steam SDK</h3>
+<h4 id="installing-steam-sdk">Installing Steam SDK</h4>
 <p>The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user.
 - <code>cd ~/</code> Makes sure we are in the home directory
 - <code>mkdir steamcmd</code> Makes SteamCMD directory
@@ -312,7 +338,7 @@
 - <code>tar -xvzf steamcmd_linux.tar.gz</code> Extracts SteamCMD
 - <code>./steamcmd.sh +force_install_dir . +login anonymous +app_update 1007 +quit</code> Runs SteamCMD to login, install a app update and quit upon completion.</p>
 <p>Steam CMD will install updates automatically and login to install 64-bit SDK.</p>
-<h4 id="copying-sdk-to-right-place">Copying SDK to right place</h4>
+<h4 id="copying-steam-sdk-to-right-place">Copying Steam SDK to right place</h4>
 <p>We still need to move the sdk to default location where the server tries to 
 - <code>cd ~/.steam</code> Go to the steam folder
 - <code>mkdir sdk64</code> Create folder for the sdk
@@ -331,7 +357,7 @@
 - <code>sudo iptables -I INPUT -p tcp --dport 27016 --syn -j ACCEPT</code>
 - <code>sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT</code>
 - <code>sudo iptables -I INPUT -p tcp --dport 27015 --syn -j ACCEPT</code></p>
-<h3 id="customize-the-server">Customize the server</h3>
+<h3 id="customizing-the-server">Customizing the server</h3>
 <p>Server values can be customized with Game.ini</p>
 <p>Create the file for edit with
 <code>nano ~/longvinter-linux-server/Longvinter/Saved/Config/LinuxServer/Game.ini</code></p>
@@ -355,12 +381,12 @@ AdminSteamID=76561198965966997
 <li><strong>AdminSteamID:</strong> Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate id's with single space.</li>
 <li>AdminSteamID=76561198965966997 11859676569976596</li>
 </ul>
-<h3 id="run-the-server">Run the server</h3>
+<h3 id="running-the-server">Running the server</h3>
 <h4 id="start-the-server-manually-with-shell-script">Start the server manually with shell script</h4>
 <ul>
 <li><code>sh /home/steam/longvinter-linux-server/LongvinterServer.sh</code></li>
 </ul>
-<h3 id="start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</h3>
+<h4 id="start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</h4>
 <ul>
 <li><code>$ cp /home/steam/longvinter-linux-server/longvinter.service /etc/systemd/system/longvinter.service</code></li>
 <li><code>$ systemctl daemon-reload</code></li>
@@ -378,10 +404,11 @@ AdminSteamID=76561198965966997
 [2022.02.22-12.51.34:849][ 23]LogOnlineSession: Warning: STEAM: Server setting ,TOTPLAYING_s:0 overflows Steam SetGameTags call&lt;br&gt;
 [2022.02.22-12.51.34:849][ 23]LogOnlineSession: Warning: STEAM: Server setting ,ServerName_s:[EU] Uuvana 1 overflows Steam SetGameTags call&lt;br&gt;
 </code></pre>
-<h3 id="updating-the-server">Updating the server</h3>
+<h3 id="server-maintenance">Server Maintenance</h3>
+<h4 id="updating-the-server">Updating the server</h4>
 <p>We have created an automated script that you can run to automatically update and restart a server.
 - <code>bash /home/steam/longvinter-linux-server/LongvinterUpdate.sh</code></p>
-<h3 id="backing-up-your-saves">Backing up your saves</h3>
+<h4 id="backing-up-your-saves">Backing up your saves</h4>
 <p>We have created an automated script that you can run to automatically backup and restart a server, for now it has to be run manually and it requires user input.
 - <code>bash /home/steam/longvinter-linux-server/LongvinterBackup.sh</code></p>
               
