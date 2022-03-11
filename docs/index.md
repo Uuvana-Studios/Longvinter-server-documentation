@@ -1,3 +1,0 @@
----
-title: Longvinter Server Documentation
----
