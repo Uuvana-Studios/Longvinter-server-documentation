@@ -1,9 +1,10 @@
 site_name: Longvinter Server Docs
 site_url: https://docs-server.longvinter.com
-site_description: Longvinter Server Documentation for Administrators
+site_description: Longvinter Server Documentation for Server Administrators
 site_author: Uuvana Studios
 
 repo_url: https://github.com/Uuvana-Studios/Longvinter-server-documentation
+repo_name: Improve this page
 edit_uri: ""
 
 nav:
@@ -18,5 +19,26 @@ nav:
 theme:
   name: 'rtd-dropdown'
   locale: en
+
+extra_css:
+  - css/hint.min.css
+
+plugins:
+  - search
+  - git-authors
+  - tooltips
+  - enumerate-headings:
+      exclude:
+        - index.md
+        - linux/index.md
+        - windows/index.md
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+      css_files:
+          - css/hint.min.css
     
 copyright: Copyright &copy; 2021 <a href="https://github.com/Uuvana-Studios">Uuvana Studios</a>.
