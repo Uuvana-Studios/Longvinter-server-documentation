@@ -1,3 +1,5 @@
+# Vanilla Setup
+
 ## How to setup a Longvinter server in Linux
 
 If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/SmPZ8hRqMV) we are more than happy to help you out!
