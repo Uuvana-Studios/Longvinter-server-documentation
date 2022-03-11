@@ -1,6 +1,6 @@
 # Vanilla Setup
 
-If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/SmPZ8hRqMV) we are more than happy to help you out!
+If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/longvinter) we are more than happy to help you out!
 
 ## Requirements and Pre-requisites
 
@@ -13,7 +13,7 @@ If you have any trouble following the guide. Please send us a message in [Discor
 
 ## System Setup
 
-### Installing GIT Large file system
+### Installing GIT and GIT Large file system
 
 .pak files are large and we need to install Git Lfs in order to download them
 
@@ -120,7 +120,7 @@ AdminSteamID=76561198965966997
 
 ### Start the server manually with shell script
 
-- `sh /home/steam/longvinter-linux-server/LongvinterServer.sh`
+- `shell sh /home/steam/longvinter-linux-server/LongvinterServer.sh`
 
 ### Start the server automatically with Systemd (Recommended)
 

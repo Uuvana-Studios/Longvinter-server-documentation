@@ -1,17 +1,45 @@
 # Docker Setup 
 
-## How to setup a Longvinter server in Linux
+If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/longvinter) we are more than happy to help you out!
 
-If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/SmPZ8hRqMV) we are more than happy to help you out!
+## Requirements and Pre-requisites
 
-## Requirements and prerequisites
+- GIT installed in your system
+- GIT LFS installed in your system
+- Docker installed in your system
+- Docker Compose installed in your system
+- Broadband internet connection
+- Router with the ability to port forward
+- Min. 2 GB RAM
 
- - Docker
- - Docker Compose
- - Git
+## System Setup
 
-For help installing Docker, go to [Install Docker using the Repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
-For help installing Docker Compose, go to [Install Docker Compose](https://docs.docker.com/compose/install/)
+### Installing GIT and GIT Large file system
+
+.pak files are large and we need to install Git Lfs in order to download them
+
+Run the following commands according to your chosen system:
+
+**Ubuntu/Debian**:
+
+- `$ apt update`
+- `$ apt install git git-lfs`
+
+**Arch-Linux**:
+
+- `$ pacman -Sy`
+- `$ pacman -S git git-lfs`
+
+**Fedora**:
+
+- `$ yum update`
+- `$ yum install git git-lfs`
+
+### Installing Docker
+
+**Ubuntu/Debian**:
+
+- `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`
 
 ## Setting up the container
 
