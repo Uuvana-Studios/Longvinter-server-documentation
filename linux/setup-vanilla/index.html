@@ -95,11 +95,6 @@
     
       
         <li class="toctree-l3">
-          <a class="toctree-l4" href="#this-guide-is-made-with-ubuntu-2004">This guide is made with Ubuntu 20.04</a>
-        </li>
-    
-      
-        <li class="toctree-l3">
           <a class="toctree-l4" href="#requirements-and-prerequisites">Requirements and prerequisites</a>
         </li>
     
@@ -163,15 +158,15 @@
           <a class="toctree-l5" href="#start-the-server-manually-with-shell-script">Start the server manually with shell script</a>
         </li>
     
-      
-        <li class="toctree-l4">
-          <a class="toctree-l5" href="#start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</a>
-        </li>
-    
     </ul>
   </li>
 
       
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</a>
+        </li>
     
       
         <li class="toctree-l3">
@@ -263,10 +258,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="how-to-setup-a-longvinter-server-in-linux">How to setup a Longvinter server in Linux</h1>
+                <h2 id="how-to-setup-a-longvinter-server-in-linux">How to setup a Longvinter server in Linux</h2>
 <p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/SmPZ8hRqMV">Discord</a> we are more than happy to help you out!</p>
-<h3 id="this-guide-is-made-with-ubuntu-2004">This guide is made with Ubuntu 20.04</h3>
-<h2 id="requirements-and-prerequisites">Requirements and prerequisites</h2>
+<h3 id="requirements-and-prerequisites">Requirements and prerequisites</h3>
 <ul>
 <li>GIT installed in your system</li>
 <li>GIT LFS installed in your system</li>
@@ -275,7 +269,7 @@
 <li>Router with the ability to port forward</li>
 <li>Min. 2 GB RAM</li>
 </ul>
-<h2 id="installing-git-large-file-system">Installing GIT Large file system</h2>
+<h3 id="installing-git-large-file-system">Installing GIT Large file system</h3>
 <p>.pak files are large and we need to install Git Lfs in order to download them</p>
 <p>Run the following commands according to your chosen system:</p>
 <p><strong>Ubuntu/Debian</strong>
@@ -287,14 +281,14 @@
 <p><strong>Fedora</strong>
 - <code>$ yum update</code>
 - <code>$ yum install git git-lfs</code></p>
-<h2 id="creating-a-dedicated-user">Creating a dedicated user</h2>
+<h3 id="creating-a-dedicated-user">Creating a dedicated user</h3>
 <ul>
 <li><code>$ useradd -m -d /home/steam steamcmd</code></li>
 <li><code>$ passwd steamcmd</code> (Choose a stronge secure password)</li>
 <li><code>$ usermod -aG sudo steamcmd</code></li>
 <li><code>$ su steamcmd</code></li>
 </ul>
-<h2 id="installing-steam-sdk">Installing Steam SDK</h2>
+<h3 id="installing-steam-sdk">Installing Steam SDK</h3>
 <p>The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user.
 - <code>cd ~/</code> Makes sure we are in the home directory
 - <code>mkdir steamcmd</code> Makes SteamCMD directory
@@ -304,12 +298,12 @@
 - <code>tar -xvzf steamcmd_linux.tar.gz</code> Extracts SteamCMD
 - <code>./steamcmd.sh +force_install_dir . +login anonymous +app_update 1007 +quit</code> Runs SteamCMD to login, install a app update and quit upon completion.</p>
 <p>Steam CMD will install updates automatically and login to install 64-bit SDK.</p>
-<h3 id="copying-sdk-to-right-place">Copying SDK to right place</h3>
+<h4 id="copying-sdk-to-right-place">Copying SDK to right place</h4>
 <p>We still need to move the sdk to default location where the server tries to 
 - <code>cd ~/.steam</code> Go to the steam folder
 - <code>mkdir sdk64</code> Create folder for the sdk
 - <code>cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/</code> Copy the steamclient.so from SteamCmd to .steam/sdk64 folder</p>
-<p>## Installing the server.</p>
+<p>### Installing the server.</p>
 <p>After this we want to make sure we are in home directory
 - <code>cd ~/</code></p>
 <p>Then we can clone the Linux repository
@@ -323,7 +317,7 @@
 - <code>sudo iptables -I INPUT -p tcp --dport 27016 --syn -j ACCEPT</code>
 - <code>sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT</code>
 - <code>sudo iptables -I INPUT -p tcp --dport 27015 --syn -j ACCEPT</code></p>
-<h2 id="customize-the-server">Customize the server</h2>
+<h3 id="customize-the-server">Customize the server</h3>
 <p>Server values can be customized with Game.ini</p>
 <p>Create the file for edit with
 <code>nano ~/longvinter-linux-server/Longvinter/Saved/Config/LinuxServer/Game.ini</code></p>
@@ -347,8 +341,8 @@ AdminSteamID=76561198965966997
 <li><strong>AdminSteamID:</strong> Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate id's with single space.</li>
 <li>AdminSteamID=76561198965966997 11859676569976596</li>
 </ul>
-<h2 id="run-the-server">Run the server</h2>
-<h3 id="start-the-server-manually-with-shell-script">Start the server manually with shell script</h3>
+<h3 id="run-the-server">Run the server</h3>
+<h4 id="start-the-server-manually-with-shell-script">Start the server manually with shell script</h4>
 <ul>
 <li><code>sh /home/steam/longvinter-linux-server/LongvinterServer.sh</code></li>
 </ul>
@@ -370,10 +364,10 @@ AdminSteamID=76561198965966997
 [2022.02.22-12.51.34:849][ 23]LogOnlineSession: Warning: STEAM: Server setting ,TOTPLAYING_s:0 overflows Steam SetGameTags call
 [2022.02.22-12.51.34:849][ 23]LogOnlineSession: Warning: STEAM: Server setting ,ServerName_s:[EU] Uuvana 1 overflows Steam SetGameTags call
 </code></pre>
-<h2 id="updating-the-server">Updating the server</h2>
+<h3 id="updating-the-server">Updating the server</h3>
 <p>We have created an automated script that you can run to automatically update and restart a server.
 - <code>bash /home/steam/longvinter-linux-server/LongvinterUpdate.sh</code></p>
-<h2 id="backing-up-your-saves">Backing up your saves</h2>
+<h3 id="backing-up-your-saves">Backing up your saves</h3>
 <p>We have created an automated script that you can run to automatically backup and restart a server, for now it has to be run manually and it requires user input.
 - <code>bash /home/steam/longvinter-linux-server/LongvinterBackup.sh</code></p>
               
