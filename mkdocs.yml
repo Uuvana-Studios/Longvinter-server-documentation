@@ -7,9 +7,13 @@ repo_url: https://github.com/Uuvana-Studios/Longvinter-server-documentation
 edit_uri: ""
 
 nav:
-    - Home: index.md
-    - Linux: linux/index.md
-        - Vanilla Setup: linux/setup-vanilla.md
+    - Home: 'index.md'
+    - 'Linux Guide':
+        - 'Vanilla Setup': 'linux/setup-vanilla.md'
+        - 'Docker Setup': 'linux/setup-docker.md'
+    - Windows Guide:
+        - 'Vanilla Setup': 'windows/setup-vanilla.md'
+        - 'Docker Setup': 'windows/setup-docker.md'
 
 theme:
   name: 'rtd-dropdown'
