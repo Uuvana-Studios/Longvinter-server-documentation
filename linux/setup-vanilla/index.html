@@ -81,7 +81,15 @@
     
       
 
-  <li class="toctree-l2 current with-children">
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+          
+
+  <li class="toctree-l3 current with-children">
     <a href="#how-to-setup-a-longvinter-server-in-linux">
       How to setup a Longvinter server in Linux
       <span class="toctree-expand"></span>
@@ -90,28 +98,28 @@
 
 
 
-  <li class="toctree-l2 current">
-    <ul class="subnav-l2 current">
+  <li class="toctree-l3 current">
+    <ul class="subnav-l3 current">
     
       
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#requirements-and-prerequisites">Requirements and prerequisites</a>
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#requirements-and-prerequisites">Requirements and prerequisites</a>
         </li>
     
       
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#installing-git-large-file-system">Installing GIT Large file system</a>
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#installing-git-large-file-system">Installing GIT Large file system</a>
         </li>
     
       
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#creating-a-dedicated-user">Creating a dedicated user</a>
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#creating-a-dedicated-user">Creating a dedicated user</a>
         </li>
     
       
           
 
-  <li class="toctree-l3">
+  <li class="toctree-l4">
     <a href="#installing-steam-sdk">
       Installing Steam SDK
       <span class="toctree-expand"></span>
@@ -120,12 +128,12 @@
 
 
 
-  <li class="toctree-l3">
-    <ul class="subnav-l3 toc-hidden">
+  <li class="toctree-l4">
+    <ul class="subnav-l4 toc-hidden">
     
       
-        <li class="toctree-l4">
-          <a class="toctree-l5" href="#copying-sdk-to-right-place">Copying SDK to right place</a>
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#copying-sdk-to-right-place">Copying SDK to right place</a>
         </li>
     
     </ul>
@@ -134,14 +142,14 @@
       
     
       
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#customize-the-server">Customize the server</a>
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#customize-the-server">Customize the server</a>
         </li>
     
       
           
 
-  <li class="toctree-l3">
+  <li class="toctree-l4">
     <a href="#run-the-server">
       Run the server
       <span class="toctree-expand"></span>
@@ -150,12 +158,12 @@
 
 
 
-  <li class="toctree-l3">
-    <ul class="subnav-l3 toc-hidden">
+  <li class="toctree-l4">
+    <ul class="subnav-l4 toc-hidden">
     
       
-        <li class="toctree-l4">
-          <a class="toctree-l5" href="#start-the-server-manually-with-shell-script">Start the server manually with shell script</a>
+        <li class="toctree-l5">
+          <a class="toctree-l6" href="#start-the-server-manually-with-shell-script">Start the server manually with shell script</a>
         </li>
     
     </ul>
@@ -164,19 +172,24 @@
       
     
       
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</a>
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</a>
         </li>
     
       
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#updating-the-server">Updating the server</a>
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#updating-the-server">Updating the server</a>
         </li>
     
       
-        <li class="toctree-l3">
-          <a class="toctree-l4" href="#backing-up-your-saves">Backing up your saves</a>
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#backing-up-your-saves">Backing up your saves</a>
         </li>
+    
+    </ul>
+  </li>
+
+      
     
     </ul>
   </li>
@@ -258,7 +271,8 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="how-to-setup-a-longvinter-server-in-linux">How to setup a Longvinter server in Linux</h2>
+                <h1 id="vanilla-setup">Vanilla Setup</h1>
+<h2 id="how-to-setup-a-longvinter-server-in-linux">How to setup a Longvinter server in Linux</h2>
 <p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/SmPZ8hRqMV">Discord</a> we are more than happy to help you out!</p>
 <h3 id="requirements-and-prerequisites">Requirements and prerequisites</h3>
 <ul>
