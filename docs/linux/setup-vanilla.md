@@ -120,7 +120,7 @@ AdminSteamID=76561198965966997
 
 ### Start the server manually with shell script
 
-- `shell sh /home/steam/longvinter-linux-server/LongvinterServer.sh`
+- `sh /home/steam/longvinter-linux-server/LongvinterServer.sh`
 
 ### Start the server automatically with Systemd (Recommended)
 

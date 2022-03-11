@@ -21,6 +21,25 @@ theme:
   custom_dir: overrides
   locale: en
   font: false
+
+  features:
+    - content.code.annotate
+    # - content.tabs.link
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  
   palette:
     scheme: slate
 
@@ -44,17 +63,20 @@ plugins:
   - git-authors
   - tooltips
   - with-pdf
+
   - enumerate-headings:
       exclude:
         - index.md
         - linux/index.md
         - windows/index.md
+
   - i18n:
       default_language: en
       languages:
         en:
           name: English
           build: true
+
   - minify:
       minify_html: true
       minify_js: true
