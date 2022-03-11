@@ -140,7 +140,7 @@ plugins:
       
   - git-revision-date-localized:
       type: timeago
-      timezone: Europe/Finland
+      timezone: Europe/Helsinki
       locale: en
       fallback_to_build_date: false
       enable_creation_date: true
