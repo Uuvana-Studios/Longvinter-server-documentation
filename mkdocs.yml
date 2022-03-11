@@ -64,6 +64,9 @@ theme:
         icon: material/toggle-switch
         name: Switch to dark mode
 
+static_templates:
+  - 404.html
+
 # Customization
 extra:
   homepage: https://docs-server.longvinter.com
