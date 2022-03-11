@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {{ super() }}
-
   {% if page.url_to_print_page %}
   <a href="{{ page.url_to_print_page }}" title="Print Site" class="md-content__button md-icon">
     {% include ".icons/material/printer.svg" %}
@@ -13,6 +11,8 @@
     {% include ".icons/material/file-pdf-box.svg" %}
   </a>
   {% endif %}
+
+  {{ super() }}
 
   {% if git_page_authors %}
     <div class="md-source-date">
