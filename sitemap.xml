@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs-server.longvinter.com/linux/</loc>
+         <lastmod>2022-03-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs-server.longvinter.com/linux/setup-vanilla/</loc>
          <lastmod>2022-03-11</lastmod>
          <changefreq>daily</changefreq>
