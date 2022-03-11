@@ -10,7 +10,7 @@ If you have any trouble following the guide. Please send us a message in [Discor
  - Docker Compose
  - Git
 
-For help installing Docker, go to [Install Docker using the Repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+For help installing Docker, go to [Install Docker using the Repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
 For help installing Docker Compose, go to [Install Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Setting up the container
@@ -25,8 +25,8 @@ To download the container configuration using git, use the command below
 
 In order to keep game progress between container restarts a data directory needs to be created. Create this directory in the same directory as the docker-compose.yaml file.
 Use the following commands to create the directory and set the appropriate rights.
-`mkdir data
-chown -R 1200:1200 data/`
+`mkdir data`
+`chown -R 1200:1200 data/`
 
 ### Configuring the server settings
 The server settings can be changed by opening the `docker-compose.yaml` file. Settings that may be changed are shown below:
@@ -60,15 +60,15 @@ environment:
 ### Changing the port numbers
 In order to run the server with different port numbers than the default ports `7777` and `27016`, the new port numbers have to be edited in two places in the `docker-compose.yaml` file. 
 ```shell
-ports:
-  - "7777:7777"
-  - "27016:27016"
+  ports:
+    - "7777:7777"
+    - "27016:27016"
 ```
 
 ```
-environment:
-  CFG_GAME_PORT: "7777"
-  CFG_QUERY_PORT: "27016"
+  environment:
+    CFG_GAME_PORT: "7777"
+    CFG_QUERY_PORT: "27016"
 ```
 
 **NOTE: Even though changing the ports is possible, it is currently not supported by the game!**
