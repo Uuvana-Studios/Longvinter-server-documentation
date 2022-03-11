@@ -164,7 +164,6 @@ plugins:
       enumerate_headings: true
       enumerate_figures: true
       add_cover_page: true
-      path_to_pdf: "assets/site.pdf"
 
   - print-site
     
