@@ -5,7 +5,7 @@ site_author: Uuvana Studios
 
 repo_url: https://github.com/Uuvana-Studios/Longvinter-server-documentation
 repo_name: Improve this page
-edit_uri: ""
+edit_uri: tree/master/docs
 
 nav:
     - Home: 'index.md'
@@ -18,7 +18,7 @@ nav:
 
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: docs/overrides
 
   locale: en
 
@@ -64,6 +64,7 @@ theme:
 
 # Customization
 extra:
+  homepage: https://docs-server.longvinter.com
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Uuvana-Studios
@@ -82,6 +83,10 @@ extra_css:
   - css/hint.min.css
 
 markdown_extensions:
+  - abbr
+  - footnotes
+  - meta
+  - tables
   - attr_list
   - pymdownx.details
   - pymdownx.caret
@@ -93,24 +98,23 @@ markdown_extensions:
   - pymdownx.superfences
 
 plugins:
-  - search
-  - git-authors
-  - tooltips
-  - with-pdf
+  - privacy:
+      externals: bundle
+      externals_directory: docs/externals
+  - search:
+      prebuild_index: true
 
   - enumerate-headings:
       exclude:
         - index.md
         - linux/index.md
         - windows/index.md
-
   - i18n:
       default_language: en
       languages:
         en:
           name: English
           build: true
-
   - minify:
       minify_html: true
       minify_js: true
@@ -119,5 +123,9 @@ plugins:
           remove_comments: true
       css_files:
           - css/hint.min.css
+  - offline
+  - git-authors
+  - tooltips
+  - print-site
     
 copyright: Copyright &copy; 2021 <a href="https://github.com/Uuvana-Studios">Uuvana Studios</a>.

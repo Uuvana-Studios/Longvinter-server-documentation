@@ -7,4 +7,6 @@ mkdocs-enumerate-headings-plugin
 mkdocs-tooltips
 mkdocs-minify-plugin
 mkdocs-static-i18n
-mkdocs-with-pdf
+mkdocs-redirects
+mkdocs-print-site-plugin
+git+https://github.com/rkoe/mkdocs-emailprotect
