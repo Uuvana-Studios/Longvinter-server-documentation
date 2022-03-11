@@ -17,7 +17,8 @@ nav:
         - 'Docker Setup': 'windows/setup-docker.md'
 
 theme:
-  name: 'rtd-dropdown'
+  name: material
+  custom_dir: overrides
   locale: en
 
 extra_css:

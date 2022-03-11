@@ -1,5 +1,6 @@
 mkdocs
 click-man
+mkdocs-material
 mkdocs-rtd-dropdown
 mkdocs-git-authors-plugin
 mkdocs-enumerate-headings-plugin
