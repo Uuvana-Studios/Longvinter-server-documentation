@@ -31,6 +31,8 @@ theme:
   search_index_only: true
 
   features:
+    - tabs
+    - instant
     - content.code.annotate
     # - content.tabs.link
     # - header.autohide
