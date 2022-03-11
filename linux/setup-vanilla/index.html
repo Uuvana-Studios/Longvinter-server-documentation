@@ -103,7 +103,7 @@
     
       
         <li class="toctree-l4">
-          <a class="toctree-l5" href="#requirements-and-prerequisites">Requirements and prerequisites</a>
+          <a class="toctree-l5" href="#requirements-and-pre-requisites">Requirements and Pre-requisites</a>
         </li>
     
       
@@ -148,7 +148,7 @@
     
       
         <li class="toctree-l4">
-          <a class="toctree-l5" href="#installing-the-server">Installing the server.</a>
+          <a class="toctree-l5" href="#installing-the-server">Installing the server</a>
         </li>
     
       
@@ -304,7 +304,7 @@
                 <h1 id="vanilla-setup">Vanilla Setup</h1>
 <h2 id="how-to-setup-a-longvinter-server-in-linux">How to setup a Longvinter server in Linux</h2>
 <p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/SmPZ8hRqMV">Discord</a> we are more than happy to help you out!</p>
-<h3 id="requirements-and-prerequisites">Requirements and prerequisites</h3>
+<h3 id="requirements-and-pre-requisites">Requirements and Pre-requisites</h3>
 <ul>
 <li>GIT installed in your system</li>
 <li>GIT LFS installed in your system</li>
@@ -317,15 +317,21 @@
 <h4 id="installing-git-large-file-system">Installing GIT Large file system</h4>
 <p>.pak files are large and we need to install Git Lfs in order to download them</p>
 <p>Run the following commands according to your chosen system:</p>
-<p><strong>Ubuntu/Debian</strong>
-- <code>$ apt update</code>
-- <code>$ apt install git git-lfs</code></p>
-<p><strong>Arch-Linux</strong>
-- <code>$ pacman -Sy</code>
-- <code>$ pacman -S git git-lfs</code></p>
-<p><strong>Fedora</strong>
-- <code>$ yum update</code>
-- <code>$ yum install git git-lfs</code></p>
+<p><strong>Ubuntu/Debian</strong></p>
+<ul>
+<li><code>$ apt update</code></li>
+<li><code>$ apt install git git-lfs</code></li>
+</ul>
+<p><strong>Arch-Linux</strong></p>
+<ul>
+<li><code>$ pacman -Sy</code></li>
+<li><code>$ pacman -S git git-lfs</code></li>
+</ul>
+<p><strong>Fedora</strong></p>
+<ul>
+<li><code>$ yum update</code></li>
+<li><code>$ yum install git git-lfs</code></li>
+</ul>
 <h4 id="creating-a-dedicated-user">Creating a dedicated user</h4>
 <ul>
 <li><code>$ useradd -m -d /home/steam steamcmd</code></li>
@@ -348,7 +354,7 @@
 - <code>cd ~/.steam</code> Go to the steam folder
 - <code>mkdir sdk64</code> Create folder for the sdk
 - <code>cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/</code> Copy the steamclient.so from SteamCmd to .steam/sdk64 folder</p>
-<h3 id="installing-the-server">Installing the server.</h3>
+<h3 id="installing-the-server">Installing the server</h3>
 <p>After this we want to make sure we are in home directory
 - <code>cd ~/</code></p>
 <p>Then we can clone the Linux repository
