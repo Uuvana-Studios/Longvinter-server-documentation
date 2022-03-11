@@ -1,10 +1,8 @@
-# How to setup a Longvinter server in Linux
+## How to setup a Longvinter server in Linux
 
 If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/SmPZ8hRqMV) we are more than happy to help you out!
 
-### This guide is made with Ubuntu 20.04
-
-## Requirements and prerequisites
+### Requirements and prerequisites
 - GIT installed in your system
 - GIT LFS installed in your system
 - SteamCMD installed in your system
@@ -12,7 +10,7 @@ If you have any trouble following the guide. Please send us a message in [Discor
 - Router with the ability to port forward
 - Min. 2 GB RAM
 
-## Installing GIT Large file system
+### Installing GIT Large file system
 
 .pak files are large and we need to install Git Lfs in order to download them
 
@@ -30,14 +28,14 @@ Run the following commands according to your chosen system:
 - `$ yum update`
 - `$ yum install git git-lfs`
 
-## Creating a dedicated user
+### Creating a dedicated user
 
 - `$ useradd -m -d /home/steam steamcmd`
 - `$ passwd steamcmd` (Choose a stronge secure password)
 - `$ usermod -aG sudo steamcmd`
 - `$ su steamcmd`
 
-## Installing Steam SDK
+### Installing Steam SDK
 The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user.
 - `cd ~/` Makes sure we are in the home directory
 - `mkdir steamcmd` Makes SteamCMD directory
@@ -49,14 +47,14 @@ The Steam server browser needs steamsdk and for this we need to install SteamCMD
 
 Steam CMD will install updates automatically and login to install 64-bit SDK.
 
-### Copying SDK to right place
+#### Copying SDK to right place
 
 We still need to move the sdk to default location where the server tries to 
 - `cd ~/.steam` Go to the steam folder
 - `mkdir sdk64` Create folder for the sdk
 - `cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/` Copy the steamclient.so from SteamCmd to .steam/sdk64 folder
 
- ## Installing the server.
+ ### Installing the server.
 
 After this we want to make sure we are in home directory
 - `cd ~/`
@@ -75,7 +73,7 @@ After this we can open the required ports by executing the following commands:
 - `sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT`
 - `sudo iptables -I INPUT -p tcp --dport 27015 --syn -j ACCEPT`
 
-## Customize the server
+### Customize the server
 
 Server values can be customized with Game.ini
 
@@ -102,9 +100,9 @@ AdminSteamID=76561198965966997
 - **AdminSteamID:** Here you can add all the admins that you want to have in the server. **If you want to add multiple** separate id's with single space.
   - AdminSteamID=76561198965966997 11859676569976596
 
-## Run the server
+### Run the server
 
-### Start the server manually with shell script
+#### Start the server manually with shell script
 - `sh /home/steam/longvinter-linux-server/LongvinterServer.sh`
 
 ### Start the server automatically with Systemd (Recommended)
@@ -128,10 +126,10 @@ If the console shows these lines at the bottom after startup your server has sta
 [2022.02.22-12.51.34:849][ 23]LogOnlineSession: Warning: STEAM: Server setting ,ServerName_s:[EU] Uuvana 1 overflows Steam SetGameTags call
 ```
 
-## Updating the server
+### Updating the server
 We have created an automated script that you can run to automatically update and restart a server.
 - `bash /home/steam/longvinter-linux-server/LongvinterUpdate.sh`
 
-## Backing up your saves
+### Backing up your saves
 We have created an automated script that you can run to automatically backup and restart a server, for now it has to be run manually and it requires user input.
 - `bash /home/steam/longvinter-linux-server/LongvinterBackup.sh`
