@@ -4,7 +4,7 @@
 
 If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/SmPZ8hRqMV) we are more than happy to help you out!
 
-### Requirements and prerequisites
+### Requirements and Pre-requisites
 - GIT installed in your system
 - GIT LFS installed in your system
 - SteamCMD installed in your system
@@ -21,14 +21,17 @@ If you have any trouble following the guide. Please send us a message in [Discor
 Run the following commands according to your chosen system:
 
 **Ubuntu/Debian**
+
 - `$ apt update`
 - `$ apt install git git-lfs`
 
 **Arch-Linux**
+
 - `$ pacman -Sy`
 - `$ pacman -S git git-lfs`
 
 **Fedora**
+
 - `$ yum update`
 - `$ yum install git git-lfs`
 
@@ -59,7 +62,7 @@ We still need to move the sdk to default location where the server tries to
 - `mkdir sdk64` Create folder for the sdk
 - `cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/` Copy the steamclient.so from SteamCmd to .steam/sdk64 folder
 
-### Installing the server.
+### Installing the server
 
 After this we want to make sure we are in home directory
 - `cd ~/`
