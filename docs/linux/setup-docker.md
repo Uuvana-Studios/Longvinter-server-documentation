@@ -27,6 +27,7 @@ In order to keep game progress between container restarts a data directory needs
 Use the following commands to create the directory and set the appropriate rights.
 
 `mkdir data`
+
 `chown -R 1200:1200 data/`
 
 ### Configuring the server settings
@@ -46,7 +47,6 @@ The server settings can be changed by opening the `docker-compose.yaml` file. Se
 
 With the default values above, the environment part of the `docker-compose.yaml` file should look like this:
 ```shell
-
   environment:
     CFG_SERVER_NAME: "Unnamed Island"
     CFG_MAX_PLAYERS: "32"
@@ -57,7 +57,6 @@ With the default values above, the environment part of the `docker-compose.yaml`
     CFG_ENABLE_PVP: "true"
     CFG_GAME_PORT: "7777"
     CFG_QUERY_PORT: "27016"
-    
 ```
 
 ### Changing the port numbers
@@ -85,6 +84,7 @@ docker-compose up -d
 ```
 
 This command will do the following:
+
 1. Build the container image (if not present)
 2. Create the container
 3. Start the container
