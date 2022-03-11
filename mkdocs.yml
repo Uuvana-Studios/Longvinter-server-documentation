@@ -6,6 +6,9 @@ site_author: Uuvana Studios
 repo_url: https://github.com/Uuvana-Studios/Longvinter-server-documentation
 edit_uri: ""
 
+nav:
+    - Home: index.md
+    - Linux: linux/index.md
 
 theme:
   name: 'rtd-dropdown'
