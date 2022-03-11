@@ -8,7 +8,7 @@
   
   <meta name="author" content="Uuvana Studios">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>How to setup a Longvinter server in Linux - Longvinter Server Docs</title>
+  <title>Vanilla Setup - Longvinter Server Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "How to setup a Longvinter server in Linux";
+    var mkdocs_page_name = "Vanilla Setup";
     var mkdocs_page_input_path = "linux/setup-vanilla.md";
     var mkdocs_page_url = "/linux/setup-vanilla/";
   </script>
@@ -57,11 +57,175 @@
   </li>
     
       
-
-
-  <li class="navtree toctree-l1 inactive">
-    <a class="" href="../../setup-vanilla.md">Linux</a>
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Linux Guide</p>
   </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Vanilla Setup
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#how-to-setup-a-longvinter-server-in-linux">
+      How to setup a Longvinter server in Linux
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#this-guide-is-made-with-ubuntu-2004">This guide is made with Ubuntu 20.04</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#requirements-and-prerequisites">Requirements and prerequisites</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#installing-git-large-file-system">Installing GIT Large file system</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#creating-a-dedicated-user">Creating a dedicated user</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#installing-steam-sdk">
+      Installing Steam SDK
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#copying-sdk-to-right-place">Copying SDK to right place</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#customize-the-server">Customize the server</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#run-the-server">
+      Run the server
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#start-the-server-manually-with-shell-script">Start the server manually with shell script</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#start-the-server-automatically-with-systemd-recommended">Start the server automatically with Systemd (Recommended)</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#updating-the-server">Updating the server</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#backing-up-your-saves">Backing up your saves</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../setup-docker.md">Docker Setup</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Windows Guide</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../windows/setup-vanilla.md">Vanilla Setup</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../windows/setup-docker.md">Docker Setup</a>
+  </li>
+        
+      </ul>
+    </li>
     
   </ul>
       </div>
@@ -84,8 +248,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Linux Guide &raquo;</li>
+        
+      
     
-    <li>How to setup a Longvinter server in Linux</li>
+    <li>Vanilla Setup</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -213,6 +381,13 @@ AdminSteamID=76561198965966997
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -238,6 +413,8 @@ AdminSteamID=76561198965966997
       
           <a href="https://github.com/Uuvana-Studios/Longvinter-server-documentation" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
