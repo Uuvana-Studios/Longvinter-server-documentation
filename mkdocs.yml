@@ -20,14 +20,30 @@ theme:
   name: material
   custom_dir: overrides
   locale: en
+  font: false
+  palette:
+    scheme: slate
+
 
 extra_css:
   - css/hint.min.css
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.betterem
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
 
 plugins:
   - search
   - git-authors
   - tooltips
+  - with-pdf
   - enumerate-headings:
       exclude:
         - index.md
@@ -48,4 +64,4 @@ plugins:
       css_files:
           - css/hint.min.css
     
-copyright: Copyright &copy; 2021 <a href="https://github.com/Uuvana-Studios">Uuvana Studios</a>.
+copyright: Made with ❤️ - Copyright &copy; 2021 <a href="https://github.com/Uuvana-Studios">Uuvana Studios</a>.
