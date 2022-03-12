@@ -81,7 +81,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 Start and enable docker service:
 
 ```shell
-$ systemctl start docker && sudo systemctl enable docker
+sudo systemctl start docker && sudo systemctl enable docker
 ```
 
 Add your user account to the docker group:
@@ -99,23 +99,23 @@ newgrp docker
 Add Docker’s package repository:
 
 ```shell
-$ dnf -y install yum-utils device-mapper-persistent-data lvm2 dnf-plugins-core
+sudo dnf -y install yum-utils device-mapper-persistent-data lvm2 dnf-plugins-core
 ```
 
 ```shell
-$ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 ```
 
 Install Docker:
 
 ```shell
-$ dnf install docker-ce docker-ce-cli containerd.io
+sudo dnf install docker-ce docker-ce-cli containerd.io
 ```
 
 Start and enable docker service:
 
 ```shell
-$ systemctl start docker && sudo systemctl enable docker
+sudo systemctl start docker && sudo systemctl enable docker
 ```
 
 Add your user account to the docker group:
@@ -133,13 +133,13 @@ newgrp docker
 Install Docker using an AUR-Helper:
 
 ```shell
-$ paru -S --noconfirm --needed docker
+sudo paru -S --noconfirm --needed docker
 ```
 
 Add your user account to the docker group:
 
 ```shell
-$ usermod -aG docker $USER
+sudo usermod -aG docker $USER
 ```
 
 ```shell
