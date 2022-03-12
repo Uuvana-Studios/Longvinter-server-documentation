@@ -178,7 +178,7 @@ What do any of them do?
 - **CommunityWebsite:** Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.
 - **Password:** Add you password here. Use only number and letters. If left empty there is no password on the server.
 - **AdminSteamID:** Here you can add all the admins that you want to have in the server. **If you want to add multiple** separate id's with single space.
-  - AdminSteamID=76561198965966997 11859676569976596
+    `AdminSteamID=76561198965966997 11859676569976596`
 - **PVP:** Here you write `true` or `false` if you want to enable/disable Player versus Player fights.
 
 ## Running the server
