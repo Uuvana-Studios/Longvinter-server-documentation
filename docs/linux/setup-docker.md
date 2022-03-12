@@ -216,7 +216,10 @@ In order to run the server with different port numbers than the default ports `7
     CFG_QUERY_PORT: "27016"
 ```
 
-!!! important "Note" Even though changing the ports is possible, it is currently not supported by the game!
+!!! important "**Note**"
+
+    Even though changing the ports is possible, it is currently not supported by the game!
+
 
 ## Starting the container
 
