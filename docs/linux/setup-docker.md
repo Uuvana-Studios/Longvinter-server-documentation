@@ -52,6 +52,7 @@ Start and enable docker service:
 
 Add your user account to the docker group:
 - `sudo usermod -aG docker $USER`
+- `newgrp docker`
 
 **Fedora**:
 Add Docker’s package repository:
@@ -66,6 +67,16 @@ Start and enable docker service:
 
 Add your user account to the docker group:
 - `sudo usermod -aG docker $USER`
+- `newgrp docker`
+
+**Arch Linux**
+
+Install Docker using an AUR-Helper:
+- `$ paru -S --noconfirm --needed docker`
+
+Add your user account to the docker group:
+- `sudo usermod -aG docker $USER`
+- `newgrp docker`
 
 ## Setting up the container
 
