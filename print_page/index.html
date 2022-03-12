@@ -603,15 +603,21 @@
 <h3 id="linux-setup-vanilla-installing-git-and-git-large-file-system">Installing GIT and GIT Large file system</h3>
 <p>.pak files are large and we need to install Git Lfs in order to download them</p>
 <p>Run the following commands according to your chosen system:</p>
-<p><strong>Ubuntu/Debian</strong>:
-- <code>$ apt update</code>
-- <code>$ apt install git git-lfs</code></p>
-<p><strong>Arch-Linux</strong>:
-- <code>$ pacman -Sy</code>
-- <code>$ pacman -S git git-lfs</code></p>
-<p><strong>Fedora</strong>:
-- <code>$ yum update</code>
-- <code>$ yum install git git-lfs</code></p>
+<p><strong>Ubuntu/Debian</strong>:</p>
+<ul>
+<li><code>$ apt update</code></li>
+<li><code>$ apt install git git-lfs</code></li>
+</ul>
+<p><strong>Arch-Linux</strong>:</p>
+<ul>
+<li><code>$ pacman -Sy</code></li>
+<li><code>$ pacman -S git git-lfs</code></li>
+</ul>
+<p><strong>Fedora</strong>:</p>
+<ul>
+<li><code>$ yum update</code></li>
+<li><code>$ yum install git git-lfs</code></li>
+</ul>
 <h3 id="linux-setup-vanilla-creating-a-dedicated-user">Creating a dedicated user</h3>
 <ul>
 <li><code>$ useradd -m -d /home/steam steamcmd</code></li>
@@ -620,40 +626,52 @@
 <li><code>$ su steamcmd</code></li>
 </ul>
 <h3 id="linux-setup-vanilla-installing-steam-sdk">Installing Steam SDK</h3>
-<p>The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user:
-- <code>cd ~/</code> Makes sure we are in the home directory
-- <code>mkdir steamcmd</code> Makes SteamCMD directory
-- <code>cd steamcmd</code> Goes to the SteamCMD directory
-- <code>apt install lib32stdc++6</code> Install lib32std
-- <code>wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz</code> Downloads SteamCMD Tar File.
-- <code>tar -xvzf steamcmd_linux.tar.gz</code> Extracts SteamCMD
-- <code>./steamcmd.sh +force_install_dir . +login anonymous +app_update 1007 +quit</code> Runs SteamCMD to login, install a app update and quit upon completion.</p>
+<p>The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user:</p>
+<ul>
+<li><code>cd ~/</code> Makes sure we are in the home directory</li>
+<li><code>mkdir steamcmd</code> Makes SteamCMD directory</li>
+<li><code>cd steamcmd</code> Goes to the SteamCMD directory</li>
+<li><code>apt install lib32stdc++6</code> Install lib32std</li>
+<li><code>wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz</code> Downloads SteamCMD Tar File.</li>
+<li><code>tar -xvzf steamcmd_linux.tar.gz</code> Extracts SteamCMD</li>
+<li><code>./steamcmd.sh +force_install_dir . +login anonymous +app_update 1007 +quit</code> Runs SteamCMD to login, install a app update and quit upon completion.</li>
+</ul>
 <p>Steam CMD will install updates automatically and login to install 64-bit SDK.</p>
 <h3 id="linux-setup-vanilla-copying-steam-sdk-to-right-place">Copying Steam SDK to right place</h3>
-<p>We still need to move the sdk to default location where the server tries to:
-- <code>cd ~/.steam</code> Go to the steam folder
-- <code>mkdir sdk64</code> Create folder for the sdk
-- <code>cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/</code> Copy the steamclient.so from SteamCmd to .steam/sdk64 folder</p>
+<p>We still need to move the sdk to default location where the server tries to:</p>
+<ul>
+<li><code>cd ~/.steam</code> Go to the steam folder</li>
+<li><code>mkdir sdk64</code> Create folder for the sdk</li>
+<li><code>cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/</code> Copy the steamclient.so from SteamCmd to .steam/sdk64 folder</li>
+</ul>
 <h2 id="linux-setup-vanilla-installing-the-server">Installing the server</h2>
-<p>After this we want to make sure we are in home directory:
-- <code>cd ~/</code></p>
-<p>Then we can clone the Linux repository:
-- <code>git clone https://github.com/Uuvana-Studios/longvinter-linux-server.git</code></p>
-<p>Then we want to give permission for this folder to execute commands with:
-- <code>sudo chmod -R ugo+rwx longvinter-linux-server/</code></p>
-<p>After this we can open the required ports by executing the following commands:
-- <code>sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT</code>
-- <code>sudo iptables -I INPUT -p tcp --dport 7777 --syn -j ACCEPT</code>
-- <code>sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT</code>
-- <code>sudo iptables -I INPUT -p tcp --dport 27016 --syn -j ACCEPT</code>
-- <code>sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT</code>
-- <code>sudo iptables -I INPUT -p tcp --dport 27015 --syn -j ACCEPT</code></p>
+<p>After this we want to make sure we are in home directory:</p>
+<ul>
+<li><code>cd ~/</code></li>
+</ul>
+<p>Then we can clone the Linux repository:</p>
+<ul>
+<li><code>git clone https://github.com/Uuvana-Studios/longvinter-linux-server.git</code></li>
+</ul>
+<p>Then we want to give permission for this folder to execute commands with:</p>
+<ul>
+<li><code>sudo chmod -R ugo+rwx longvinter-linux-server/</code></li>
+</ul>
+<p>After this we can open the required ports by executing the following commands:</p>
+<ul>
+<li><code>sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT</code></li>
+<li><code>sudo iptables -I INPUT -p tcp --dport 7777 --syn -j ACCEPT</code></li>
+<li><code>sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT</code></li>
+<li><code>sudo iptables -I INPUT -p tcp --dport 27016 --syn -j ACCEPT</code></li>
+<li><code>sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT</code></li>
+<li><code>sudo iptables -I INPUT -p tcp --dport 27015 --syn -j ACCEPT</code></li>
+</ul>
 <h2 id="linux-setup-vanilla-customizing-the-server">Customizing the server</h2>
 <p>Server values can be customized with Game.ini</p>
-<p>Create the file for edit with:
-<code>nano ~/longvinter-linux-server/Longvinter/Saved/Config/LinuxServer/Game.ini</code></p>
+<p>Create the file for edit with:</p>
+<p><code>nano ~/longvinter-linux-server/Longvinter/Saved/Config/LinuxServer/Game.ini</code></p>
 <p>Add the following content there:</p>
-<p><div class="highlight"><pre><span></span><code>[/Game/Blueprints/Server/GI_AdvancedSessions.GI_AdvancedSessions_C]
+<div class="highlight"><pre><span></span><code>[/Game/Blueprints/Server/GI_AdvancedSessions.GI_AdvancedSessions_C]
 ServerName=Unnamed Island
 MaxPlayers=32
 ServerMOTD=Welcome to Longvinter Island!
@@ -663,13 +681,15 @@ CommunityWebsite=www.longvinter.com
 [/Game/Blueprints/Server/GM_Longvinter.GM_Longvinter_C]
 AdminSteamID=76561198965966997
 </code></pre></div>
-- <strong>ServerName:</strong> Name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.
-- <strong>ServerMOTD:</strong> Server message that is on a signs around the island.
-- <strong>MaxPlayer:</strong> Maximum allowed players that can connect at any given time.
-- <strong>CommunityWebsite:</strong> Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.
-- <strong>Password:</strong> Add you password here. Use only number and letters. If left empty there is no password on the server.
-- <strong>AdminSteamID:</strong> Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate id's with single space.
-  - AdminSteamID=76561198965966997 11859676569976596</p>
+<ul>
+<li><strong>ServerName:</strong> Name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.</li>
+<li><strong>ServerMOTD:</strong> Server message that is on a signs around the island.</li>
+<li><strong>MaxPlayer:</strong> Maximum allowed players that can connect at any given time.</li>
+<li><strong>CommunityWebsite:</strong> Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.</li>
+<li><strong>Password:</strong> Add you password here. Use only number and letters. If left empty there is no password on the server.</li>
+<li><strong>AdminSteamID:</strong> Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate id's with single space.</li>
+<li>AdminSteamID=76561198965966997 11859676569976596</li>
+</ul>
 <h2 id="linux-setup-vanilla-running-the-server">Running the server</h2>
 <h3 id="linux-setup-vanilla-start-the-server-manually-with-shell-script">Start the server manually with shell script</h3>
 <ul>
@@ -680,26 +700,32 @@ AdminSteamID=76561198965966997
 <li><code>$ cp /home/steam/longvinter-linux-server/longvinter.service /etc/systemd/system/longvinter.service</code></li>
 <li><code>$ systemctl daemon-reload</code></li>
 </ul>
-<p>Now, how to use it:
-- <code>$ systemctl start longvinter.service</code> (Starts the server)
-- <code>$ systemctl stop longvinter.service</code> (Stops the server)
-- <code>$ systemctl restart longvinter.service</code> (Restart the server, for example, if you made a change to Game.ini)
-- <code>$ systemctl enable longvinter.service</code> (Everytime you reboot the machine it starts on boot)
-- <code>$ systemctl status longvinter.service</code> (Checks the latest 20 lines on the server console)</p>
-<p>If the console shows these lines at the bottom after startup your server has started corretly.
+<p>Now, how to use it:</p>
+<ul>
+<li><code>$ systemctl start longvinter.service</code> (Starts the server)</li>
+<li><code>$ systemctl stop longvinter.service</code> (Stops the server)</li>
+<li><code>$ systemctl restart longvinter.service</code> (Restart the server, for example, if you made a change to Game.ini)</li>
+<li><code>$ systemctl enable longvinter.service</code> (Everytime you reboot the machine it starts on boot)</li>
+<li><code>$ systemctl status longvinter.service</code> (Checks the latest 20 lines on the server console)</li>
+</ul>
+<p>If the console shows these lines at the bottom after startup your server has started corretly.</p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">514</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">13</span><span class="p p-Indicator">]</span><span class="nt">LogOnline</span><span class="p">:</span><span class="w"> </span><span class="nt">Verbose</span><span class="p">:</span><span class="w"> </span><span class="nt">STEAM</span><span class="p">:</span><span class="w"> </span><span class="nt">FOnlineAsyncEventSteamServerConnectedGS ServerId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server[0x***************]</span><span class="w"></span>
 <span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">782</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">21</span><span class="p p-Indicator">]</span><span class="nt">LogOnline</span><span class="p">:</span><span class="w"> </span><span class="nt">Verbose</span><span class="p">:</span><span class="w"> </span><span class="nt">STEAM</span><span class="p">:</span><span class="w"> </span><span class="nt">FOnlineAsyncEventSteamServerPolicyResponseGS Secure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 <span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">849</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">23</span><span class="p p-Indicator">]</span><span class="nt">LogOnline</span><span class="p">:</span><span class="w"> </span><span class="nt">Verbose</span><span class="p">:</span><span class="w"> </span><span class="nt">OSS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Async task &#39;FOnlineAsyncTaskSteamCreateServer bWasSuccessful</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1&#39; succeeded in 2.828243 seconds</span><span class="w"></span>
 <span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">849</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">23</span><span class="p p-Indicator">]</span><span class="nt">LogOnlineSession</span><span class="p">:</span><span class="w"> </span><span class="nt">Warning</span><span class="p">:</span><span class="w"> </span><span class="nt">STEAM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server setting ,TOTPLAYING_s:0 overflows Steam SetGameTags call</span><span class="w"></span>
 <span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">849</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">23</span><span class="p p-Indicator">]</span><span class="nt">LogOnlineSession</span><span class="p">:</span><span class="w"> </span><span class="nt">Warning</span><span class="p">:</span><span class="w"> </span><span class="nt">STEAM</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server setting ,ServerName_s:[EU] Uuvana 1 overflows Steam SetGameTags call</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="linux-setup-vanilla-server-maintenance">Server Maintenance</h2>
 <h3 id="linux-setup-vanilla-updating-the-server">Updating the server</h3>
-<p>We have created an automated script that you can run to automatically update and restart a server.
-- <code>bash /home/steam/longvinter-linux-server/LongvinterUpdate.sh</code></p>
+<p>We have created an automated script that you can run to automatically update and restart a server.</p>
+<ul>
+<li><code>bash /home/steam/longvinter-linux-server/LongvinterUpdate.sh</code></li>
+</ul>
 <h3 id="linux-setup-vanilla-backing-up-your-saves">Backing up your saves</h3>
-<p>We have created an automated script that you can run to automatically backup and restart a server, for now it has to be run manually and it requires user input.
-- <code>bash /home/steam/longvinter-linux-server/LongvinterBackup.sh</code></p></section><section class="print-page" id="linux-setup-docker"><h1 id="linux-setup-docker-docker-setup">Docker Setup</h1>
+<p>We have created an automated script that you can run to automatically backup and restart a server, for now it has to be run manually and it requires user input.</p>
+<ul>
+<li><code>bash /home/steam/longvinter-linux-server/LongvinterBackup.sh</code></li>
+</ul></section><section class="print-page" id="linux-setup-docker"><h1 id="linux-setup-docker-docker-setup">Docker Setup</h1>
 <p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/longvinter">Discord</a> we are more than happy to help you out!</p>
 <h2 id="linux-setup-docker-requirements-and-pre-requisites">Requirements and Pre-requisites</h2>
 <ul>
@@ -715,47 +741,69 @@ AdminSteamID=76561198965966997
 <h3 id="linux-setup-docker-installing-git-and-git-large-file-system">Installing GIT and GIT Large file system</h3>
 <p>.pak files are large and we need to install Git Lfs in order to download them</p>
 <p>Run the following commands according to your chosen system:</p>
-<p><strong>Ubuntu/Debian</strong>:
-- <code>$ apt update</code>
-- <code>$ apt install git git-lfs</code></p>
-<p><strong>Arch-Linux</strong>:
-- <code>$ pacman -Sy</code>
-- <code>$ pacman -S git git-lfs</code></p>
-<p><strong>Fedora</strong>:
-- <code>$ yum update</code>
-- <code>$ yum install git git-lfs</code></p>
+<p><strong>Ubuntu/Debian</strong>:</p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo apt install git git-lfs
+</code></pre></div>
+<p><strong>Arch-Linux</strong>:</p>
+<div class="highlight"><pre><span></span><code>sudo pacman -Sy
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo pacman -S git git-lfs
+</code></pre></div>
+<p><strong>Fedora</strong>:</p>
+<div class="highlight"><pre><span></span><code>sudo yum update
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo yum install git git-lfs
+</code></pre></div>
 <h3 id="linux-setup-docker-installing-docker">Installing Docker</h3>
-<p><strong>Ubuntu/Debian</strong>:
-Begin by adding dependencies needed by the installation process:
-- <code>$ apt-get install apt-transport-https ca-certificates curl gnupg lsb-release</code></p>
-<p>Begin by adding dependencies needed by the installation process:
-- <code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></p>
-<p>Begin by adding dependencies needed by the installation process:
-- <code>echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</code></p>
-<p>Now you can install Docker:
-<code>$ apt-get install docker-ce docker-ce-cli containerd.io</code></p>
-<p>Start and enable docker service:
-- <code>sudo systemctl start docker &amp;&amp; sudo systemctl enable docker</code></p>
-<p>Add your user account to the docker group:
-- <code>sudo usermod -aG docker $USER</code>
-- <code>newgrp docker</code></p>
-<p><strong>Fedora</strong>:
-Add Docker’s package repository:
-- <code>$ dnf -y install yum-utils device-mapper-persistent-data lvm2 dnf-plugins-core</code>
-- <code>$ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo</code></p>
-<p>Install Docker:
-- <code>$ dnf install docker-ce docker-ce-cli containerd.io</code></p>
-<p>Start and enable docker service:
-- <code>sudo systemctl start docker &amp;&amp; sudo systemctl enable docker</code></p>
-<p>Add your user account to the docker group:
-- <code>sudo usermod -aG docker $USER</code>
-- <code>newgrp docker</code></p>
+<p><strong>Ubuntu/Debian</strong>:</p>
+<p>Begin by adding dependencies needed by the installation process:</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+</code></pre></div>
+<p>Begin by adding dependencies needed by the installation process:</p>
+<div class="highlight"><pre><span></span><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+</code></pre></div>
+<p>Begin by adding dependencies needed by the installation process:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</code></pre></div>
+<p>Now you can install Docker:</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install docker-ce docker-ce-cli containerd.io
+</code></pre></div>
+<p>Start and enable docker service:</p>
+<div class="highlight"><pre><span></span><code>$ systemctl start docker <span class="o">&amp;&amp;</span> sudo systemctl <span class="nb">enable</span> docker
+</code></pre></div>
+<p>Add your user account to the docker group:</p>
+<div class="highlight"><pre><span></span><code>sudo usermod -aG docker <span class="nv">$USER</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>newgrp docker
+</code></pre></div>
+<p><strong>Fedora</strong>:</p>
+<p>Add Docker’s package repository:</p>
+<div class="highlight"><pre><span></span><code>$ dnf -y install yum-utils device-mapper-persistent-data lvm2 dnf-plugins-core
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+</code></pre></div>
+<p>Install Docker:</p>
+<div class="highlight"><pre><span></span><code>$ dnf install docker-ce docker-ce-cli containerd.io
+</code></pre></div>
+<p>Start and enable docker service:</p>
+<div class="highlight"><pre><span></span><code>$ systemctl start docker <span class="o">&amp;&amp;</span> sudo systemctl <span class="nb">enable</span> docker
+</code></pre></div>
+<p>Add your user account to the docker group:</p>
+<div class="highlight"><pre><span></span><code>sudo usermod -aG docker <span class="nv">$USER</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>newgrp docker
+</code></pre></div>
 <p><strong>Arch Linux</strong></p>
-<p>Install Docker using an AUR-Helper:
-- <code>$ paru -S --noconfirm --needed docker</code></p>
-<p>Add your user account to the docker group:
-- <code>sudo usermod -aG docker $USER</code>
-- <code>newgrp docker</code></p>
+<p>Install Docker using an AUR-Helper:</p>
+<div class="highlight"><pre><span></span><code>$ paru -S --noconfirm --needed docker
+</code></pre></div>
+<p>Add your user account to the docker group:</p>
+<div class="highlight"><pre><span></span><code>$ usermod -aG docker <span class="nv">$USER</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>newgrp docker
+</code></pre></div>
 <h2 id="linux-setup-docker-setting-up-the-container">Setting up the container</h2>
 <h3 id="linux-setup-docker-downloading-the-container">Downloading the container</h3>
 <p>Downloading the container can be done by either using git (recommended), or by clicking the green Code button on this page and using the Download ZIP option on the <a href="https://github.com/tvandoorn/longvinter-docker-server">Docker Image Github</a>.
@@ -764,8 +812,10 @@ To download the container configuration using git, use the command below
 <h3 id="linux-setup-docker-creating-the-data-directory">Creating the data directory</h3>
 <p>In order to keep game progress between container restarts a data directory needs to be created. Create this directory in the same directory as the docker-compose.yaml file.
 Use the following commands to create the directory and set the appropriate rights.</p>
-<p><code>mkdir data</code></p>
-<p><code>chown -R 1200:1200 data/</code></p>
+<div class="highlight"><pre><span></span><code>mkdir data
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>chown -R <span class="m">1200</span>:1200 data/
+</code></pre></div>
 <h3 id="linux-setup-docker-configuring-the-server-settings">Configuring the server settings</h3>
 <p>The server settings can be changed by opening the <code>docker-compose.yaml</code> file. Settings that may be changed are shown below:</p>
 <table>
@@ -824,7 +874,7 @@ Use the following commands to create the directory and set the appropriate right
 </tr>
 </tbody>
 </table>
-<p>With the default values above, the environment part of the <code>docker-compose.yaml</code> file should look like this:
+<p>With the default values above, the environment part of the <code>docker-compose.yaml</code> file should look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">CFG_SERVER_NAME</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Unnamed</span><span class="nv"> </span><span class="s">Island&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">CFG_MAX_PLAYERS</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;32&quot;</span><span class="w"></span>
@@ -835,13 +885,13 @@ Use the following commands to create the directory and set the appropriate right
 <span class="w">    </span><span class="nt">CFG_ENABLE_PVP</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">CFG_GAME_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;7777&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">CFG_QUERY_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;27016&quot;</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="linux-setup-docker-changing-the-port-numbers">Changing the port numbers</h3>
-<p>In order to run the server with different port numbers than the default ports <code>7777</code> and <code>27016</code>, the new port numbers have to be edited in two places in the <code>docker-compose.yaml</code> file.
+<p>In order to run the server with different port numbers than the default ports <code>7777</code> and <code>27016</code>, the new port numbers have to be edited in two places in the <code>docker-compose.yaml</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;7777:7777&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;27016:27016&quot;</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">CFG_GAME_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;7777&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">CFG_QUERY_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;27016&quot;</span><span class="w"></span>
@@ -849,9 +899,9 @@ Use the following commands to create the directory and set the appropriate right
 <p><strong>NOTE: Even though changing the ports is possible, it is currently not supported by the game!</strong></p>
 <h2 id="linux-setup-docker-starting-the-container">Starting the container</h2>
 <p>When the setup and configuration is done, the container is ready to be started. Open the command line and navigate to the directory (using the <code>cd</code> command) that contains the <code>Dockerfile</code>, <code>docker-compose.yaml</code> and <code>run.sh</code> files.</p>
-<p>Start the container using the following command:
+<p>Start the container using the following command:</p>
 <div class="highlight"><pre><span></span><code>docker-compose up -d
-</code></pre></div></p>
+</code></pre></div>
 <p>This command will do the following:</p>
 <ol>
 <li>Build the container image (if not present)</li>
@@ -863,21 +913,21 @@ Use the following commands to create the directory and set the appropriate right
 <li>Start the Longvinter server</li>
 </ol>
 <h2 id="linux-setup-docker-stopping-the-container">Stopping the container</h2>
-<p>To stop the container, run the command below. Note that this removes the container from Docker, but the save data will be saved in the <code>data</code> directory and will be loaded when the server is started again next time.
+<p>To stop the container, run the command below. Note that this removes the container from Docker, but the save data will be saved in the <code>data</code> directory and will be loaded when the server is started again next time.</p>
 <div class="highlight"><pre><span></span><code>docker-compose down
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="linux-setup-docker-updating-the-container">Updating the container</h2>
-<p>When a new version of the container is released, make sure to update the files using <code>git pull</code>, or manually update the files by downloading the code as ZIP from Github. Run the command below to build the new container image and restart the container.
-<div class="highlight"><pre><span></span><code>docker-compose up -d --build
+<p>When a new version of the container is released, make sure to update the files using <code>git pull</code>, or manually update the files by downloading the code as ZIP from Github. Run the command below to build the new container image and restart the container.</p>
+<p><div class="highlight"><pre><span></span><code>docker-compose up -d --build
 </code></pre></div>
 Note that these commands have to be run from the same directory as the <code>Dockerfile</code>, <code>docker-compose.yaml</code> and <code>run.sh</code> files.</p>
 <h2 id="linux-setup-docker-updating-the-longvinter-server">Updating the Longvinter server</h2>
-<p>Updating the Longvinter server is as easy as restarting the container:
+<p>Updating the Longvinter server is as easy as restarting the container:</p>
 <div class="highlight"><pre><span></span><code>docker-compose restart
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="linux-setup-docker-running-multiple-longvinter-containers-on-one-docker-server">Running multiple Longvinter containers on one Docker server</h2>
-<p>Running multiple Longvinter containers on one Docker server is very easy. Follow the <em>Setting up the container</em> steps again, but this time set up the server to use a different directory for the new server.
-<div class="highlight"><pre><span></span><code>git clone https://github.com/tvandoorn/longvinter-docker-server.git new-name-here
+<p>Running multiple Longvinter containers on one Docker server is very easy. Follow the <em>Setting up the container</em> steps again, but this time set up the server to use a different directory for the new server.</p>
+<p><div class="highlight"><pre><span></span><code>git clone https://github.com/tvandoorn/longvinter-docker-server.git new-name-here
 </code></pre></div>
 The command above will download the container files in a directory named <code>new-name-here</code>. Make sure to change the server ports using the <em>Changing the port numbers</em> step.</p>
 <p><strong>NOTE: Even though changing the ports is possible, it is currently not supported by the game!</strong></p>
