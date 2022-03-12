@@ -737,7 +737,8 @@ Begin by adding dependencies needed by the installation process:
 <p>Start and enable docker service:
 - <code>sudo systemctl start docker &amp;&amp; sudo systemctl enable docker</code></p>
 <p>Add your user account to the docker group:
-- <code>sudo usermod -aG docker $USER</code></p>
+- <code>sudo usermod -aG docker $USER</code>
+- <code>newgrp docker</code></p>
 <p><strong>Fedora</strong>:
 Add Docker’s package repository:
 - <code>$ dnf -y install yum-utils device-mapper-persistent-data lvm2 dnf-plugins-core</code>
@@ -747,7 +748,14 @@ Add Docker’s package repository:
 <p>Start and enable docker service:
 - <code>sudo systemctl start docker &amp;&amp; sudo systemctl enable docker</code></p>
 <p>Add your user account to the docker group:
-- <code>sudo usermod -aG docker $USER</code></p>
+- <code>sudo usermod -aG docker $USER</code>
+- <code>newgrp docker</code></p>
+<p><strong>Arch Linux</strong></p>
+<p>Install Docker using an AUR-Helper:
+- <code>$ paru -S --noconfirm --needed docker</code></p>
+<p>Add your user account to the docker group:
+- <code>sudo usermod -aG docker $USER</code>
+- <code>newgrp docker</code></p>
 <h2 id="linux-setup-docker-setting-up-the-container">Setting up the container</h2>
 <h3 id="linux-setup-docker-downloading-the-container">Downloading the container</h3>
 <p>Downloading the container can be done by either using git (recommended), or by clicking the green Code button on this page and using the Download ZIP option on the <a href="https://github.com/tvandoorn/longvinter-docker-server">Docker Image Github</a>.
