@@ -675,15 +675,7 @@ sudo useradd -m -d /home/steam steamcmd
 <p>After this we can open the required ports by executing the following commands:
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">7777</span> --syn -j ACCEPT
-</code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27016</span> -j ACCEPT
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">27016</span> --syn -j ACCEPT
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27015</span> -j ACCEPT
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">27015</span> --syn -j ACCEPT
 </code></pre></div></p>
 <h2 id="linux-setup-vanilla-customizing-the-server">Customizing the server</h2>
 <p>Server values can be customized with Game.ini</p>
@@ -970,7 +962,18 @@ Note that these commands have to be run from the same directory as the <code>Doc
 The command above will download the container files in a directory named <code>new-name-here</code>. Make sure to change the server ports using the <em>Changing the port numbers</em> step.</p>
 <p><strong>NOTE: Even though changing the ports is possible, it is currently not supported by the game!</strong></p>
 <h2 id="linux-setup-docker-portforwarding-and-firewalls">Portforwarding and firewalls</h2>
-<p>When running the container it might be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer. For opening ports in your software firewall use the <code>Windows Firewall with Advanced Security</code> tool for Windows systems. For Linux based systems you can use the ufw or iptables tools. Please refer to their official documentation for instructions.</p></section><h1 class='nav-section-title-end'>Ended: Linux Guide</h1>
+<p>If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.</p>
+<p>For opening ports in your linux machine use the following depending on the firewall software you are using:</p>
+<p><strong>IPTables</strong>:
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27016</span> -j ACCEPT
+</code></pre></div></p>
+<p><strong>Uncomplicated Firewall (UFW)</strong>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">7777</span>/udp
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27016</span>/udp
+</code></pre></div></p></section><h1 class='nav-section-title-end'>Ended: Linux Guide</h1>
                         <h1 class='nav-section-title' id='section-windows-guide'>
                             Windows Guide <a class='headerlink' href='#section-windows-guide' title='Permanent link'>↵</a>
                         </h1>
