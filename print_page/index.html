@@ -616,7 +616,7 @@
 <p><strong>Fedora</strong>:</p>
 <div class="highlight"><pre><span></span><code>sudo yum update
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo yum install git git-lfs<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code>sudo yum install git git-lfs
 
 <span class="c1">### Creating a dedicated user</span>
 
@@ -624,7 +624,7 @@
 sudo useradd -m -d /home/steam steamcmd
 </code></pre></div>
 <p>Make sure you choose a secure password.
-<div class="highlight"><pre><span></span><code>sudo passwd steamcmd<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code>sudo passwd steamcmd
 </code></pre></div></p>
 <div class="highlight"><pre><span></span><code>sudo usermod -aG sudo steamcmd
 </code></pre></div>
@@ -702,15 +702,17 @@ sudo useradd -m -d /home/steam steamcmd
 <span class="na">AdminSteamID</span><span class="o">=</span><span class="s">76561198965966997</span><span class="w"></span>
 <span class="na">PVP</span><span class="o">=</span><span class="s">true</span><span class="w"></span>
 </code></pre></div></p>
-<p>What do any of them do?
-- <strong>ServerName:</strong> It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.
-- <strong>ServerMOTD:</strong> Server message that is on a signs around the island.
-- <strong>MaxPlayer:</strong> Maximum allowed players that can connect at any given time.
-- <strong>CommunityWebsite:</strong> Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.
-- <strong>Password:</strong> Add you password here. Use only number and letters. If left empty there is no password on the server.
-- <strong>AdminSteamID:</strong> Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate id's with single space.
-  - AdminSteamID=76561198965966997 11859676569976596
-- <strong>PVP:</strong> Here you write <code>true</code> or <code>false</code> if you want to enable/disable Player versus Player fights.</p>
+<p>What do any of them do?</p>
+<ul>
+<li><strong>ServerName:</strong> It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.</li>
+<li><strong>ServerMOTD:</strong> Server message that is on a signs around the island.</li>
+<li><strong>MaxPlayer:</strong> Maximum allowed players that can connect at any given time.</li>
+<li><strong>CommunityWebsite:</strong> Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.</li>
+<li><strong>Password:</strong> Add you password here. Use only number and letters. If left empty there is no password on the server.</li>
+<li><strong>AdminSteamID:</strong> Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate id's with single space.</li>
+<li>AdminSteamID=76561198965966997 11859676569976596</li>
+<li><strong>PVP:</strong> Here you write <code>true</code> or <code>false</code> if you want to enable/disable Player versus Player fights.</li>
+</ul>
 <h2 id="linux-setup-vanilla-running-the-server">Running the server</h2>
 <h3 id="linux-setup-vanilla-start-the-server-manually-with-shell-script">Start the server manually with shell script</h3>
 <div class="highlight"><pre><span></span><code>sh /home/steam/longvinter-linux-server/LongvinterServer.sh
@@ -840,7 +842,8 @@ sudo useradd -m -d /home/steam steamcmd
 <h3 id="linux-setup-docker-downloading-the-container">Downloading the container</h3>
 <p>Downloading the container can be done by either using git (recommended), or by clicking the green Code button on this page and using the Download ZIP option on the <a href="https://github.com/tvandoorn/longvinter-docker-server">Docker Image Github</a>.
 To download the container configuration using git, use the command below
-<code>git clone https://github.com/tvandoorn/longvinter-docker-server.git</code></p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/tvandoorn/longvinter-docker-server.git
+</code></pre></div></p>
 <h3 id="linux-setup-docker-creating-the-data-directory">Creating the data directory</h3>
 <p>In order to keep game progress between container restarts a data directory needs to be created. Create this directory in the same directory as the docker-compose.yaml file.
 Use the following commands to create the directory and set the appropriate rights.</p>
@@ -928,7 +931,7 @@ Use the following commands to create the directory and set the appropriate right
 <span class="w">    </span><span class="nt">CFG_GAME_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;7777&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">CFG_QUERY_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;27016&quot;</span><span class="w"></span>
 </code></pre></div>
-<p><strong>NOTE: Even though changing the ports is possible, it is currently not supported by the game!</strong></p>
+<p>!!! danger "<strong>NOTE</strong>" Even though changing the ports is possible, it is currently not supported by the game!</p>
 <h2 id="linux-setup-docker-starting-the-container">Starting the container</h2>
 <p>When the setup and configuration is done, the container is ready to be started. Open the command line and navigate to the directory (using the <code>cd</code> command) that contains the <code>Dockerfile</code>, <code>docker-compose.yaml</code> and <code>run.sh</code> files.</p>
 <p>Start the container using the following command:</p>
