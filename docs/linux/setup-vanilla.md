@@ -144,19 +144,7 @@ After this we can open the required ports by executing the following commands:
 sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
 ```
 ```shell
-sudo iptables -I INPUT -p tcp --dport 7777 --syn -j ACCEPT
-```
-```shell
 sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p tcp --dport 27016 --syn -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p tcp --dport 27015 --syn -j ACCEPT
 ```
 
 ## Customizing the server
