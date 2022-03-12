@@ -152,7 +152,9 @@ newgrp docker
 
 Downloading the container can be done by either using git (recommended), or by clicking the green Code button on this page and using the Download ZIP option on the [Docker Image Github](https://github.com/tvandoorn/longvinter-docker-server).
 To download the container configuration using git, use the command below
-`git clone https://github.com/tvandoorn/longvinter-docker-server.git`
+```shell
+git clone https://github.com/tvandoorn/longvinter-docker-server.git
+```
 
 ### Creating the data directory
 
@@ -214,7 +216,7 @@ In order to run the server with different port numbers than the default ports `7
     CFG_QUERY_PORT: "27016"
 ```
 
-**NOTE: Even though changing the ports is possible, it is currently not supported by the game!**
+!!! danger "**NOTE**" Even though changing the ports is possible, it is currently not supported by the game!
 
 ## Starting the container
 

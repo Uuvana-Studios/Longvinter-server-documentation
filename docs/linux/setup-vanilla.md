@@ -46,7 +46,7 @@ sudo yum update
 ```
 
 ```shell
-sudo yum install git git-lfs`
+sudo yum install git git-lfs
 
 ### Creating a dedicated user
 
@@ -56,7 +56,7 @@ sudo useradd -m -d /home/steam steamcmd
 
 Make sure you choose a secure password.
 ```shell
-sudo passwd steamcmd`
+sudo passwd steamcmd
 ```
 
 ```shell
@@ -183,6 +183,7 @@ PVP=true
 ```
 
 What do any of them do?
+
 - **ServerName:** It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.
 - **ServerMOTD:** Server message that is on a signs around the island.
 - **MaxPlayer:** Maximum allowed players that can connect at any given time.
