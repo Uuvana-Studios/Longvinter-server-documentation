@@ -29,6 +29,13 @@
          
     </url>
     <url>
+         <loc>https://docs-server.longvinter.com/windows/setup-docker/</loc>
+         <lastmod>2022-03-14</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/windows/setup-docker/"/>
+         
+    </url>
+    <url>
          <loc>https://docs-server.longvinter.com/windows/setup-vanilla/</loc>
          <lastmod>2022-03-14</lastmod>
          <changefreq>daily</changefreq>
