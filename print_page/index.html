@@ -1116,7 +1116,7 @@ The command above will download the container files in a directory named <code>n
                         </h1>
                         <section class="print-page" id="windows-setup-vanilla"><h1 id="windows-setup-vanilla-vanilla-setup">Vanilla Setup</h1>
 <p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/longvinter">Discord</a> we are more than happy to help you out!</p>
-<h2 id="windows-setup-vanilla-requirements-and-prerequisites">Requirements and prerequisites</h2>
+<h2 id="windows-setup-vanilla-requirements-and-pre-requisites">Requirements and Pre-requisites</h2>
 <ul>
 <li><a href="https://gitforwindows.org/">GIT</a> installed in your system</li>
 <li><a href="https://git-lfs.github.com/">GIT LFS</a> instaled in your system</li>
@@ -1242,20 +1242,18 @@ Add the following content inside this file.</p>
 git pull
 </code></pre></div></section><section class="print-page" id="windows-setup-docker"><h1 id="windows-setup-docker-docker-setup">Docker Setup</h1>
 <p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/longvinter">Discord</a> we are more than happy to help you out!</p>
-<h2 id="windows-setup-docker-requirements-and-prerequisites">Requirements and Prerequisites</h2>
+<h2 id="windows-setup-docker-requirements-and-prerequisites">Requirements and prerequisites</h2>
 <ul>
-<li>GIT installed in your system</li>
-<li>Docker installed in your system</li>
-<li>Docker Compose installed in your system</li>
+<li><a href="https://gitforwindows.org/">GIT</a> installed in your system</li>
+<li><a href="https://git-lfs.github.com/">GIT LFS</a> instaled in your system</li>
+<li><a href="https://www.docker.com/products/docker-desktop">Docker and Docker-Compose</a></li>
 <li>Broadband internet connection</li>
 <li>Router with the ability to port forward</li>
 <li>Min. 2 GB RAM</li>
+<li>Min. 64-bit Windows 10 Operating System</li>
 </ul>
 <h2 id="windows-setup-docker-system-setup">System Setup</h2>
-<h3 id="windows-setup-docker-installing-git-and-git-large-file-system">Installing GIT and GIT Large file system</h3>
-<p>Download Git for Windows here: https://gitforwindows.org</p>
-<h3 id="windows-setup-docker-installing-docker">Installing Docker</h3>
-<p>Download Docker Desktop here: https://www.docker.com/products/docker-desktop</p>
+<h3 id="windows-setup-docker-post-installing-docker">Post-Installing Docker</h3>
 <p>After installation, restart your computer if necessary. Then open the Docker Dashboard by right-clicking the docker icon on the bottom right of your screen, or open Docker using your start menu. Depending on your OS and/or updates you may be asked to install "WSL 2". Make sure you do this as well.</p>
 <h2 id="windows-setup-docker-setting-up-the-container">Setting up the container</h2>
 <h3 id="windows-setup-docker-choosing-a-location-on-your-computerserver">Choosing a location on your computer/server</h3>
@@ -1263,9 +1261,10 @@ git pull
 <p>Open Windows Explorer where you would like to place the server and right click somewhere. Click the option "Git Bash Here".
 <img alt="image" src="https://user-images.githubusercontent.com/80425961/155396499-de40ebb5-f38f-441a-b545-1baad176bfe3.png" /></p>
 <p>This will open a command line in the location you right-clicked. From here, execute the commands in the next chapters.</p>
+<p><img alt="image" src="https://i.imgur.com/2QhZmXI.png" /></p>
 <h3 id="windows-setup-docker-downloading-the-container">Downloading the container</h3>
-<p>Downloading the container can be done by either using git (recommended), or by clicking the green Code button on this page and using the Download ZIP option on the <a href="https://github.com/tvandoorn/longvinter-docker-server">Docker Image Github</a>.
-To download the container configuration using git, use the command below
+<p>Downloading the container can be done by either using git (recommended), or by clicking the green code button on this page and using the Download ZIP option on the <a href="https://github.com/tvandoorn/longvinter-docker-server">Docker Image Github</a>.</p>
+<p>To download the container configuration using git, use the command below:
 <div class="highlight"><pre><span></span><code>git clone https://github.com/Uuvana-Studios/longvinter-docker-server.git
 </code></pre></div></p>
 <p>When the clone is finished, enter the directory the git command created:
@@ -1356,6 +1355,10 @@ Use the following commands to create the directory and set the appropriate right
 <span class="w">    </span><span class="nt">CFG_GAME_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;7777&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">CFG_QUERY_PORT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;27016&quot;</span><span class="w"></span>
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title"><strong>Note</strong></p>
+<p>Even though changing the ports is possible, it is currently not supported by the game!</p>
+</div>
 <h2 id="windows-setup-docker-starting-the-container">Starting the container</h2>
 <p>When the setup and configuration is done, the container is ready to be started. Open the command line and navigate to the directory (using the <code>cd</code> command) that contains the <code>Dockerfile</code>, <code>docker-compose.yaml</code> and <code>run.sh</code> files.</p>
 <p>Start the container using the following command:</p>
@@ -1379,9 +1382,12 @@ Use the following commands to create the directory and set the appropriate right
 </code></pre></div>
 <h2 id="windows-setup-docker-updating-the-container">Updating the container</h2>
 <p>When a new version of the container is released, make sure to update the files using <code>git pull</code>, or manually update the files by downloading the code as ZIP from Github. Run the command below to build the new container image and restart the container.</p>
-<p><div class="highlight"><pre><span></span><code>docker-compose up -d --build
+<div class="highlight"><pre><span></span><code>docker-compose up -d --build
 </code></pre></div>
-Note that these commands have to be run from the same directory as the <code>Dockerfile</code>, <code>docker-compose.yaml</code> and <code>run.sh</code> files.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Note</strong></p>
+<p>Remember that these commands have to be run from the same directory as the <code>Dockerfile</code>, <code>docker-compose.yaml</code> and <code>run.sh</code> files.</p>
+</div>
 <h2 id="windows-setup-docker-updating-the-longvinter-server">Updating the Longvinter server</h2>
 <p>Updating the Longvinter server is as easy as restarting the container:</p>
 <div class="highlight"><pre><span></span><code>docker-compose restart
@@ -1391,13 +1397,23 @@ Note that these commands have to be run from the same directory as the <code>Doc
 <p><div class="highlight"><pre><span></span><code>git clone https://github.com/Uuvana-Studios/longvinter-docker-server.git new-name-here
 </code></pre></div>
 The command above will download the container files in a directory named <code>new-name-here</code>. Make sure to change the server ports using the <em>Changing the port numbers</em> step.</p>
+<div class="admonition info">
+<p class="admonition-title"><strong>Note</strong></p>
+<p>This works in theory but, remember, that even though changing the ports is possible, it is currently not supported by the game!</p>
+</div>
 <h2 id="windows-setup-docker-open-ports">Open Ports</h2>
 <p>You also need to open ports on your home router to allow traffic go through. This process is greatly different from what type of router you have. It is recommended to look in the manual provided by the manufacturer or contact your ISP for instructions.</p>
-<p>For Steam open: 27015 &amp; 27016
-For Unreal Engine open: 7777</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Warning</strong></p>
+<p>In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!</p>
+</div>
+<ul>
+<li>For Steam open: 27015 &amp; 27016 (TCP and UDP)</li>
+<li>For Unreal Engine open: 7777 (UDP Only)</li>
+</ul>
 <p>In some cases, opening the ports in your home router is not enough. In that case you usually also need to allow the ports in your software firewall. Windows has a built-in firewall, but some antivirus packages also include a firewall feature. For changing the settings on your antivirus firewall, look for instructions online or contact the developer directly.</p>
-<h3 id="windows-setup-docker-opening-firewall-ports-on-windows-firewall">Opening firewall ports on Windows firewall</h3>
-<p>In order to open the ports in the included Windows firewall, follow the steps below.</p>
+<h3 id="windows-setup-docker-setting-ports-rules-on-windows-firewall">Setting ports rules on Windows Firewall</h3>
+<p>In order to open the ports in the included Windows Firewall, follow the steps below:</p>
 <ol>
 <li>Open the Start Menu and search for "Windows Defender Firewall with Advanced Security", or the equivalent in your language.</li>
 <li>
