@@ -26,10 +26,10 @@ Run the following commands according to your chosen system:
     ```
 
     ```shell
-    sudo apt install git git-lfs
+    sudo apt install git git-lfs steamcmd
     ```
 
-    **Note**: If you are using a 64 bit machine you will need to add multivers
+    **Note**: If you are using a 64 bit machine you will need to add multiverse.
 
     ```shell
     sudo add-apt-repository multiverse
@@ -57,6 +57,22 @@ Run the following commands according to your chosen system:
     sudo pacman -S git git-lfs
     ```
 
+    ```shell
+    git clone https://aur.archlinux.org/steamcmd.git
+    ```
+
+    ```shell
+    cd steamcmd
+    ```
+
+    ```shell
+    makepkg -si
+    ```
+
+    ```shell
+    sudo ln -s /usr/games/steamcmd /home/steam/steamcmd
+    ```
+
 ??? "**Fedora**"
 
     ```shell
@@ -64,7 +80,7 @@ Run the following commands according to your chosen system:
     ```
 
     ```shell
-    sudo yum install git git-lfs
+    sudo yum install git git-lfs steamcmd
     ```
 
 ### Creating user and group to run the server 
@@ -97,7 +113,7 @@ cd ~/
 
 Create the SteamCMD directory:
 ```shell
-mkdir steamcmd
+mkdir steamcmd-source
 ```
 
 Go into the newly created SteamCMD directory:
