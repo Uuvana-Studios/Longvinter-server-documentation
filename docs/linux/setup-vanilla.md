@@ -49,6 +49,10 @@ Run the following commands according to your chosen system:
     sudo yum install git git-lfs
     ```
 
+```shell
+sudo useradd -m -d /home/steam steamcmd
+```
+
 Make sure you choose a secure password.
 ```shell
 sudo passwd steamcmd
