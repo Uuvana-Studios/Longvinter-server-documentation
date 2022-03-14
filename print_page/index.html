@@ -776,27 +776,43 @@
 <div class="highlight"><pre><span></span><code>sudo systemctl daemon-reload
 </code></pre></div>
 <h4 id="linux-setup-vanilla-how-to-use-systemd-management">How to use Systemd Management</h4>
-<h5 id="linux-setup-vanilla-how-to-start-the-server">How to start the server:</h5>
+<ol>
+<li>
+<p>How to start the server:
 <div class="highlight"><pre><span></span><code>sudo systemctl start longvinter.service
-</code></pre></div>
-<h5 id="linux-setup-vanilla-how-to-stop-the-server">How to stop the server:</h5>
+</code></pre></div></p>
+</li>
+<li>
+<p>How to stop the server:
 <div class="highlight"><pre><span></span><code>sudo systemctl stop longvinter.service
-</code></pre></div>
-<h5 id="linux-setup-vanilla-how-to-restart-the-server">How to restart the server:</h5>
+</code></pre></div></p>
+</li>
+<li>
+<p>How to restart the server:
 <div class="highlight"><pre><span></span><code>sudo systemctl restart longvinter.service
-</code></pre></div>
-<h5 id="linux-setup-vanilla-how-to-enable-the-server-to-start-on-boot">How to enable the server to start on boot:</h5>
+</code></pre></div></p>
+</li>
+<li>
+<p>How to enable the server to start on boot:
 <div class="highlight"><pre><span></span><code>sudo systemctl <span class="nb">enable</span> longvinter.service
-</code></pre></div>
-<h5 id="linux-setup-vanilla-how-to-check-status-the-server">How to check status the server:</h5>
+</code></pre></div></p>
+</li>
+<li>
+<p>How to check status the server:
 <div class="highlight"><pre><span></span><code>sudo systemctl status longvinter.service
-</code></pre></div>
-<h5 id="linux-setup-vanilla-how-to-see-real-time-logs-of-the-server">How to see real-time logs of the server:</h5>
+</code></pre></div></p>
+</li>
+<li>
+<p>How to see real-time logs of the server:
 <div class="highlight"><pre><span></span><code>sudo journalctl -u longvinter -f
-</code></pre></div>
-<h5 id="linux-setup-vanilla-how-to-see-all-the-logs-of-the-server">How to see all the logs of the server:</h5>
+</code></pre></div></p>
+</li>
+<li>
+<p>How to see all the logs of the server:
 <div class="highlight"><pre><span></span><code>sudo journalctl -u longvinter
-</code></pre></div>
+</code></pre></div></p>
+</li>
+</ol>
 <p>If the console shows these lines at the bottom after startup your server has started corretly.
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">514</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">13</span><span class="p p-Indicator">]</span><span class="nt">LogOnline</span><span class="p">:</span><span class="w"> </span><span class="nt">Verbose</span><span class="p">:</span><span class="w"> </span><span class="nt">STEAM</span><span class="p">:</span><span class="w"> </span><span class="nt">FOnlineAsyncEventSteamServerConnectedGS ServerId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server[0x***************]</span><span class="w"></span>
 <span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">782</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">21</span><span class="p p-Indicator">]</span><span class="nt">LogOnline</span><span class="p">:</span><span class="w"> </span><span class="nt">Verbose</span><span class="p">:</span><span class="w"> </span><span class="nt">STEAM</span><span class="p">:</span><span class="w"> </span><span class="nt">FOnlineAsyncEventSteamServerPolicyResponseGS Secure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
