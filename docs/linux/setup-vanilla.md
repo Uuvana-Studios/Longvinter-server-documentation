@@ -29,6 +29,24 @@ Run the following commands according to your chosen system:
     sudo apt install git git-lfs
     ```
 
+    **Note**: If you are using a 64 bit machine you will need to add multivers
+
+    ```shell
+    sudo add-apt-repository multiverse
+    ```
+
+    ```shell
+    sudo dpkg --add-architecture i386
+    ```
+
+    ```shell
+    sudo apt update
+    ```
+
+    ```shell
+    sudo apt install lib32gcc-s1 steamcmd
+    ```
+
 ??? "**Arch-Linux**"
 
     ```shell
