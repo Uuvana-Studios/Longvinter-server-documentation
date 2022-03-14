@@ -158,11 +158,17 @@ In some cases, opening the ports in your home router is not enough. In that case
 In order to open the ports in the included Windows firewall, follow the steps below.
 
 1. Open the Start Menu and search for "Windows Defender Firewall with Advanced Security", or the equivalent in your language.
-2. Right-click the Inbound Rules option on the left side and choose New Rule...![](../../../../Downloads/drive-download-20220314T200921Z-001/inboundrules.png)
-3. In the window that opens, select the Port option and click Next. ![](../../../../Downloads/drive-download-20220314T200921Z-001/port.png)
-4. Next, enter the port that you wish to forward, select the correct protocol (TCP or UDP) and click Next. ![](../../../../Downloads/drive-download-20220314T200921Z-001/tcpudp.png)
-5. Make sure "Allow the connection" is selected and click Next. ![](../../../../Downloads/drive-download-20220314T200921Z-001/allowconnection.png)
-6. Make sure all options are selected and click Next. ![](../../../../Downloads/drive-download-20220314T200921Z-001/profile.png)
-7. Give the firewall rule a recognizable name (Such as Longvinter [port]) and click Finish. ![](../../../../Downloads/drive-download-20220314T200921Z-001/name.png)
+2. Right-click the Inbound Rules option on the left side and choose New Rule...
+![inboundrules](https://user-images.githubusercontent.com/3257540/158257002-fdd91104-b661-46f8-90de-a07c0d724c91.png)
+
+3. In the window that opens, select the Port option and click Next. ![port](https://user-images.githubusercontent.com/3257540/158257053-1d9cab7d-666a-4bef-9871-09d6fcc445db.png)
+
+4. Next, enter the port that you wish to forward, select the correct protocol (TCP or UDP) and click Next. ![tcpudp](https://user-images.githubusercontent.com/3257540/158257096-96d8de79-80a3-483a-98ed-da830fe89a6b.png)
+
+5. Make sure "Allow the connection" is selected and click Next. ![allowconnection](https://user-images.githubusercontent.com/3257540/158257123-674efc62-ba90-4c96-b753-5124929500b8.png)
+6. Make sure all options are selected and click Next. ![profile](https://user-images.githubusercontent.com/3257540/158257155-ebba1e05-2f33-445b-bebb-b392e038edca.png)
+
+7. Give the firewall rule a recognizable name (Such as Longvinter [port]) and click Finish. ![name](https://user-images.githubusercontent.com/3257540/158257182-f57e43d6-0905-4db5-ba67-5cf334c27711.png)
+
 
 Make sure to repeat steps 2-7 for each port that needs to be openend in the firewall.
