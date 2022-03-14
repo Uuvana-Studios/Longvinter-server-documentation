@@ -317,4 +317,4 @@ The command above will download the container files in a directory named `new-na
 
 !!! info "**Note**"
 
-    This works in theory, but remember that, even though changing the ports is possible, it is currently not supported by the game!
+    This works in theory but, remember, that even though changing the ports is possible, it is currently not supported by the game!
