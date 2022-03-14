@@ -256,7 +256,7 @@ In order to run the server with different port numbers than the default ports `7
     CFG_QUERY_PORT: "27016"
 ```
 
-!!! important "**Note**"
+!!! info "**Note**"
 
     Even though changing the ports is possible, it is currently not supported by the game!
 
@@ -315,6 +315,6 @@ git clone https://github.com/tvandoorn/longvinter-docker-server.git new-name-her
 ```
 The command above will download the container files in a directory named `new-name-here`. Make sure to change the server ports using the _Changing the port numbers_ step.
 
-!!! important "**Note**"
+!!! info "**Note**"
 
-    Even though changing the ports is possible, it is currently not supported by the game!
+    This works in theory, but remember that, even though changing the ports is possible, it is currently not supported by the game!
