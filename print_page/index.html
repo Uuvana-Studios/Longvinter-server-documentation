@@ -855,8 +855,9 @@
 <p class="admonition-title"><strong>Warning</strong></p>
 <p>In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!</p>
 </div>
-<p><strong>IPTables</strong>:
-<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
+<details>
+<summary><strong>IPTables</strong></summary>
+<p><div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27016</span> -j ACCEPT
 </code></pre></div>
@@ -866,6 +867,7 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">27015</span> -j ACCEPT
 </code></pre></div></p>
+</details>
 <p><strong>Uncomplicated Firewall (UFW)</strong>
 <div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">7777</span>/udp
 </code></pre></div>
