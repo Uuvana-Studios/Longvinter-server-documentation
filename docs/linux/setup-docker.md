@@ -146,6 +146,44 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 
+## Port-forwarding and Firewalls
+
+If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
+
+For opening ports in your linux machine use the following depending on the firewall software you are using:
+
+!!! warning "**Warning**"
+
+    In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!
+
+**IPTables**:
+```shell
+sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
+```
+```shell
+sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
+```
+```shell
+sudo iptables -I INPUT -p tcp --dport 27016 -j ACCEPT
+```
+```shell
+sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT
+```
+```shell
+sudo iptables -I INPUT -p tcp --dport 27015 -j ACCEPT
+```
+
+**Uncomplicated Firewall (UFW)**
+```shell
+sudo ufw allow 7777/udp
+```
+```shell
+sudo ufw allow 27016
+```
+```shell
+sudo ufw allow 27015
+```
+
 ## Setting up the container
 
 ### Downloading the container
@@ -275,26 +313,6 @@ git clone https://github.com/tvandoorn/longvinter-docker-server.git new-name-her
 ```
 The command above will download the container files in a directory named `new-name-here`. Make sure to change the server ports using the _Changing the port numbers_ step.
 
-**NOTE: Even though changing the ports is possible, it is currently not supported by the game!**
+!!! important "**Note**"
 
-## Port-forwarding and Firewalls
-
-If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
-
-For opening ports in your linux machine use the following depending on the firewall software you are using:
-
-**IPTables**:
-```shell
-sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
-```
-
-**Uncomplicated Firewall (UFW)**
-```shell
-sudo ufw allow 7777/udp
-```
-```shell
-sudo ufw allow 27016/udp
-```
+    Even though changing the ports is possible, it is currently not supported by the game!
