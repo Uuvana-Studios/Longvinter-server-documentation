@@ -673,15 +673,27 @@
 <h2 id="linux-setup-vanilla-port-forwarding-and-firewalls">Port-forwarding and Firewalls</h2>
 <p>If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.</p>
 <p>For opening ports in your linux machine use the following depending on the firewall software you are using:</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Warning</strong></p>
+<p>In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!</p>
+</div>
 <p><strong>IPTables</strong>:
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27016</span> -j ACCEPT
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">27016</span> -j ACCEPT
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27015</span> -j ACCEPT
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">27015</span> -j ACCEPT
 </code></pre></div></p>
 <p><strong>Uncomplicated Firewall (UFW)</strong>
 <div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">7777</span>/udp
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27016</span>/udp
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27016</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27015</span>
 </code></pre></div></p>
 <h2 id="linux-setup-vanilla-customizing-the-server">Customizing the server</h2>
 <p>Server values can be customized with Game.ini</p>
@@ -836,6 +848,31 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>newgrp docker
 </code></pre></div>
+<h2 id="linux-setup-docker-port-forwarding-and-firewalls">Port-forwarding and Firewalls</h2>
+<p>If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.</p>
+<p>For opening ports in your linux machine use the following depending on the firewall software you are using:</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Warning</strong></p>
+<p>In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!</p>
+</div>
+<p><strong>IPTables</strong>:
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27016</span> -j ACCEPT
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">27016</span> -j ACCEPT
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27015</span> -j ACCEPT
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">27015</span> -j ACCEPT
+</code></pre></div></p>
+<p><strong>Uncomplicated Firewall (UFW)</strong>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">7777</span>/udp
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27016</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27015</span>
+</code></pre></div></p>
 <h2 id="linux-setup-docker-setting-up-the-container">Setting up the container</h2>
 <h3 id="linux-setup-docker-downloading-the-container">Downloading the container</h3>
 <p>Downloading the container can be done by either using git (recommended), or by clicking the green Code button on this page and using the Download ZIP option on the <a href="https://github.com/tvandoorn/longvinter-docker-server">Docker Image Github</a>.
@@ -966,20 +1003,10 @@ Note that these commands have to be run from the same directory as the <code>Doc
 <p><div class="highlight"><pre><span></span><code>git clone https://github.com/tvandoorn/longvinter-docker-server.git new-name-here
 </code></pre></div>
 The command above will download the container files in a directory named <code>new-name-here</code>. Make sure to change the server ports using the <em>Changing the port numbers</em> step.</p>
-<p><strong>NOTE: Even though changing the ports is possible, it is currently not supported by the game!</strong></p>
-<h2 id="linux-setup-docker-port-forwarding-and-firewalls">Port-forwarding and Firewalls</h2>
-<p>If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.</p>
-<p>For opening ports in your linux machine use the following depending on the firewall software you are using:</p>
-<p><strong>IPTables</strong>:
-<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27016</span> -j ACCEPT
-</code></pre></div></p>
-<p><strong>Uncomplicated Firewall (UFW)</strong>
-<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">7777</span>/udp
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27016</span>/udp
-</code></pre></div></p></section><h1 class='nav-section-title-end'>Ended: Linux Guide</h1>
+<div class="admonition important">
+<p class="admonition-title"><strong>Note</strong></p>
+<p>Even though changing the ports is possible, it is currently not supported by the game!</p>
+</div></section><h1 class='nav-section-title-end'>Ended: Linux Guide</h1>
                         <h1 class='nav-section-title' id='section-windows-guide'>
                             Windows Guide <a class='headerlink' href='#section-windows-guide' title='Permanent link'>↵</a>
                         </h1>
