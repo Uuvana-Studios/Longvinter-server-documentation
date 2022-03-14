@@ -3,13 +3,13 @@
 If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/longvinter) we are more than happy to help you out!
 
 ## Requirements and prerequisites
-- [GIT](https://gitforwindows.org/) installed in your system
-- [GIT LFS](https://git-lfs.github.com/) instaled in your system
-- [Docker and Docker-Compose](https://www.docker.com/products/docker-desktop)
-- Broadband internet connection
-- Router with the ability to port forward
-- Min. 2 GB RAM
-- Min. 64-bit Windows 10 Operating System
+- [GIT](https://gitforwindows.org/) installed in your system;
+- [GIT LFS](https://git-lfs.github.com/) installed in your system;
+- [Docker and Docker-Compose](https://www.docker.com/products/docker-desktop) installed in your system;
+- Broadband internet connection;
+- Router with the ability to port forward;
+- Min. 2 GB RAM;
+- Min. 64-bit Windows 10 Operating System.
 
 ## System Setup
 
@@ -131,7 +131,7 @@ When a new version of the container is released, make sure to update the files u
 ```shell
 docker-compose up -d --build
 ```
-!!! note "**Note**"
+!!! info "**Note**"
 
     Remember that these commands have to be run from the same directory as the `Dockerfile`, `docker-compose.yaml` and `run.sh` files.
 

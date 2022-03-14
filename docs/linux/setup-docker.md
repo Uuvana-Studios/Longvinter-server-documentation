@@ -4,13 +4,13 @@ If you have any trouble following the guide. Please send us a message in [Discor
 
 ## Requirements and Pre-requisites
 
-- GIT installed in your system
-- GIT LFS installed in your system
-- Docker installed in your system
-- Docker Compose installed in your system
-- Broadband internet connection
-- Router with the ability to port forward
-- Min. 2 GB RAM
+- GIT installed in your system;
+- GIT LFS installed in your system;
+- Docker and Docker-Compose installed in your system;
+- Broadband internet connection;
+- Router with the ability to port forward;
+- Min. 2 GB RAM;
+- Min. 64-bit Linux Operating System.
 
 ## System Setup
 

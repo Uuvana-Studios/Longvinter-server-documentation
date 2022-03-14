@@ -4,13 +4,13 @@ If you have any trouble following the guide. Please send us a message in [Discor
 
 ## Requirements and Pre-requisites
 
-- [GIT](https://gitforwindows.org/) installed in your system
-- [GIT LFS](https://git-lfs.github.com/) instaled in your system
-- [Steam](https://store.steampowered.com/about/) installed in your system.
-- Broadband internet connection
-- Router with the ability to port forward
-- Min. 3 GB RAM
-- Min. 64-bit Windows 10 Operating System
+- [GIT](https://gitforwindows.org/) installed in your system;
+- [GIT LFS](https://git-lfs.github.com/) instaled in your system;
+- [Steam](https://store.steampowered.com/about/) installed in your system;
+- Broadband internet connection;
+- Router with the ability to port forward;
+- Min. 3 GB RAM;
+- Min. 64-bit Windows 10 Operating System.
 
 ## Port-forwarding and Firewalls
 
