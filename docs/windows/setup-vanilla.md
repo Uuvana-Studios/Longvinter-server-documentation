@@ -11,14 +11,20 @@ If you have any trouble following the guide. Please send us a message in [Discor
 - Min. 3 GB RAM
 - Min. 64-bit Windows 10 Operating System
 
-## Open Ports
+## Port-forwarding and Firewalls
 
-You also need to open ports on your home router to allow traffic go trough. This process is greatly different from what type of router you have.
+If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
 
-For Steam open: 27015 & 27016
-For Unreal Engine open: 7777
+!!! warning "**Warning**"
 
-The easiest way to install them is to right-click and git bash to the folder where you want to install the server files. You can also use CMD if you installed just GIT and not the GIT BASH.
+    In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!
+
+- For Steam open: 27015 & 27016 (TCP and UDP)
+- For Unreal Engine open: 7777 (UDP Only)
+
+## Installing the server
+
+The easiest way to install the server is to right-click and git bash to the folder where you want to install the server files. You can also use CMD if you installed just GIT and not the GIT BASH.
 
 ![image](https://user-images.githubusercontent.com/80425961/155396499-de40ebb5-f38f-441a-b545-1baad176bfe3.png)
 
@@ -35,7 +41,7 @@ Once the cloning is done you should see the following files inside the folder co
 
 You now have installed the server!
 
-## Customizing The Server
+## Customizing the server
 
 You can customize some server parameters by editing the Game.ini config file
 
@@ -48,7 +54,7 @@ Here you should _create a new file_ and name it Game.ini
 Open it for edit. You can use any text editor you want.
 Add the following content inside this file.
 
-```
+```ini
 [/game/blueprints/server/gi_advancedsessions.gi_advancedsessions_c]
 ServerName=Unnamed Island
 MaxPlayers=32
@@ -60,19 +66,19 @@ CommunityWebsite=www.longvinter.com
 AdminSteamID=97615967659669198
 ```
 
-## What do different params do?
+### What does each setting mean?
 
-- ServerName: Name that shows up in the server browser. Please don't call your server with an OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players!
+| Setting name     | Used for                                                                                                                                                                                           | Default value                 |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
+| ServerName       | It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players. | Unnamed Island                |
+| ServerMOTD       | Server message that is on a signs around the island.                                                                                                                                               | 32                            |
+| MaxPlayer        | Maximum allowed players that can connect at any given time.                                                                                                                                        | Welcome to Longvinter Island! |
+| CommunityWebsite | Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.                                                                                | www.longvinter.com            |
+| Password         | Add you password here. Use only number and letters. If left empty there is no password on the server.                                                                                              | _(empty)_                     |
+| AdminSteamID     | Here you can add all the admins that you want to have in the server. **If you want to add multiple** separate the ID's with single space.                                                          | 76561198965966997             |
+| PVP              | Here you write `true` or `false` if you want to enable/disable Player versus Player fights. 
 
-- ServerMOTD: Server message that is on signs around the island.
-
-- MaxPlayer: Maximum allowed players that can connect at any given time.
-
-- CommunityWebsite: This allows you to promote a website in the same place where the server message is shown. This link can be opened in-game.
-
-- Password: Add your password here. Use only numbers and letters. If left empty there is no password on the server.
-
-## Starting The Server
+## Running the server
 
 For easy starting and closing, I recommend creating a shortcut for LongvinterServer.exe
 

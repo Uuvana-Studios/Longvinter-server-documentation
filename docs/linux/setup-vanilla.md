@@ -13,42 +13,7 @@ If you have any trouble following the guide. Please send us a message in [Discor
 
 ## System Setup
 
-### Installing GIT, GIT Large file system and other requisits 
-
-.pak files are large and we need to install Git Lfs in order to download them
-
-Run the following commands according to your chosen system:
-
-**Ubuntu/Debian**:
-
-```shell
-sudo apt update
-```
-
-```shell
-sudo apt install git git-lfs
-```
-
-**Arch-Linux**:
-
-```shell
-sudo pacman -Sy
-```
-
-```shell
-sudo pacman -S git git-lfs
-```
-
-**Fedora**:
-
-```shell
-sudo yum update
-```
-
-```shell
-sudo yum install git git-lfs
-
-### Creating a dedicated user
+### Creating user and group to run the server 
 
 ```shell
 sudo useradd -m -d /home/steam steamcmd
@@ -67,6 +32,76 @@ sudo usermod -aG sudo steamcmd
 sudo su steamcmd
 ```
 
+### Installing GIT, GIT Large file system and other requisits 
+
+.pak files are large and we need to install Git Lfs in order to download them
+
+Run the following commands according to your chosen system:
+
+??? "**Ubuntu/Debian**"
+
+    ```shell
+    sudo apt update
+    ```
+
+    ```shell
+    sudo apt install git git-lfs steamcmd
+    ```
+
+    **Note**: If you are using a 64 bit machine you will need to add multiverse.
+
+    ```shell
+    sudo add-apt-repository multiverse
+    ```
+
+    ```shell
+    sudo dpkg --add-architecture i386
+    ```
+
+    ```shell
+    sudo apt update
+    ```
+
+    ```shell
+    sudo apt install lib32gcc-s1 steamcmd
+    ```
+
+??? "**Arch-Linux**"
+
+    ```shell
+    sudo pacman -Sy
+    ```
+
+    ```shell
+    sudo pacman -S git git-lfs
+    ```
+
+    ```shell
+    git clone https://aur.archlinux.org/steamcmd.git
+    ```
+
+    ```shell
+    cd steamcmd
+    ```
+
+    ```shell
+    makepkg -si
+    ```
+
+    ```shell
+    sudo ln -s /usr/games/steamcmd /home/steam/steamcmd
+    ```
+
+??? "**Fedora**"
+
+    ```shell
+    sudo yum update
+    ```
+
+    ```shell
+    sudo yum install git git-lfs steamcmd
+    ```
+
 ### Installing Steam SDK
 
 The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user:
@@ -78,7 +113,7 @@ cd ~/
 
 Create the SteamCMD directory:
 ```shell
-mkdir steamcmd
+mkdir steamcmd-source
 ```
 
 Go into the newly created SteamCMD directory:
@@ -122,6 +157,46 @@ And copy inside it the required `steamclient.so` file from SteamCMD:
 cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/
 ```
 
+## Port-forwarding and Firewalls
+
+If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
+
+For opening ports in your linux machine use the following depending on the firewall software you are using:
+
+!!! warning "**Warning**"
+
+    In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!
+
+??? "**IPTables**"
+
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p tcp --dport 27016 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p tcp --dport 27015 -j ACCEPT
+    ```
+
+??? "**Uncomplicated Firewall (UFW)**"
+
+    ```shell
+    sudo ufw allow 7777/udp
+    ```
+    ```shell
+    sudo ufw allow 27016
+    ```
+    ```shell
+    sudo ufw allow 27015
+    ```
+
 ## Installing the server
 
 In this step let's first return to the steamcmd user home directory:
@@ -137,14 +212,6 @@ git clone https://github.com/Uuvana-Studios/longvinter-linux-server.git
 Then we want to give permission for this folder to execute commands with:
 ```shell
 sudo chmod -R ugo+rwx longvinter-linux-server/
-```
-
-After this we can open the required ports by executing the following commands:
-```shell
-sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
 ```
 
 ## Customizing the server
@@ -170,16 +237,17 @@ AdminSteamID=76561198965966997
 PVP=true
 ```
 
-What do any of them do?
+### What does each setting mean?
 
-- **ServerName:** It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.
-- **ServerMOTD:** Server message that is on a signs around the island.
-- **MaxPlayer:** Maximum allowed players that can connect at any given time.
-- **CommunityWebsite:** Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.
-- **Password:** Add you password here. Use only number and letters. If left empty there is no password on the server.
-- **AdminSteamID:** Here you can add all the admins that you want to have in the server. **If you want to add multiple** separate id's with single space.
-    `AdminSteamID=76561198965966997 11859676569976596`
-- **PVP:** Here you write `true` or `false` if you want to enable/disable Player versus Player fights.
+| Setting name     | Used for                                                                                                                                                                                           | Default value                 |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
+| ServerName       | It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players. | Unnamed Island                |
+| ServerMOTD       | Server message that is on a signs around the island.                                                                                                                                               | 32                            |
+| MaxPlayer        | Maximum allowed players that can connect at any given time.                                                                                                                                        | Welcome to Longvinter Island! |
+| CommunityWebsite | Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.                                                                                | www.longvinter.com            |
+| Password         | Add you password here. Use only number and letters. If left empty there is no password on the server.                                                                                              | _(empty)_                     |
+| AdminSteamID     | Here you can add all the admins that you want to have in the server. **If you want to add multiple** separate the ID's with single space.                                                          | 76561198965966997             |
+| PVP              | Here you write `true` or `false` if you want to enable/disable Player versus Player fights.                                                                                                        | true                          |
 
 ## Running the server
 
@@ -196,42 +264,46 @@ sudo cp /home/steam/longvinter-linux-server/longvinter.service /etc/systemd/syst
 ```
 
 ```shell
+sudo cp /home/steam/longvinter-linux-server/longvinter.socket /etc/systemd/system/longvinter.socket
+```
+
+```shell
 sudo systemctl daemon-reload
 ```
 
 #### How to use Systemd Management
 
-##### How to start the server:
+1. How to start the server:
 ```shell
 sudo systemctl start longvinter.service
 ```
 
-##### How to stop the server:
+2. How to stop the server:
 ```shell
 sudo systemctl stop longvinter.service
 ```
 
-##### How to restart the server:
+3. How to restart the server:
 ```shell
 sudo systemctl restart longvinter.service
 ```
 
-##### How to enable the server to start on boot:
+4. How to enable the server to start on boot:
 ```shell
 sudo systemctl enable longvinter.service
 ```
 
-##### How to check status the server:
+5. How to check status the server:
 ```shell
 sudo systemctl status longvinter.service
 ```
 
-##### How to see real-time logs of the server:
+6. How to see real-time logs of the server:
 ```shell
 sudo journalctl -u longvinter -f
 ```
 
-##### How to see all the logs of the server:
+7. How to see all the logs of the server:
 ```shell
 sudo journalctl -u longvinter
 ```

@@ -20,131 +20,171 @@ If you have any trouble following the guide. Please send us a message in [Discor
 
 Run the following commands according to your chosen system:
 
-**Ubuntu/Debian**:
+??? "**Ubuntu/Debian**"
 
-```shell
-sudo apt update
-```
+    ```shell
+    sudo apt update
+    ```
 
-```shell
-sudo apt install git git-lfs
-```
+    ```shell
+    sudo apt install git git-lfs
+    ```
 
-**Arch-Linux**:
+??? "**Arch-Linux**"
 
-```shell
-sudo pacman -Sy
-```
+    ```shell
+    sudo pacman -Sy
+    ```
 
-```shell
-sudo pacman -S git git-lfs
-```
+    ```shell
+    sudo pacman -S git git-lfs
+    ```
 
-**Fedora**:
+??? "**Fedora**"
 
-```shell
-sudo yum update
-```
+    ```shell
+    sudo yum update
+    ```
 
-```shell
-sudo yum install git git-lfs
-```
+    ```shell
+    sudo yum install git git-lfs
+    ```
 
 ### Installing Docker
 
-**Ubuntu/Debian**:
+??? "**Ubuntu/Debian**"
 
-Begin by adding dependencies needed by the installation process:
+    Begin by adding dependencies needed by the installation process:
 
-```shell
-sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
-```
+    ```shell
+    sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+    ```
 
-Begin by adding dependencies needed by the installation process:
+    Begin by adding dependencies needed by the installation process:
 
-```shell
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-```
+    ```shell
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    ```
 
-Begin by adding dependencies needed by the installation process:
+    Begin by adding dependencies needed by the installation process:
 
-```shell
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
+    ```shell
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    ```
 
-Now you can install Docker:
+    Now you can install Docker:
 
-```shell
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-```
+    ```shell
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
+    ```
 
-Start and enable docker service:
+    Start and enable docker service:
 
-```shell
-sudo systemctl start docker && sudo systemctl enable docker
-```
+    ```shell
+    sudo systemctl start docker && sudo systemctl enable docker
+    ```
 
-Add your user account to the docker group:
+    Add your user account to the docker group:
 
-```shell
-sudo usermod -aG docker $USER
-```
+    ```shell
+    sudo usermod -aG docker $USER
+    ```
 
-```shell
-newgrp docker
-```
+    ```shell
+    newgrp docker
+    ```
 
-**Fedora**:
+??? "**Fedora**"
 
-Add Docker’s package repository:
+    Add Docker’s package repository:
 
-```shell
-sudo dnf -y install yum-utils device-mapper-persistent-data lvm2 dnf-plugins-core
-```
+    ```shell
+    sudo dnf -y install yum-utils device-mapper-persistent-data lvm2 dnf-plugins-core
+    ```
 
-```shell
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-```
+    ```shell
+    sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+    ```
 
-Install Docker:
+    Install Docker:
 
-```shell
-sudo dnf install docker-ce docker-ce-cli containerd.io
-```
+    ```shell
+    sudo dnf install docker-ce docker-ce-cli containerd.io
+    ```
 
-Start and enable docker service:
+    Start and enable docker service:
 
-```shell
-sudo systemctl start docker && sudo systemctl enable docker
-```
+    ```shell
+    sudo systemctl start docker && sudo systemctl enable docker
+    ```
 
-Add your user account to the docker group:
+    Add your user account to the docker group:
 
-```shell
-sudo usermod -aG docker $USER
-```
+    ```shell
+    sudo usermod -aG docker $USER
+    ```
 
-```shell
-newgrp docker
-```
+    ```shell
+    newgrp docker
+    ```
 
-**Arch Linux**
+??? "**Arch Linux**"
 
-Install Docker using an AUR-Helper:
+    Install Docker using an AUR-Helper:
 
-```shell
-sudo paru -S --noconfirm --needed docker
-```
+    ```shell
+    sudo paru -S --noconfirm --needed docker
+    ```
 
-Add your user account to the docker group:
+    Add your user account to the docker group:
 
-```shell
-sudo usermod -aG docker $USER
-```
+    ```shell
+    sudo usermod -aG docker $USER
+    ```
 
-```shell
-newgrp docker
-```
+    ```shell
+    newgrp docker
+    ```
+
+## Port-forwarding and Firewalls
+
+If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
+
+For opening ports in your linux machine use the following depending on the firewall software you are using:
+
+!!! warning "**Warning**"
+
+    In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!
+
+??? "**IPTables**"
+
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p tcp --dport 27016 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p tcp --dport 27015 -j ACCEPT
+    ```
+
+??? "**Uncomplicated Firewall (UFW)**"
+
+    ```shell
+    sudo ufw allow 7777/udp
+    ```
+    ```shell
+    sudo ufw allow 27016
+    ```
+    ```shell
+    sudo ufw allow 27015
+    ```
 
 ## Setting up the container
 
@@ -216,7 +256,7 @@ In order to run the server with different port numbers than the default ports `7
     CFG_QUERY_PORT: "27016"
 ```
 
-!!! important "**Note**"
+!!! info "**Note**"
 
     Even though changing the ports is possible, it is currently not supported by the game!
 
@@ -275,26 +315,6 @@ git clone https://github.com/tvandoorn/longvinter-docker-server.git new-name-her
 ```
 The command above will download the container files in a directory named `new-name-here`. Make sure to change the server ports using the _Changing the port numbers_ step.
 
-**NOTE: Even though changing the ports is possible, it is currently not supported by the game!**
+!!! info "**Note**"
 
-## Portforwarding and firewalls
-
-If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
-
-For opening ports in your linux machine use the following depending on the firewall software you are using:
-
-**IPTables**:
-```shell
-sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
-```
-
-**Uncomplicated Firewall (UFW)**
-```shell
-sudo ufw allow 7777/udp
-```
-```shell
-sudo ufw allow 27016/udp
-```
+    This works in theory but, remember, that even though changing the ports is possible, it is currently not supported by the game!
