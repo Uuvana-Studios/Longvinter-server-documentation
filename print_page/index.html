@@ -1099,11 +1099,16 @@ The command above will download the container files in a directory named <code>n
 <li>Min. 3 GB RAM</li>
 <li>Min. 64-bit Windows 10 Operating System</li>
 </ul>
-<h2 id="windows-setup-vanilla-open-ports">Open Ports</h2>
-<p>You also need to open ports on your home router to allow traffic go trough. This process is greatly different from what type of router you have.</p>
-<p>For Steam open: 27015 &amp; 27016
-For Unreal Engine open: 7777</p>
-<p>The easiest way to install them is to right-click and git bash to the folder where you want to install the server files. You can also use CMD if you installed just GIT and not the GIT BASH.</p>
+<h2 id="windows-setup-vanilla-port-forwarding-and-firewalls">Port-forwarding and Firewalls</h2>
+<p>If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Warning</strong></p>
+<p>In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!</p>
+</div>
+<p>For Steam open: 27015 &amp; 27016 (TCP and UDP)
+For Unreal Engine open: 7777 (UDP Only)</p>
+<h2 id="windows-setup-vanilla-installing-the-server">Installing the server</h2>
+<p>The easiest way to install the server is to right-click and git bash to the folder where you want to install the server files. You can also use CMD if you installed just GIT and not the GIT BASH.</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396499-de40ebb5-f38f-441a-b545-1baad176bfe3.png" /></p>
 <p>Enter the following command to clone the GitHub repository to your wanted folder:
 NOTE: cloning creates a new folder for the files so no need to make a folder for the repository beforehand.</p>
@@ -1112,42 +1117,71 @@ NOTE: cloning creates a new folder for the files so no need to make a folder for
 <p>Once the cloning is done you should see the following files inside the folder command created.</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396668-e4ec5308-5b1a-422f-981d-61deeaaa0ca8.png" /></p>
 <p>You now have installed the server!</p>
-<h2 id="windows-setup-vanilla-customizing-the-server">Customizing The Server</h2>
+<h2 id="windows-setup-vanilla-customizing-the-server">Customizing the server</h2>
 <p>You can customize some server parameters by editing the Game.ini config file</p>
 <p>Go to server folder and navigate to Longvinter -&gt;Saved -&gt; Config -&gt; WindowsServer</p>
 <p>Here you should <em>create a new file</em> and name it Game.ini</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396792-28842ee7-dbe9-4c74-b009-c023e9fb510f.png" /></p>
 <p>Open it for edit. You can use any text editor you want.
 Add the following content inside this file.</p>
-<div class="highlight"><pre><span></span><code>[/game/blueprints/server/gi_advancedsessions.gi_advancedsessions_c]
-ServerName=Unnamed Island
-MaxPlayers=32
-ServerMOTD=Welcome to Longvinter Island!
-Password=
-CommunityWebsite=www.longvinter.com
+<div class="highlight"><pre><span></span><code><span class="k">[/game/blueprints/server/gi_advancedsessions.gi_advancedsessions_c]</span><span class="w"></span>
+<span class="na">ServerName</span><span class="o">=</span><span class="s">Unnamed Island</span><span class="w"></span>
+<span class="na">MaxPlayers</span><span class="o">=</span><span class="s">32</span><span class="w"></span>
+<span class="na">ServerMOTD</span><span class="o">=</span><span class="s">Welcome to Longvinter Island!</span><span class="w"></span>
+<span class="na">Password</span><span class="o">=</span><span class="w"></span>
+<span class="na">CommunityWebsite</span><span class="o">=</span><span class="s">www.longvinter.com</span><span class="w"></span>
 
-[/game/blueprints/server/gm_longvinter.gm_longvinter_c]
-AdminSteamID=97615967659669198
+<span class="k">[/game/blueprints/server/gm_longvinter.gm_longvinter_c]</span><span class="w"></span>
+<span class="na">AdminSteamID</span><span class="o">=</span><span class="s">97615967659669198</span><span class="w"></span>
 </code></pre></div>
-<h2 id="windows-setup-vanilla-what-do-different-params-do">What do different params do?</h2>
-<ul>
-<li>
-<p>ServerName: Name that shows up in the server browser. Please don't call your server with an OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players!</p>
-</li>
-<li>
-<p>ServerMOTD: Server message that is on signs around the island.</p>
-</li>
-<li>
-<p>MaxPlayer: Maximum allowed players that can connect at any given time.</p>
-</li>
-<li>
-<p>CommunityWebsite: This allows you to promote a website in the same place where the server message is shown. This link can be opened in-game.</p>
-</li>
-<li>
-<p>Password: Add your password here. Use only numbers and letters. If left empty there is no password on the server.</p>
-</li>
-</ul>
-<h2 id="windows-setup-vanilla-starting-the-server">Starting The Server</h2>
+<h3 id="windows-setup-vanilla-what-does-each-setting-mean">What does each setting mean?</h3>
+<table>
+<thead>
+<tr>
+<th>Setting name</th>
+<th>Used for</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ServerName</td>
+<td>It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.</td>
+<td>Unnamed Island</td>
+</tr>
+<tr>
+<td>ServerMOTD</td>
+<td>Server message that is on a signs around the island.</td>
+<td>32</td>
+</tr>
+<tr>
+<td>MaxPlayer</td>
+<td>Maximum allowed players that can connect at any given time.</td>
+<td>Welcome to Longvinter Island!</td>
+</tr>
+<tr>
+<td>CommunityWebsite</td>
+<td>Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.</td>
+<td>www.longvinter.com</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Add you password here. Use only number and letters. If left empty there is no password on the server.</td>
+<td><em>(empty)</em></td>
+</tr>
+<tr>
+<td>AdminSteamID</td>
+<td>Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate the ID's with single space.</td>
+<td>76561198965966997</td>
+</tr>
+<tr>
+<td>PVP</td>
+<td>Here you write <code>true</code> or <code>false</code> if you want to enable/disable Player versus Player fights.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-setup-vanilla-running-the-server">Running the server</h2>
 <p>For easy starting and closing, I recommend creating a shortcut for LongvinterServer.exe</p>
 <p>Right-click the file and press create a shortcut.</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396928-b648729a-8d1a-441a-b0cf-63ca19b17a76.png" /></p>
