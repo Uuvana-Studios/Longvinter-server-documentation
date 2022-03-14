@@ -13,6 +13,25 @@ If you have any trouble following the guide. Please send us a message in [Discor
 
 ## System Setup
 
+### Creating user and group to run the server 
+
+```shell
+sudo useradd -m -d /home/steam steamcmd
+```
+
+Make sure you choose a secure password.
+```shell
+sudo passwd steamcmd
+```
+
+```shell
+sudo usermod -aG sudo steamcmd
+```
+
+```shell
+sudo su steamcmd
+```
+
 ### Installing GIT, GIT Large file system and other requisits 
 
 .pak files are large and we need to install Git Lfs in order to download them
@@ -82,25 +101,6 @@ Run the following commands according to your chosen system:
     ```shell
     sudo yum install git git-lfs steamcmd
     ```
-
-### Creating user and group to run the server 
-
-```shell
-sudo useradd -m -d /home/steam steamcmd
-```
-
-Make sure you choose a secure password.
-```shell
-sudo passwd steamcmd
-```
-
-```shell
-sudo usermod -aG sudo steamcmd
-```
-
-```shell
-sudo su steamcmd
-```
 
 ### Installing Steam SDK
 
