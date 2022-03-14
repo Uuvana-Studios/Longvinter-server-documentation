@@ -156,22 +156,23 @@ For opening ports in your linux machine use the following depending on the firew
 
     In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!
 
-**IPTables**:
-```shell
-sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p tcp --dport 27016 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT
-```
-```shell
-sudo iptables -I INPUT -p tcp --dport 27015 -j ACCEPT
-```
+??? "**IPTables**"
+
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p tcp --dport 27016 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p udp --dport 27015 -j ACCEPT
+    ```
+    ```shell
+    sudo iptables -I INPUT -p tcp --dport 27015 -j ACCEPT
+    ```
 
 **Uncomplicated Firewall (UFW)**
 ```shell
