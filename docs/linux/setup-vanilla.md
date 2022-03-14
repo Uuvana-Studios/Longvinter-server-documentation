@@ -47,6 +47,7 @@ sudo yum update
 
 ```shell
 sudo yum install git git-lfs
+```
 
 ### Creating a dedicated user
 
@@ -139,12 +140,26 @@ Then we want to give permission for this folder to execute commands with:
 sudo chmod -R ugo+rwx longvinter-linux-server/
 ```
 
-After this we can open the required ports by executing the following commands:
+## Port-forwarding and Firewalls
+
+If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
+
+For opening ports in your linux machine use the following depending on the firewall software you are using:
+
+**IPTables**:
 ```shell
 sudo iptables -I INPUT -p udp --dport 7777 -j ACCEPT
 ```
 ```shell
 sudo iptables -I INPUT -p udp --dport 27016 -j ACCEPT
+```
+
+**Uncomplicated Firewall (UFW)**
+```shell
+sudo ufw allow 7777/udp
+```
+```shell
+sudo ufw allow 27016/udp
 ```
 
 ## Customizing the server
