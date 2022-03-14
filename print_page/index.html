@@ -600,6 +600,16 @@
 <li>Min. 2 GB RAM</li>
 </ul>
 <h2 id="linux-setup-vanilla-system-setup">System Setup</h2>
+<h3 id="linux-setup-vanilla-creating-user-and-group-to-run-the-server">Creating user and group to run the server</h3>
+<div class="highlight"><pre><span></span><code>sudo useradd -m -d /home/steam steamcmd
+</code></pre></div>
+<p>Make sure you choose a secure password.
+<div class="highlight"><pre><span></span><code>sudo passwd steamcmd
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>sudo usermod -aG sudo steamcmd
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo su steamcmd
+</code></pre></div>
 <h3 id="linux-setup-vanilla-installing-git-git-large-file-system-and-other-requisits">Installing GIT, GIT Large file system and other requisits</h3>
 <p>.pak files are large and we need to install Git Lfs in order to download them</p>
 <p>Run the following commands according to your chosen system:</p>
@@ -641,16 +651,6 @@
 <div class="highlight"><pre><span></span><code>sudo yum install git git-lfs steamcmd
 </code></pre></div>
 </details>
-<h3 id="linux-setup-vanilla-creating-user-and-group-to-run-the-server">Creating user and group to run the server</h3>
-<div class="highlight"><pre><span></span><code>sudo useradd -m -d /home/steam steamcmd
-</code></pre></div>
-<p>Make sure you choose a secure password.
-<div class="highlight"><pre><span></span><code>sudo passwd steamcmd
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>sudo usermod -aG sudo steamcmd
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo su steamcmd
-</code></pre></div>
 <h3 id="linux-setup-vanilla-installing-steam-sdk">Installing Steam SDK</h3>
 <p>The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user:</p>
 <p>Make sure we are in the steamcmd user home directory:
