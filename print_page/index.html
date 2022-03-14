@@ -607,9 +607,9 @@
 <summary><strong>Ubuntu/Debian</strong></summary>
 <div class="highlight"><pre><span></span><code>sudo apt update
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo apt install git git-lfs
+<div class="highlight"><pre><span></span><code>sudo apt install git git-lfs steamcmd
 </code></pre></div>
-<p><strong>Note</strong>: If you are using a 64 bit machine you will need to add multivers</p>
+<p><strong>Note</strong>: If you are using a 64 bit machine you will need to add multiverse.</p>
 <div class="highlight"><pre><span></span><code>sudo add-apt-repository multiverse
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo dpkg --add-architecture i386
@@ -625,12 +625,20 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo pacman -S git git-lfs
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>git clone https://aur.archlinux.org/steamcmd.git
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> steamcmd
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>makepkg -si
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo ln -s /usr/games/steamcmd /home/steam/steamcmd
+</code></pre></div>
 </details>
 <details>
 <summary><strong>Fedora</strong></summary>
 <div class="highlight"><pre><span></span><code>sudo yum update
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>sudo yum install git git-lfs
+<div class="highlight"><pre><span></span><code>sudo yum install git git-lfs steamcmd
 </code></pre></div>
 </details>
 <h3 id="linux-setup-vanilla-creating-user-and-group-to-run-the-server">Creating user and group to run the server</h3>
@@ -649,7 +657,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/
 </code></pre></div></p>
 <p>Create the SteamCMD directory:
-<div class="highlight"><pre><span></span><code>mkdir steamcmd
+<div class="highlight"><pre><span></span><code>mkdir steamcmd-source
 </code></pre></div></p>
 <p>Go into the newly created SteamCMD directory:
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> steamcmd
