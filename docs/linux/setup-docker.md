@@ -277,7 +277,7 @@ The command above will download the container files in a directory named `new-na
 
 **NOTE: Even though changing the ports is possible, it is currently not supported by the game!**
 
-## Portforwarding and firewalls
+## Port-forwarding and Firewalls
 
 If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
 
