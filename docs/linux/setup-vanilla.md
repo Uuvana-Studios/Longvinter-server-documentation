@@ -49,6 +49,8 @@ Run the following commands according to your chosen system:
     sudo yum install git git-lfs
     ```
 
+### Creating user and group to run the server 
+
 ```shell
 sudo useradd -m -d /home/steam steamcmd
 ```
