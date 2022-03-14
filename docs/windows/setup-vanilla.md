@@ -19,8 +19,8 @@ If you are running this in your home network it will be necessary to do port for
 
     In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!
 
-For Steam open: 27015 & 27016 (TCP and UDP)
-For Unreal Engine open: 7777 (UDP Only)
+- For Steam open: 27015 & 27016 (TCP and UDP)
+- For Unreal Engine open: 7777 (UDP Only)
 
 ## Installing the server
 
