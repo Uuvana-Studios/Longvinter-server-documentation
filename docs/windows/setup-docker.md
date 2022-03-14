@@ -182,6 +182,5 @@ In order to open the ports in the included Windows Firewall, follow the steps be
 
 7. Give the firewall rule a recognizable name (Such as Longvinter [port]) and click Finish. ![name](https://user-images.githubusercontent.com/3257540/158257182-f57e43d6-0905-4db5-ba67-5cf334c27711.png)
 
-
 Make sure to repeat steps 2-7 for each port that needs to be openend in the firewall.
 

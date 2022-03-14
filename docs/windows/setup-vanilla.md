@@ -12,17 +12,6 @@ If you have any trouble following the guide. Please send us a message in [Discor
 - Min. 3 GB RAM;
 - Min. 64-bit Windows 10 Operating System.
 
-## Port-forwarding and Firewalls
-
-If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.
-
-!!! warning "**Warning**"
-
-    In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!
-
-- For Steam open: 27015 & 27016 (TCP and UDP)
-- For Unreal Engine open: 7777 (UDP Only)
-
 ## Installing the server
 
 The easiest way to install the server is to right-click and git bash to the folder where you want to install the server files. You can also use CMD if you installed just GIT and not the GIT BASH.
@@ -112,6 +101,36 @@ You can also use the Steam server tool to see if your server is visible in the L
 ![image](https://user-images.githubusercontent.com/80425961/155397111-d10300f6-228a-482b-b9f5-6b0b5dabd2bd.png)
 
 If your server shows up on the LAN tab but not in the game's server browser. This indicates that there is either firewall problem with your windows or the ports of the router are not configured correctly.
+
+## Open Ports
+You also need to open ports on your home router to allow traffic go through. This process is greatly different from what type of router you have. It is recommended to look in the manual provided by the manufacturer or contact your ISP for instructions.
+
+!!! warning "**Warning**"
+
+    In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!
+
+- For Steam open: 27015 & 27016 (TCP and UDP)
+- For Unreal Engine open: 7777 (UDP Only)
+
+In some cases, opening the ports in your home router is not enough. In that case you usually also need to allow the ports in your software firewall. Windows has a built-in firewall, but some antivirus packages also include a firewall feature. For changing the settings on your antivirus firewall, look for instructions online or contact the developer directly.
+
+### Setting ports rules on Windows Firewall
+In order to open the ports in the included Windows Firewall, follow the steps below:
+
+1. Open the Start Menu and search for "Windows Defender Firewall with Advanced Security", or the equivalent in your language.
+2. Right-click the Inbound Rules option on the left side and choose New Rule...
+![inboundrules](https://user-images.githubusercontent.com/3257540/158257002-fdd91104-b661-46f8-90de-a07c0d724c91.png)
+
+3. In the window that opens, select the Port option and click Next. ![port](https://user-images.githubusercontent.com/3257540/158257053-1d9cab7d-666a-4bef-9871-09d6fcc445db.png)
+
+4. Next, enter the port that you wish to forward, select the correct protocol (TCP or UDP) and click Next. ![tcpudp](https://user-images.githubusercontent.com/3257540/158257096-96d8de79-80a3-483a-98ed-da830fe89a6b.png)
+
+5. Make sure "Allow the connection" is selected and click Next. ![allowconnection](https://user-images.githubusercontent.com/3257540/158257123-674efc62-ba90-4c96-b753-5124929500b8.png)
+6. Make sure all options are selected and click Next. ![profile](https://user-images.githubusercontent.com/3257540/158257155-ebba1e05-2f33-445b-bebb-b392e038edca.png)
+
+7. Give the firewall rule a recognizable name (Such as Longvinter [port]) and click Finish. ![name](https://user-images.githubusercontent.com/3257540/158257182-f57e43d6-0905-4db5-ba67-5cf334c27711.png)
+
+Make sure to repeat steps 2-7 for each port that needs to be openend in the firewall.
 
 ## Updating To Latest build
 
