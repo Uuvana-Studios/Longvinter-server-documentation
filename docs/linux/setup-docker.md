@@ -20,35 +20,35 @@ If you have any trouble following the guide. Please send us a message in [Discor
 
 Run the following commands according to your chosen system:
 
-**Ubuntu/Debian**:
+??? "**Ubuntu/Debian**"
 
-```shell
-sudo apt update
-```
+    ```shell
+    sudo apt update
+    ```
 
-```shell
-sudo apt install git git-lfs
-```
+    ```shell
+    sudo apt install git git-lfs
+    ```
 
-**Arch-Linux**:
+??? "**Arch-Linux**"
 
-```shell
-sudo pacman -Sy
-```
+    ```shell
+    sudo pacman -Sy
+    ```
 
-```shell
-sudo pacman -S git git-lfs
-```
+    ```shell
+    sudo pacman -S git git-lfs
+    ```
 
-**Fedora**:
+??? "**Fedora**"
 
-```shell
-sudo yum update
-```
+    ```shell
+    sudo yum update
+    ```
 
-```shell
-sudo yum install git git-lfs
-```
+    ```shell
+    sudo yum install git git-lfs
+    ```
 
 ### Installing Docker
 
