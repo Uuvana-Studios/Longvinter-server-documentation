@@ -2,7 +2,8 @@
 
 If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/longvinter) we are more than happy to help you out!
 
-## Requirements and prerequisites
+## Requirements and Pre-requisites
+
 - [GIT](https://gitforwindows.org/) installed in your system
 - [GIT LFS](https://git-lfs.github.com/) instaled in your system
 - [Steam](https://store.steampowered.com/about/) installed in your system.
