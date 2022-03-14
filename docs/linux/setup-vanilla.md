@@ -229,37 +229,37 @@ sudo systemctl daemon-reload
 
 #### How to use Systemd Management
 
-##### How to start the server:
+1. How to start the server:
 ```shell
 sudo systemctl start longvinter.service
 ```
 
-##### How to stop the server:
+2. How to stop the server:
 ```shell
 sudo systemctl stop longvinter.service
 ```
 
-##### How to restart the server:
+3. How to restart the server:
 ```shell
 sudo systemctl restart longvinter.service
 ```
 
-##### How to enable the server to start on boot:
+4. How to enable the server to start on boot:
 ```shell
 sudo systemctl enable longvinter.service
 ```
 
-##### How to check status the server:
+5. How to check status the server:
 ```shell
 sudo systemctl status longvinter.service
 ```
 
-##### How to see real-time logs of the server:
+6. How to see real-time logs of the server:
 ```shell
 sudo journalctl -u longvinter -f
 ```
 
-##### How to see all the logs of the server:
+7. How to see all the logs of the server:
 ```shell
 sudo journalctl -u longvinter
 ```
