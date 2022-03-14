@@ -603,24 +603,27 @@
 <h3 id="linux-setup-vanilla-installing-git-git-large-file-system-and-other-requisits">Installing GIT, GIT Large file system and other requisits</h3>
 <p>.pak files are large and we need to install Git Lfs in order to download them</p>
 <p>Run the following commands according to your chosen system:</p>
-<p><strong>Ubuntu/Debian</strong>:</p>
+<details>
+<summary><strong>Ubuntu/Debian</strong></summary>
 <div class="highlight"><pre><span></span><code>sudo apt update
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo apt install git git-lfs
 </code></pre></div>
-<p><strong>Arch-Linux</strong>:</p>
+</details>
+<details>
+<summary><strong>Arch-Linux</strong></summary>
 <div class="highlight"><pre><span></span><code>sudo pacman -Sy
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo pacman -S git git-lfs
 </code></pre></div>
-<p><strong>Fedora</strong>:</p>
+</details>
+<details>
+<summary><strong>Fedora</strong></summary>
 <div class="highlight"><pre><span></span><code>sudo yum update
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo yum install git git-lfs
 </code></pre></div>
-<h3 id="linux-setup-vanilla-creating-a-dedicated-user">Creating a dedicated user</h3>
-<div class="highlight"><pre><span></span><code>sudo useradd -m -d /home/steam steamcmd
-</code></pre></div>
+</details>
 <p>Make sure you choose a secure password.
 <div class="highlight"><pre><span></span><code>sudo passwd steamcmd
 </code></pre></div></p>
@@ -660,16 +663,6 @@
 <p>And copy inside it the required <code>steamclient.so</code> file from SteamCMD:
 <div class="highlight"><pre><span></span><code>cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/
 </code></pre></div></p>
-<h2 id="linux-setup-vanilla-installing-the-server">Installing the server</h2>
-<p>In this step let's first return to the steamcmd user home directory:
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/
-</code></pre></div></p>
-<p>Then we will clone the linux repository:
-<div class="highlight"><pre><span></span><code>git clone https://github.com/Uuvana-Studios/longvinter-linux-server.git
-</code></pre></div></p>
-<p>Then we want to give permission for this folder to execute commands with:
-<div class="highlight"><pre><span></span><code>sudo chmod -R ugo+rwx longvinter-linux-server/
-</code></pre></div></p>
 <h2 id="linux-setup-vanilla-port-forwarding-and-firewalls">Port-forwarding and Firewalls</h2>
 <p>If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.</p>
 <p>For opening ports in your linux machine use the following depending on the firewall software you are using:</p>
@@ -677,8 +670,9 @@
 <p class="admonition-title"><strong>Warning</strong></p>
 <p>In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!</p>
 </div>
-<p><strong>IPTables</strong>:
-<div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
+<details>
+<summary><strong>IPTables</strong></summary>
+<p><div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27016</span> -j ACCEPT
 </code></pre></div>
@@ -688,12 +682,25 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p tcp --dport <span class="m">27015</span> -j ACCEPT
 </code></pre></div></p>
-<p><strong>Uncomplicated Firewall (UFW)</strong>
-<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">7777</span>/udp
+</details>
+<details>
+<summary><strong>Uncomplicated Firewall (UFW)</strong></summary>
+<p><div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">7777</span>/udp
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27016</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27015</span>
+</code></pre></div></p>
+</details>
+<h2 id="linux-setup-vanilla-installing-the-server">Installing the server</h2>
+<p>In this step let's first return to the steamcmd user home directory:
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/
+</code></pre></div></p>
+<p>Then we will clone the linux repository:
+<div class="highlight"><pre><span></span><code>git clone https://github.com/Uuvana-Studios/longvinter-linux-server.git
+</code></pre></div></p>
+<p>Then we want to give permission for this folder to execute commands with:
+<div class="highlight"><pre><span></span><code>sudo chmod -R ugo+rwx longvinter-linux-server/
 </code></pre></div></p>
 <h2 id="linux-setup-vanilla-customizing-the-server">Customizing the server</h2>
 <p>Server values can be customized with Game.ini</p>
@@ -712,17 +719,53 @@
 <span class="na">AdminSteamID</span><span class="o">=</span><span class="s">76561198965966997</span><span class="w"></span>
 <span class="na">PVP</span><span class="o">=</span><span class="s">true</span><span class="w"></span>
 </code></pre></div></p>
-<p>What do any of them do?</p>
-<ul>
-<li><strong>ServerName:</strong> It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.</li>
-<li><strong>ServerMOTD:</strong> Server message that is on a signs around the island.</li>
-<li><strong>MaxPlayer:</strong> Maximum allowed players that can connect at any given time.</li>
-<li><strong>CommunityWebsite:</strong> Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.</li>
-<li><strong>Password:</strong> Add you password here. Use only number and letters. If left empty there is no password on the server.</li>
-<li><strong>AdminSteamID:</strong> Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate id's with single space.
-    <code>AdminSteamID=76561198965966997 11859676569976596</code></li>
-<li><strong>PVP:</strong> Here you write <code>true</code> or <code>false</code> if you want to enable/disable Player versus Player fights.</li>
-</ul>
+<h3 id="linux-setup-vanilla-what-does-each-setting-mean">What does each setting mean?</h3>
+<table>
+<thead>
+<tr>
+<th>Setting name</th>
+<th>Used for</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ServerName</td>
+<td>It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.</td>
+<td>Unnamed Island</td>
+</tr>
+<tr>
+<td>ServerMOTD</td>
+<td>Server message that is on a signs around the island.</td>
+<td>32</td>
+</tr>
+<tr>
+<td>MaxPlayer</td>
+<td>Maximum allowed players that can connect at any given time.</td>
+<td>Welcome to Longvinter Island!</td>
+</tr>
+<tr>
+<td>CommunityWebsite</td>
+<td>Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.</td>
+<td>www.longvinter.com</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Add you password here. Use only number and letters. If left empty there is no password on the server.</td>
+<td><em>(empty)</em></td>
+</tr>
+<tr>
+<td>AdminSteamID</td>
+<td>Here you can add all the admins that you want to have in the server. <strong>If you want to add multiple</strong> separate the ID's with single space.</td>
+<td>76561198965966997</td>
+</tr>
+<tr>
+<td>PVP</td>
+<td>Here you write <code>true</code> or <code>false</code> if you want to enable/disable Player versus Player fights.</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linux-setup-vanilla-running-the-server">Running the server</h2>
 <h3 id="linux-setup-vanilla-start-the-server-manually-with-shell-script">Start the server manually with shell script</h3>
 <div class="highlight"><pre><span></span><code>sh /home/steam/longvinter-linux-server/LongvinterServer.sh
@@ -785,21 +828,27 @@
 <h3 id="linux-setup-docker-installing-git-and-git-large-file-system">Installing GIT and GIT Large file system</h3>
 <p>.pak files are large and we need to install Git Lfs in order to download them</p>
 <p>Run the following commands according to your chosen system:</p>
-<p><strong>Ubuntu/Debian</strong>:</p>
+<details>
+<summary><strong>Ubuntu/Debian</strong></summary>
 <div class="highlight"><pre><span></span><code>sudo apt update
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo apt install git git-lfs
 </code></pre></div>
-<p><strong>Arch-Linux</strong>:</p>
+</details>
+<details>
+<summary><strong>Arch-Linux</strong></summary>
 <div class="highlight"><pre><span></span><code>sudo pacman -Sy
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo pacman -S git git-lfs
 </code></pre></div>
-<p><strong>Fedora</strong>:</p>
+</details>
+<details>
+<summary><strong>Fedora</strong></summary>
 <div class="highlight"><pre><span></span><code>sudo yum update
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo yum install git git-lfs
 </code></pre></div>
+</details>
 <h3 id="linux-setup-docker-installing-docker">Installing Docker</h3>
 <details>
 <summary><strong>Ubuntu/Debian</strong></summary>
