@@ -617,11 +617,9 @@
 <div class="highlight"><pre><span></span><code>sudo yum update
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo yum install git git-lfs
-
-<span class="c1">### Creating a dedicated user</span>
-
-<span class="sb">```</span>shell
-sudo useradd -m -d /home/steam steamcmd
+</code></pre></div>
+<h3 id="linux-setup-vanilla-creating-a-dedicated-user">Creating a dedicated user</h3>
+<div class="highlight"><pre><span></span><code>sudo useradd -m -d /home/steam steamcmd
 </code></pre></div>
 <p>Make sure you choose a secure password.
 <div class="highlight"><pre><span></span><code>sudo passwd steamcmd
@@ -672,10 +670,18 @@ sudo useradd -m -d /home/steam steamcmd
 <p>Then we want to give permission for this folder to execute commands with:
 <div class="highlight"><pre><span></span><code>sudo chmod -R ugo+rwx longvinter-linux-server/
 </code></pre></div></p>
-<p>After this we can open the required ports by executing the following commands:
+<h2 id="linux-setup-vanilla-port-forwarding-and-firewalls">Port-forwarding and Firewalls</h2>
+<p>If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.</p>
+<p>For opening ports in your linux machine use the following depending on the firewall software you are using:</p>
+<p><strong>IPTables</strong>:
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">7777</span> -j ACCEPT
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo iptables -I INPUT -p udp --dport <span class="m">27016</span> -j ACCEPT
+</code></pre></div></p>
+<p><strong>Uncomplicated Firewall (UFW)</strong>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">7777</span>/udp
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">27016</span>/udp
 </code></pre></div></p>
 <h2 id="linux-setup-vanilla-customizing-the-server">Customizing the server</h2>
 <p>Server values can be customized with Game.ini</p>
