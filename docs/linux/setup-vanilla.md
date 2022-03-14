@@ -224,6 +224,10 @@ sudo cp /home/steam/longvinter-linux-server/longvinter.service /etc/systemd/syst
 ```
 
 ```shell
+sudo cp /home/steam/longvinter-linux-server/longvinter.socket /etc/systemd/system/longvinter.socket
+```
+
+```shell
 sudo systemctl daemon-reload
 ```
 
