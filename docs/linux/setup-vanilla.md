@@ -119,7 +119,7 @@ mkdir steamcmd-source
 
 Go into the newly created SteamCMD directory:
 ```shell
-cd steamcmd
+cd steamcmd-source
 ```
 
 Now download the compressed SteamCMD installer:
@@ -155,7 +155,7 @@ mkdir sdk64
 
 And copy inside it the required `steamclient.so` file from SteamCMD:
 ```shell
-cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/
+cp ~/steamcmd-source/linux64/steamclient.so ~/.steam/sdk64/
 ```
 
 ## Port-forwarding and Firewalls
