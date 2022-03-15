@@ -668,7 +668,7 @@
 <div class="highlight"><pre><span></span><code>mkdir steamcmd-source
 </code></pre></div></p>
 <p>Go into the newly created SteamCMD directory:
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> steamcmd
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> steamcmd-source
 </code></pre></div></p>
 <p>Now download the compressed SteamCMD installer:
 <div class="highlight"><pre><span></span><code>wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
@@ -689,7 +689,7 @@
 <div class="highlight"><pre><span></span><code>mkdir sdk64
 </code></pre></div></p>
 <p>And copy inside it the required <code>steamclient.so</code> file from SteamCMD:
-<div class="highlight"><pre><span></span><code>cp ~/steamcmd/linux64/steamclient.so ~/.steam/sdk64/
+<div class="highlight"><pre><span></span><code>cp ~/steamcmd-source/linux64/steamclient.so ~/.steam/sdk64/
 </code></pre></div></p>
 <h2 id="linux-setup-vanilla-port-forwarding-and-firewalls">Port-forwarding and Firewalls</h2>
 <p>If you are running this in your home network it will be necessary to do port forwarding or open ports in your firewall. For port forwarding instructions, please refer to the information/documentation provided by your ISP or router/modem manufacturer.</p>
