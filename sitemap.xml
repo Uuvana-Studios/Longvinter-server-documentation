@@ -8,13 +8,6 @@
          
     </url>
     <url>
-         <loc>https://docs-server.longvinter.com/linux/</loc>
-         <lastmod>2022-03-17</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/linux/"/>
-         
-    </url>
-    <url>
          <loc>https://docs-server.longvinter.com/linux/setup-docker.fr/</loc>
          <lastmod>2022-03-17</lastmod>
          <changefreq>daily</changefreq>
