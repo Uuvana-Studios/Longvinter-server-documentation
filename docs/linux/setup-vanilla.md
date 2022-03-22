@@ -308,6 +308,10 @@ sudo journalctl -u longvinter -f
 ```shell
 sudo journalctl -u longvinter
 ```
+8. How to get the ID of the server(Requires server initialization first):
+```shell
+./LongvinterGetId.sh
+```
 
 If the console shows these lines at the bottom after startup your server has started corretly.
 ```yaml
