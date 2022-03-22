@@ -310,6 +310,11 @@ sudo journalctl -u longvinter -f
 sudo journalctl -u longvinter
 ```
 
+8. Comment obtenir l'identifiant serveur(Requière d'avoir lancer le serveur):
+```shell
+./LongvinterGetId.sh
+```
+
 Si votre console montre ces lignes au départ, votre serveur est démarré correctement.
 ```yaml
 [2022.02.22-12.51.34:514][ 13]LogOnline: Verbose: STEAM: FOnlineAsyncEventSteamServerConnectedGS ServerId: Server[0x***************]
