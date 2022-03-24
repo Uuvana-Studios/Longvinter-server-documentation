@@ -2,63 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
          <loc>https://docs-server.longvinter.com/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/"/>
          
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/linux/setup-docker.fr/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/linux/setup-docker.fr/"/>
          
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/linux/setup-docker/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/linux/setup-docker/"/>
          
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/linux/setup-vanilla.fr/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/linux/setup-vanilla.fr/"/>
          
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/linux/setup-vanilla/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/linux/setup-vanilla/"/>
          
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/windows/setup-docker.fr/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/windows/setup-docker.fr/"/>
          
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/windows/setup-docker/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/windows/setup-docker/"/>
          
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/windows/setup-vanilla.fr/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/windows/setup-vanilla.fr/"/>
          
     </url>
     <url>
          <loc>https://docs-server.longvinter.com/windows/setup-vanilla/</loc>
-         <lastmod>2022-03-17</lastmod>
+         <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://docs-server.longvinter.com/en/windows/setup-vanilla/"/>
          
