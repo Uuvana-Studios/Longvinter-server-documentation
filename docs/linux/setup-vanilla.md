@@ -236,6 +236,8 @@ CommunityWebsite=www.longvinter.com
 [/Game/Blueprints/Server/GM_Longvinter.GM_Longvinter_C]
 AdminSteamID=76561198965966997
 PVP=true
+TentDecay=true
+MaxTents=2
 ```
 
 ### What does each setting mean?
@@ -243,12 +245,14 @@ PVP=true
 | Setting name     | Used for                                                                                                                                                                                           | Default value                 |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
 | ServerName       | It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players. | Unnamed Island                |
-| ServerMOTD       | Server message that is on a signs around the island.                                                                                                                                               | Welcome to Longvinter Island!        |
-| MaxPlayer        | Maximum allowed players that can connect at any given time.                                                                                                                                        | 32 |
+| ServerMOTD       | Server message that is on a signs around the island.                                                                                                                                               | 32                            |
+| MaxPlayer        | Maximum allowed players that can connect at any given time.                                                                                                                                        | Welcome to Longvinter Island! |
 | CommunityWebsite | Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.                                                                                | www.longvinter.com            |
 | Password         | Add you password here. Use only number and letters. If left empty there is no password on the server.                                                                                              | _(empty)_                     |
 | AdminSteamID     | Here you can add all the admins that you want to have in the server. **If you want to add multiple** separate the ID's with single space.                                                          | 76561198965966997             |
-| PVP              | Here you write `true` or `false` if you want to enable/disable Player versus Player fights.                                                                                                        | true                          |
+| PVP              | Here you write `true` or `false` if you want to enable/disable Player versus Player fights.
+| TentDecay              | Here you write `true` or `false` if you want to enable/disable tent decay to make sure there isn't an abundant number of abandoned tents in the server.
+| MaxTents              |  Maximum allowed of tents that players that can place in the server
 
 ## Running the server
 
