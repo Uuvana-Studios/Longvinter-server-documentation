@@ -1,6 +1,6 @@
 # Vanilla Setup
 
-If you have any trouble following the guide, please send us a message on [Discord](https://discord.gg/longvinter). We are more than happy to help you out!
+If you have any trouble following the guide, please send us a message on [Discord](https://discord.gg/longvinter) or the [Uuvana Forums](https://forum.uuvana.com/t/longvinter-questions-and-help). We are more than happy to help you out!
 
 ## Requirements and Pre-requisites
 
