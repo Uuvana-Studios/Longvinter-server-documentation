@@ -596,7 +596,7 @@
                             Linux Guide <a class='headerlink' href='#section-linux-guide' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="linux-setup-vanilla"><h1 id="linux-setup-vanilla-vanilla-setup">Vanilla Setup</h1>
-<p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/longvinter">Discord</a> we are more than happy to help you out!</p>
+<p>If you have any trouble following the guide, please send us a message on <a href="https://discord.gg/longvinter">Discord</a> or the <a href="https://forum.uuvana.com/t/longvinter-questions-and-help">Uuvana Forums</a>. We are more than happy to help you out!</p>
 <h2 id="linux-setup-vanilla-requirements-and-pre-requisites">Requirements and Pre-requisites</h2>
 <ul>
 <li>GIT installed in your system;</li>
@@ -619,7 +619,7 @@
 <div class="highlight"><pre><span></span><code>sudo su steamcmd
 </code></pre></div>
 <h3 id="linux-setup-vanilla-installing-git-git-large-file-system-and-other-requisits">Installing GIT, GIT Large file system and other requisits</h3>
-<p>.pak files are large and we need to install Git Lfs in order to download them</p>
+<p>.pak files are large and we need to install Git LFS in order to download them.</p>
 <p>Run the following commands according to your chosen system:</p>
 <details>
 <summary><strong>Ubuntu/Debian</strong></summary>
@@ -660,7 +660,7 @@
 </code></pre></div>
 </details>
 <h3 id="linux-setup-vanilla-installing-steam-sdk">Installing Steam SDK</h3>
-<p>The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user:</p>
+<p>The Steam server browser needs SteamSDK. For this, we need to install SteamCMD which needs to be done under the SteamCMD user:</p>
 <p>Make sure we are in the steamcmd user home directory:
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/
 </code></pre></div></p>
@@ -676,19 +676,19 @@
 <p>After that, extract it:
 <div class="highlight"><pre><span></span><code>tar -xvzf steamcmd_linux.tar.gz
 </code></pre></div></p>
-<p>And finally run SteamCMD to login, install a app update and quit upon completion with the following:
+<p>Finally run SteamCMD to login, install a app update and quit upon completion with the following command:
 <div class="highlight"><pre><span></span><code>./steamcmd.sh +force_install_dir . +login anonymous +app_update <span class="m">1007</span> +quit
 </code></pre></div></p>
 <p>Steam CMD will install updates automatically and login to install 64-bit SDK.</p>
-<h3 id="linux-setup-vanilla-copying-steam-sdk-to-right-place">Copying Steam SDK to right place</h3>
-<p>We still need to move the sdk to default location where the server tries to:</p>
+<h3 id="linux-setup-vanilla-copying-steam-sdk-to-the-right-place">Copying Steam SDK to the right place</h3>
+<p>We still need to move the SDK to default location where the server can interact with it:</p>
 <p>Go to the steam folder:
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/.steam
 </code></pre></div></p>
 <p>Create folder for the 64-bits SDK:
 <div class="highlight"><pre><span></span><code>mkdir sdk64
 </code></pre></div></p>
-<p>And copy inside it the required <code>steamclient.so</code> file from SteamCMD:
+<p>Copy the required <code>steamclient.so</code> file from SteamCMD:
 <div class="highlight"><pre><span></span><code>cp ~/steamcmd-source/linux64/steamclient.so ~/.steam/sdk64/
 </code></pre></div></p>
 <h2 id="linux-setup-vanilla-port-forwarding-and-firewalls">Port-forwarding and Firewalls</h2>
@@ -858,7 +858,7 @@
 <div class="highlight"><pre><span></span><code>./LongvinterGetId.sh
 </code></pre></div></li>
 </ol>
-<p>If the console shows these lines at the bottom after startup your server has started corretly.
+<p>If the console shows these lines at the bottom during or after startup, your server has started up correctly.
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">514</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">13</span><span class="p p-Indicator">]</span><span class="nt">LogOnline</span><span class="p">:</span><span class="w"> </span><span class="nt">Verbose</span><span class="p">:</span><span class="w"> </span><span class="nt">STEAM</span><span class="p">:</span><span class="w"> </span><span class="nt">FOnlineAsyncEventSteamServerConnectedGS ServerId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server[0x***************]</span><span class="w"></span>
 <span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">782</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">21</span><span class="p p-Indicator">]</span><span class="nt">LogOnline</span><span class="p">:</span><span class="w"> </span><span class="nt">Verbose</span><span class="p">:</span><span class="w"> </span><span class="nt">STEAM</span><span class="p">:</span><span class="w"> </span><span class="nt">FOnlineAsyncEventSteamServerPolicyResponseGS Secure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 <span class="p p-Indicator">[</span><span class="nv">2022.02.22-12.51.34</span><span class="p p-Indicator">:</span><span class="nv">849</span><span class="p p-Indicator">][</span><span class="w"> </span><span class="nv">23</span><span class="p p-Indicator">]</span><span class="nt">LogOnline</span><span class="p">:</span><span class="w"> </span><span class="nt">Verbose</span><span class="p">:</span><span class="w"> </span><span class="nt">OSS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Async task &#39;FOnlineAsyncTaskSteamCreateServer bWasSuccessful</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1&#39; succeeded in 2.828243 seconds</span><span class="w"></span>
