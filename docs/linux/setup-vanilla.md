@@ -1,6 +1,6 @@
 # Vanilla Setup
 
-If you have any trouble following the guide. Please send us a message in [Discord](https://discord.gg/longvinter) we are more than happy to help you out!
+If you have any trouble following the guide, please send us a message on [Discord](https://discord.gg/longvinter) or the [Uuvana Forums](https://forum.uuvana.com/t/longvinter-questions-and-help). We are more than happy to help you out!
 
 ## Requirements and Pre-requisites
 
@@ -35,7 +35,7 @@ sudo su steamcmd
 
 ### Installing GIT, GIT Large file system and other requisits 
 
-.pak files are large and we need to install Git Lfs in order to download them
+.pak files are large and we need to install Git LFS in order to download them.
 
 Run the following commands according to your chosen system:
 
@@ -105,7 +105,7 @@ Run the following commands according to your chosen system:
 
 ### Installing Steam SDK
 
-The Steam server browser needs steamsdk and for this we need to install SteamCMD, we will do this under the steamcmd user:
+The Steam server browser needs SteamSDK. For this, we need to install SteamCMD which needs to be done under the SteamCMD user:
 
 Make sure we are in the steamcmd user home directory:
 ```shell
@@ -132,16 +132,16 @@ After that, extract it:
 tar -xvzf steamcmd_linux.tar.gz
 ```
 
-And finally run SteamCMD to login, install a app update and quit upon completion with the following:
+Finally run SteamCMD to login, install a app update and quit upon completion with the following command:
 ```shell
 ./steamcmd.sh +force_install_dir . +login anonymous +app_update 1007 +quit
 ```
 
 Steam CMD will install updates automatically and login to install 64-bit SDK.
 
-### Copying Steam SDK to right place
+### Copying Steam SDK to the right place
 
-We still need to move the sdk to default location where the server tries to:
+We still need to move the SDK to default location where the server can interact with it:
 
 Go to the steam folder:
 ```shell
@@ -153,7 +153,7 @@ Create folder for the 64-bits SDK:
 mkdir sdk64
 ```
 
-And copy inside it the required `steamclient.so` file from SteamCMD:
+Copy the required `steamclient.so` file from SteamCMD:
 ```shell
 cp ~/steamcmd-source/linux64/steamclient.so ~/.steam/sdk64/
 ```
@@ -317,7 +317,7 @@ sudo journalctl -u longvinter
 ./LongvinterGetId.sh
 ```
 
-If the console shows these lines at the bottom after startup your server has started corretly.
+If the console shows these lines at the bottom during or after startup, your server has started up correctly.
 ```yaml
 [2022.02.22-12.51.34:514][ 13]LogOnline: Verbose: STEAM: FOnlineAsyncEventSteamServerConnectedGS ServerId: Server[0x***************]
 [2022.02.22-12.51.34:782][ 21]LogOnline: Verbose: STEAM: FOnlineAsyncEventSteamServerPolicyResponseGS Secure: 1
