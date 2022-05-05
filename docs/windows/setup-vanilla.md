@@ -77,40 +77,14 @@ MaxTents=2
 
 ## Running the server
 
-For easy starting and closing, I recommend creating a shortcut for LongvinterServer.exe
-
-Right-click the file and press create a shortcut.
-
-![image](https://user-images.githubusercontent.com/80425961/155396928-b648729a-8d1a-441a-b0cf-63ca19b17a76.png)
-
-Then right-click the shortcut and open the Properties panel, here you need to edit the Target field in the shortcut tab.
-
-![image](https://user-images.githubusercontent.com/80425961/155396959-034b8948-0a33-4e1f-b305-5acd5cc9adc8.png)
-
-Add the -log to the right side of the path. This is telling the program that we want to open a command panel for the server program. This helps us verify that the server starts correctly
-
-After edit just Press "OK" to save the edit.
-
-Then you can start the server with the shortcut. If the console is not opened you need to close the server using Task Manager.
-
-![image](https://user-images.githubusercontent.com/80425961/155397007-069bbb19-8211-4559-9643-11afc7721197.png)
-
-To verify that server started correctly look for these 3 lines in the console window.
-
-![image](https://user-images.githubusercontent.com/80425961/155397051-28cc777b-39e3-4486-a66b-482fe5fa44ce.png)
-
-If these lines are not present look further up the command line for any error or other warnings that are Steam related.
-
-You can also use the Steam server tool to see if your server is visible in the LAN space.
-
-![image](https://user-images.githubusercontent.com/80425961/155397100-aaa4e3e5-b7e1-4710-8035-4bab0775e08d.png)
-
-![image](https://user-images.githubusercontent.com/80425961/155397111-d10300f6-228a-482b-b9f5-6b0b5dabd2bd.png)
-
-If your server shows up on the LAN tab but not in the game's server browser. This indicates that there is either firewall problem with your windows or the ports of the router are not configured correctly.
+// To Do
 
 ## Open Ports
 You also need to open ports on your home router to allow traffic go through. This process is greatly different from what type of router you have. It is recommended to look in the manual provided by the manufacturer or contact your ISP for instructions.
+
+!!! warning "**P.S.A.**"
+
+    You currently cannot connect to server hosted from same machine (localhost).
 
 !!! warning "**Warning**"
 
