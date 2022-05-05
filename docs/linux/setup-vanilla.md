@@ -228,6 +228,7 @@ Add the following content there:
 ```ini
 [/Game/Blueprints/Server/GI_AdvancedSessions.GI_AdvancedSessions_C]
 ServerName=Unnamed Island
+ServerTag=Default
 MaxPlayers=32
 ServerMOTD=Welcome to Longvinter Island!
 Password=
