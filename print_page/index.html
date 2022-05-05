@@ -1267,24 +1267,13 @@ Add the following content inside this file.</p>
 </tbody>
 </table>
 <h2 id="windows-setup-vanilla-running-the-server">Running the server</h2>
-<p>For easy starting and closing, I recommend creating a shortcut for LongvinterServer.exe</p>
-<p>Right-click the file and press create a shortcut.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396928-b648729a-8d1a-441a-b0cf-63ca19b17a76.png" /></p>
-<p>Then right-click the shortcut and open the Properties panel, here you need to edit the Target field in the shortcut tab.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396959-034b8948-0a33-4e1f-b305-5acd5cc9adc8.png" /></p>
-<p>Add the -log to the right side of the path. This is telling the program that we want to open a command panel for the server program. This helps us verify that the server starts correctly</p>
-<p>After edit just Press "OK" to save the edit.</p>
-<p>Then you can start the server with the shortcut. If the console is not opened you need to close the server using Task Manager.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155397007-069bbb19-8211-4559-9643-11afc7721197.png" /></p>
-<p>To verify that server started correctly look for these 3 lines in the console window.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155397051-28cc777b-39e3-4486-a66b-482fe5fa44ce.png" /></p>
-<p>If these lines are not present look further up the command line for any error or other warnings that are Steam related.</p>
-<p>You can also use the Steam server tool to see if your server is visible in the LAN space.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155397100-aaa4e3e5-b7e1-4710-8035-4bab0775e08d.png" /></p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155397111-d10300f6-228a-482b-b9f5-6b0b5dabd2bd.png" /></p>
-<p>If your server shows up on the LAN tab but not in the game's server browser. This indicates that there is either firewall problem with your windows or the ports of the router are not configured correctly.</p>
+<p>// To Do</p>
 <h2 id="windows-setup-vanilla-open-ports">Open Ports</h2>
 <p>You also need to open ports on your home router to allow traffic go through. This process is greatly different from what type of router you have. It is recommended to look in the manual provided by the manufacturer or contact your ISP for instructions.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>P.S.A.</strong></p>
+<p>You currently cannot connect to server hosted from same machine (localhost).</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title"><strong>Warning</strong></p>
 <p>In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!</p>
