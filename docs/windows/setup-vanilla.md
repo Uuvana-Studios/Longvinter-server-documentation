@@ -47,6 +47,7 @@ Add the following content inside this file.
 ```ini
 [/game/blueprints/server/gi_advancedsessions.gi_advancedsessions_c]
 ServerName=Unnamed Island
+ServerTag=Default
 MaxPlayers=32
 ServerMOTD=Welcome to Longvinter Island!
 Password=
@@ -64,6 +65,7 @@ MaxTents=2
 | Setting name     | Used for                                                                                                                                                                                           | Default value                 |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
 | ServerName       | It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players. | Unnamed Island                |
+| ServerTag       | It's the tag that allows for easier search of the server. Please don't use your the word OFFICIAL on it. We want players to clearly know if they are joining a server that is hosted by other players. And only place one tag. | Default                |
 | ServerMOTD       | Server message that is on a signs around the island.                                                                                                                                               | 32                            |
 | MaxPlayer        | Maximum allowed players that can connect at any given time.                                                                                                                                        | Welcome to Longvinter Island! |
 | CommunityWebsite | Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.                                                                                | www.longvinter.com            |
