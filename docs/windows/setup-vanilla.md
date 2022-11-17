@@ -54,10 +54,11 @@ Password=
 CommunityWebsite=www.longvinter.com
 
 [/game/blueprints/server/gm_longvinter.gm_longvinter_c]
-AdminSteamID=97615967659669198
+AdminEosID=97615967659669198
 PVP=true
 TentDecay=true
 MaxTents=2
+ChestRespawnTime=600
 ```
 
 ### What does each setting mean?
@@ -70,10 +71,11 @@ MaxTents=2
 | MaxPlayer        | Maximum allowed players that can connect at any given time.                                                                                                                                        | Welcome to Longvinter Island! |
 | CommunityWebsite | Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.                                                                                | www.longvinter.com            |
 | Password         | Add you password here. Use only number and letters. If left empty there is no password on the server.                                                                                              | _(empty)_                     |
-| AdminSteamID     | Here you can add all the admins that you want to have in the server. **If you want to add multiple** separate the ID's with single space.                                                          | 76561198965966997             |
+| AdminEosID     | Here you can add all the admins that you want to have in the server. Your EOS ID can be found in the general settings tab. **If you want to add multiple** separate the ID's with single space.                                                          | 76561198965966997             |
 | PVP              | Here you write `true` or `false` if you want to enable/disable Player versus Player fights.
 | TentDecay              | Here you write `true` or `false` if you want to enable/disable tent decay to make sure there isn't an abundant number of abandoned tents in the server.
 | MaxTents              |  Maximum allowed of tents that players that can place in the server
+| ChestRespawnTime      |  How much is the maximum respawn time for loot chests                                                                                                                                         | 600        |
 
 ## Running the server
 
