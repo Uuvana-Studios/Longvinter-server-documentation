@@ -147,12 +147,12 @@ plugins:
         - linux/index.md
         - windows/index.md
 
-  - i18n:
-      default_language: en
-      languages:
-        en:
-          name: English
-          build: true
+ # - i18n:
+ #     default_language: en
+ #     languages:
+ #       en:
+ #         name: English
+ #         build: true
 
   - minify:
       minify_html: true
