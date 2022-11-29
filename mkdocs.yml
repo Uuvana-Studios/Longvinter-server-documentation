@@ -179,7 +179,5 @@ plugins:
       enumerate_headings: true
       enumerate_figures: true
       add_cover_page: true
-
-  - print-site
     
 copyright: Copyright &copy; 2021 <a href="https://github.com/Uuvana-Studios">Uuvana Studios</a>.
