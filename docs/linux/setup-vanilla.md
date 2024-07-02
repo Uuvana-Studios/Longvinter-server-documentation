@@ -1,5 +1,7 @@
 # Vanilla Setup
 
+## This part of the documentation is no longer maintained
+
 For the most up-to-date instructions on setting up a Longvinter server on Linux, please visit:
 
 [wiki.longvinter.com/server/linux](https://wiki.longvinter.com/server/linux)
