@@ -1045,172 +1045,19 @@ The command above will download the container files in a directory named <code>n
                             Windows Guide <a class='headerlink' href='#section-windows-guide' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="windows-setup-vanilla"><h1 id="windows-setup-vanilla-vanilla-setup">Vanilla Setup</h1>
-<p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/longvinter">Discord</a> we are more than happy to help you out!</p>
-<h2 id="windows-setup-vanilla-requirements-and-pre-requisites">Requirements and Pre-requisites</h2>
+<h2 id="windows-setup-vanilla-this-part-of-the-documentation-is-no-longer-maintained">This part of the documentation is no longer maintained</h2>
+<p>For the most up-to-date instructions on setting up a Longvinter server on Linux, please visit:</p>
+<p><a href="https://wiki.longvinter.com/server/windows">wiki.longvinter.com/server/windows</a></p>
+<p>The wiki contains comprehensive guides and the latest information on:</p>
 <ul>
-<li><a href="https://gitforwindows.org/">GIT</a> installed in your system;</li>
-<li><a href="https://git-lfs.github.com/">GIT LFS</a> instaled in your system;</li>
-<li><a href="https://store.steampowered.com/about/">Steam</a> installed in your system;</li>
-<li>Broadband internet connection;</li>
-<li>Router with the ability to port forward;</li>
-<li>Min. 3 GB RAM;</li>
-<li>Min. 64-bit Windows 10 Operating System.</li>
+<li>System requirements and prerequisites</li>
+<li>System setup</li>
+<li>Port forwarding and firewall configuration</li>
+<li>Server installation</li>
+<li>Server customization</li>
+<li>Running and maintaining your server</li>
 </ul>
-<h2 id="windows-setup-vanilla-installing-the-server">Installing the server</h2>
-<p>The easiest way to install the server is to right-click and git bash to the folder where you want to install the server files. You can also use CMD if you installed just GIT and not the GIT BASH.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396499-de40ebb5-f38f-441a-b545-1baad176bfe3.png" /></p>
-<p>Enter the following command to clone the GitHub repository to your wanted folder:
-NOTE: cloning creates a new folder for the files so no need to make a folder for the repository beforehand.</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/Uuvana-Studios/longvinter-windows-server.git
-</code></pre></div>
-<p>Once the cloning is done you should see the following files inside the folder command created.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396668-e4ec5308-5b1a-422f-981d-61deeaaa0ca8.png" /></p>
-<p>You now have installed the server!</p>
-<h2 id="windows-setup-vanilla-customizing-the-server">Customizing the server</h2>
-<p>You can customize some server parameters by editing the Game.ini config file</p>
-<p>Go to server folder and navigate to Longvinter -&gt;Saved -&gt; Config -&gt; WindowsServer</p>
-<p>Here you should <em>create a new file</em> and name it Game.ini</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/80425961/155396792-28842ee7-dbe9-4c74-b009-c023e9fb510f.png" /></p>
-<p>Open it for edit. You can use any text editor you want.
-Add the following content inside this file.</p>
-<div class="highlight"><pre><span></span><code><span class="k">[/game/blueprints/server/gi_advancedsessions.gi_advancedsessions_c]</span>
-<span class="na">ServerName</span><span class="o">=</span><span class="s">Unnamed Island</span>
-<span class="na">ServerTag</span><span class="o">=</span><span class="s">Default</span>
-<span class="na">MaxPlayers</span><span class="o">=</span><span class="s">32</span>
-<span class="na">ServerMOTD</span><span class="o">=</span><span class="s">Welcome to Longvinter Island!</span>
-<span class="na">Password</span><span class="o">=</span>
-<span class="na">CommunityWebsite</span><span class="o">=</span><span class="s">www.longvinter.com</span>
-
-<span class="k">[/game/blueprints/server/gm_longvinter.gm_longvinter_c]</span>
-<span class="na">AdminEosID</span><span class="o">=</span><span class="s">97615967659669198</span>
-<span class="na">PVP</span><span class="o">=</span><span class="s">true</span>
-<span class="na">TentDecay</span><span class="o">=</span><span class="s">true</span>
-<span class="na">MaxTents</span><span class="o">=</span><span class="s">2</span>
-<span class="na">ChestRespawnTime</span><span class="o">=</span><span class="s">600</span>
-</code></pre></div>
-<h3 id="windows-setup-vanilla-what-does-each-setting-mean">What does each setting mean?</h3>
-<table>
-<thead>
-<tr>
-<th>Setting name</th>
-<th>Used for</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ServerName</td>
-<td>It's the name that shows up in the server browser. Please don't call your server with OFFICIAL name. We want players to clearly know if they are joining a server that is hosted by other players.</td>
-<td>Unnamed Island</td>
-</tr>
-<tr>
-<td>ServerTag</td>
-<td>It's the tag that allows for easier search of the server. Please don't use your the word OFFICIAL on it. We want players to clearly know if they are joining a server that is hosted by other players. And only place one tag.</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>ServerMOTD</td>
-<td>Server message that is on a signs around the island.</td>
-<td>32</td>
-</tr>
-<tr>
-<td>MaxPlayer</td>
-<td>Maximum allowed players that can connect at any given time.</td>
-<td>Welcome to Longvinter Island!</td>
-</tr>
-<tr>
-<td>CommunityWebsite</td>
-<td>Allows you to promote a website on a same place where the server message is shown. This link can be opened in-game.</td>
-<td>www.longvinter.com</td>
-</tr>
-<tr>
-<td>Password</td>
-<td>Add you password here. Use only number and letters. If left empty there is no password on the server.</td>
-<td><em>(empty)</em></td>
-</tr>
-<tr>
-<td>AdminEosID</td>
-<td>Here you can add all the admins that you want to have in the server. Your EOS ID can be found in the general settings tab. <strong>If you want to add multiple</strong> separate the ID's with single space.</td>
-<td>76561198965966997</td>
-</tr>
-<tr>
-<td>PVP</td>
-<td>Here you write <code>true</code> or <code>false</code> if you want to enable/disable Player versus Player fights.</td>
-<td></td>
-</tr>
-<tr>
-<td>TentDecay</td>
-<td>Here you write <code>true</code> or <code>false</code> if you want to enable/disable tent decay to make sure there isn't an abundant number of abandoned tents in the server.</td>
-<td></td>
-</tr>
-<tr>
-<td>MaxTents</td>
-<td>Maximum allowed of tents that players that can place in the server</td>
-<td></td>
-</tr>
-<tr>
-<td>ChestRespawnTime</td>
-<td>How much is the maximum respawn time for loot chests</td>
-<td>600</td>
-</tr>
-</tbody>
-</table>
-<h2 id="windows-setup-vanilla-running-the-server">Running the server</h2>
-<p>// To Do</p>
-<h2 id="windows-setup-vanilla-open-ports">Open Ports</h2>
-<p>You also need to open ports on your home router to allow traffic go through. This process is greatly different from what type of router you have. It is recommended to look in the manual provided by the manufacturer or contact your ISP for instructions.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>P.S.A.</strong></p>
-<p>You currently cannot connect to server hosted from same machine (localhost).</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title"><strong>Warning</strong></p>
-<p>In other tutorials it is asked to open the TCP Port 7777, do not do it. Unreal Engine doesn't use TCP connections - you would be leaving a unused port open by doing so!</p>
-</div>
-<ul>
-<li>For Steam open: 27015 &amp; 27016 (TCP and UDP)</li>
-<li>For Unreal Engine open: 7777 (UDP Only)</li>
-</ul>
-<p>In some cases, opening the ports in your home router is not enough. In that case you usually also need to allow the ports in your software firewall. Windows has a built-in firewall, but some antivirus packages also include a firewall feature. For changing the settings on your antivirus firewall, look for instructions online or contact the developer directly.</p>
-<h3 id="windows-setup-vanilla-setting-ports-rules-on-windows-firewall">Setting ports rules on Windows Firewall</h3>
-<p>In order to open the ports in the included Windows Firewall, follow the steps below:</p>
-<ol>
-<li>Open the Start Menu and search for "Windows Defender Firewall with Advanced Security", or the equivalent in your language.</li>
-<li>
-<p>Right-click the Inbound Rules option on the left side and choose New Rule...
-<img alt="inboundrules" src="https://user-images.githubusercontent.com/3257540/158257002-fdd91104-b661-46f8-90de-a07c0d724c91.png" /></p>
-</li>
-<li>
-<p>In the window that opens, select the Port option and click Next. <img alt="port" src="https://user-images.githubusercontent.com/3257540/158257053-1d9cab7d-666a-4bef-9871-09d6fcc445db.png" /></p>
-</li>
-<li>
-<p>Next, enter the port that you wish to forward, select the correct protocol (TCP or UDP) and click Next. <img alt="tcpudp" src="https://user-images.githubusercontent.com/3257540/158257096-96d8de79-80a3-483a-98ed-da830fe89a6b.png" /></p>
-</li>
-<li>
-<p>Make sure "Allow the connection" is selected and click Next. <img alt="allowconnection" src="https://user-images.githubusercontent.com/3257540/158257123-674efc62-ba90-4c96-b753-5124929500b8.png" /></p>
-</li>
-<li>
-<p>Make sure all options are selected and click Next. <img alt="profile" src="https://user-images.githubusercontent.com/3257540/158257155-ebba1e05-2f33-445b-bebb-b392e038edca.png" /></p>
-</li>
-<li>
-<p>Give the firewall rule a recognizable name (Such as Longvinter [port]) and click Finish. <img alt="name" src="https://user-images.githubusercontent.com/3257540/158257182-f57e43d6-0905-4db5-ba67-5cf334c27711.png" /></p>
-</li>
-</ol>
-<p>Make sure to repeat steps 2-7 for each port that needs to be openend in the firewall.</p>
-<h2 id="windows-setup-vanilla-updating-to-latest-build">Updating To Latest build</h2>
-<p>I suggest you update the server every time you start it. The best rule of thumb is that if your game has updated in steam. This means you also have to update the server.</p>
-<p>Updating is done by opening the server folder in GIT BASH or in CMD as I showed earlier. The difference is that you now have to be inside the folder and not where it is located.</p>
-<p>First, verify that you are in the folder by typing:</p>
-<div class="highlight"><pre><span></span><code>git status 
-</code></pre></div>
-<p>If console prints:
-<div class="highlight"><pre><span></span><code>fatal: not a git repository (or any of the parent directories): .git
-</code></pre></div></p>
-<p>This means you are in the wrong folder and you cannot pull the update from here.</p>
-<p>Updating is simple. Just execute these two lines separately</p>
-<div class="highlight"><pre><span></span><code>git restore .
-git pull
-</code></pre></div></section><section class="print-page" id="windows-setup-docker"><h1 id="windows-setup-docker-docker-setup">Docker Setup</h1>
+<p>If you have any trouble following the guide on the wiki, please send us a message on <a href="https://discord.gg/longvinter">Discord</a> or the <a href="https://forum.uuvana.com/t/longvinter-questions-and-help">Uuvana Forums</a>. We are more than happy to help you out!</p></section><section class="print-page" id="windows-setup-docker"><h1 id="windows-setup-docker-docker-setup">Docker Setup</h1>
 <p>If you have any trouble following the guide. Please send us a message in <a href="https://discord.gg/longvinter">Discord</a> we are more than happy to help you out!</p>
 <h2 id="windows-setup-docker-requirements-and-prerequisites">Requirements and prerequisites</h2>
 <ul>
